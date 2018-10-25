@@ -1,23 +1,11 @@
-<!----- Conversion time: 3.326 seconds.
-
-
-Using this Markdown file:
-
-1. Cut and paste this output into your source file.
-2. See the notes and action items below regarding this conversion run.
-3. Check the rendered output (headings, lists, code blocks, tables) for proper
-   formatting and use a linkchecker before you publish this page.
-
-Conversion notes:
-
-* GD2md-html version 1.0β13
-* Wed Oct 24 2018 19:05:47 GMT-0700 (PDT)
+<!-----
 * Source doc: https://docs.google.com/open?id=1D7lQAb7F33CNHl0hpxkePO0K8ANl5YKj2Kib9UBjQF0
 ----->
 
 
 
 # Docker/Kaldi Workshop steps DRAFT
+(to suit docker-kaldi version 0.2)
 
 This workshop goes through stages of installing and getting familiar with using _Docker_, then running tasks to prepare a corpus and train _Kaldi_, a speech recogniser.
 

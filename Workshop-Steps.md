@@ -1,4 +1,4 @@
-# Docker/Kaldi Workshop steps
+# Docker/Kaldi CoEDLfest 2018 Workshop
 docker-kaldi version 0.2
 
 This workshop goes through stages of installing and getting familiar with using *Docker*, then running tasks to prepare a corpus and train *Kaldi*, a speech recogniser. If you run into problems when going through these steps, check the **issues** for potential solutions, and get in touch if you don't find an answer there.

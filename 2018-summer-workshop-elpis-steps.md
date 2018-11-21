@@ -9,7 +9,16 @@ First, check the *Questions* document. As we find answers to common problems, we
 
 
 ## Contents of this document  
-TBC
+
+- [The tools][]
+- [Exercise 1 Getting familiar with Docker][]
+- [Exercise 2 Sharing data with a Docker container][]
+- [Exercise 3 Loading data into a container with Elpis and Kaldi installed][]
+- [Exercise 4 Running Kaldi with a toy corpus][]
+- [Exercise 5 Using your own Elan data with the Kaldi container][]
+- [Using your own data formats other than Elan][]
+- [Further reading][]
+
 
 Prepare for the workshop by
 

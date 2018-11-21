@@ -13,7 +13,11 @@ TBC
 
 ## Download some toy data
 
-.. desktop
+For some of these exercises we will use a 'toy corpus'. This is a very minimal set of data which is enough to test that the systems work without the long processing time that large quantities of data would incur.
+
+Open a web browser and go to [https://github.com/CoEDL/toy-corpora](https://github.com/CoEDL/toy-corpora) to download the Abui 'toy' data.
+
+On that page, click the green *Clone or Download* button, then *Download ZIP*. Unzip the files and put the *abui-toy-corpus* folder on your Desktop.
 
 ## Installing the tools
 
@@ -80,11 +84,7 @@ Well, that’s all this exercise does. Once it has output the information to the
 
 To work with our own data in the container, we share a folder containing our data with the container. 
 
-Get the Abui 'toy' data. Open a web browser and go to [https://github.com/CoEDL/toy-corpora](https://github.com/CoEDL/toy-corpora)
-
-On that page, click the green *Clone or Download* button, then *Download ZIP*. Unzip the files and put the *abui-toy-corpus* folder on your Desktop.
-
-Open a terminal window and change into the Abui data directory on your desktop.
+Open a terminal window and change into the Abui data directory on your desktop (if it's not there, jump back up to the [Download some toy data][] section above).
 
 Mac
 ```
@@ -101,6 +101,8 @@ The next command extends what we have used so far, adding a new option `-v` with
 ```
 $ docker run -it -v `pwd`:/docs-inside-docker alpine
 ```
+
+What's it all mean?
 
 `-v` is an *option*, it tells docker that we want to share a volume
 
@@ -127,6 +129,7 @@ This will list the files in the container's *docs-inside-docker* folder. They sh
 
 
 ## Exercise 3 Loading data into a container with Elpis and Kaldi installed
+
 In this exercise, we will load some example data into a container that has Elpis and Kaldi installed.
 
 Get the Docker image for Elpis. So far, the images we have downloaded have been small, but make sure you are on a good internet connection, as the Docker image we download in this exercise is about 5GB! Use the following pull command if you want to update the image later too, when you hear that we have made some changes to the pipeline. Back in the terminal, type:
@@ -156,83 +159,81 @@ $ docker run -it --rm -v ~/Desktop/abui_toy_corpus/:/kaldi-helpers/input coedl/k
 
 * `$` this is the prompt, after which we type our commands. Will be `>` on Windows
 * `docker run` this runs a docker image
-* `-it` **i**n**t**eractive mode (so that you can stay inside while working. Otherwise it will immediately EXIT the docker container after running this command)
+* `-it` interactive mode (so that you can stay inside while working. Otherwise it will immediately EXIT the docker container after running this command)
 * `--rm` clean up/fully close the container after it's done (when you exit it)
-* `-v`  mount (kind of like sharing) a **v**olume (essentially a folder or directory)
+* `-v`  mount (kind of like sharing) a volume (essentially a folder or directory)
 * `~/Desktop/abui_toy_corpus/` the source (location) of the folder on your computer that you want to use inside the container. This is the folder that has our config, data and output folders in it.
 * `:` …will be shared into…
 * `/kaldi-helpers/input` the target location, where we want the source folder to be within the docker container.
 * `coedl/kaldi-helpers:0.XXXX` the name and version number of the docker image that you want to build a container from
 
-## Exercise 5 Running Kaldi with a toy corpus
-Now we have the data shared with a Kaldi image that has our pipeline tasks, we can build and run the ASR system.
+
+## Exercise 4 Running Kaldi with a toy corpus
+
+4.1 Now we have the data shared with a Kaldi image that has our pipeline tasks, we can build and run the ASR system.
+
+    / # task _run-elan
+
+4.2 When this task has completed, you should see a 'Done' message. At this point, Kaldi has been set up with files in the right places for it to begin learning. Run the train-test task.
+
+    / # task _train-test
+
+4.3 When this has completed, you will see a list of WER and SER values.
+
+4.4 Interpret the results!
+
+4.5 Now, try inference
+
+4.6 Exit the container to close it.
+
+    / # exit
+
+
+
+## Exercise 5 Using your own Elan data with the Kaldi container
+
+5.1 Prepare your data. [Read more about that here](cleaning-data).
+
+5.2 Set up your folders
+    - On the Desktop, create a new folder, name it **elpis_workshop**.
+    - Note: In Windows Home, if you're using Docker Toolbox version, you need to do this is Users/[Username]/
+    - Inside it create two new folders, call one **input**, the other **output**. 
+    - Inside *input*, make two folders: a **config** folder, and a **data** folder. 
+    - Leave the **output** folder empty. 
+
+    ├── elpis_workshop
+    │   ├── input
+    │   │   ├── config
+    │   │   └── data
+    │   └── output
+
+5.3 Add the config files
+    - Copy the *optional_silence.txt* and *silence_phones.txt* files from the Abui toy corpus config folder into your *config* folder.
+    - In your *config* folder we need to create a text file which has a letter to sound map...
+
+5.4 Add your data
+    - Put your audio and transcription files inside the *data* folder.
+
+5.5 Now we will share the project directory with a new Docker container.
+
+    $ docker run -it --rm -v ~/Desktop/elpis_workshop/:/kaldi-helpers/input coedl/kaldi-helpers:0.XXXX
+
+5.6 Now you can run the tasks...
+- If your data is in Elan format, and clean, use the default tasks. These tasks will build the project, train and test on your own data, using transcriptions from tiers named 'Phrase'.
 
 ```
 / # task _run-elan
-```
-
-When this task has completed, you should see a 'Done' message. At this point, Kaldi has been set up with files in the right places for it to begin learning. Run the train-test task.
-
-```
 / # task _train-test
 ```
 
-When this has completed, you will see a list of WER and SER values.
+5.7 Once the models have been trained, you can get a hypothesis for untranscribed audio.
+- Make a new folder in input called **infer**
+- Put your sentence audio in there (for the demo, use a short sentence - 10 or 20 seconds)
 
-Interpret the results!
-
-Exit the container to close it.
-
-```
-/ # exit
-```
-
-## Using your own Elan data with the Kaldi container
-Prepare your data. [Read more about that here](cleaning-data).
-
-
-You need to create two new folders on the Desktop, call one **input**, the other **output**. Inside input, make two folders: a **config** folder, and a **data** folder. Leave **output** folder empty. 
-
-Note: In Windows Home, if you're using Docker Toolbox version, you need to do this is Users/[Username]/
-
-Copy the *optional_silence.txt* and *silence_phones.txt* files from the Abui toy corpus config folder into the *input/config* folder.
-
-In this config folder we need to create a text file which has a letter to sound map.
-
-Put your audio and transcription files inside the data folder. Leave the output folder empty.
-
-Load the new project directory into a new Docker container.
-
-```
-$ docker run -it --rm -v ~/Desktop/my_data/:/kaldi-helpers/input coedl/kaldi-helpers:0.XXXX
-```
-
-Now you can run the tasks, and they will build the project, train and test on your own data. If your data is in Elan format, and clean, use the default tasks. These tasks will get transcriptions from a tier named 'Phrase'.
-
-```
-/ # task _run-elan
-/ # task _train-test
-```
-
-To use your own tier names, you can pass in a value to the task:
-*Please note, this may not be working in v0.2*
-
-```
-/ # TARGET_LANGUAGE_TIER=default task _run-elan
-```
-
-`TARGET_LANGUAGE_TIER` - this is a *variable*
-
-`default` - this is a *value* that you assign to the variable
 
 ## Using your own data formats other than Elan
-To work with Praat Textgrid files, Transcriber files, or if you need to resample your data, use on of the recipes linked to below.
+To work with Praat Textgrid files, Transcriber trs files, or if you need to resample your data, use one of the [recipes](recipes) according to the particular type and condition of your data.
 
-## Pipeline recipes
-Follow one of these guides according to the particular type and condition of your data
+And for information about the pipeline options, read more about the [tasks](tasks).
 
-[https://github.com/CoEDL/kaldi-helpers/blob/master/guides/recipes.md](https://github.com/CoEDL/kaldi-helpers/blob/master/guides/recipes.md)
-
-More information about the pipeline tasks and scripts [https://github.com/CoEDL/kaldi-helpers/blob/master/guides/](https://github.com/CoEDL/kaldi-helpers/blob/master/guides/)
-
-## Quick-find table of commands
+Further reading

@@ -1,8 +1,12 @@
 # Welcome to the Elpis wiki!
 
-For information about preparing your computer for the CoEDL Summer School 2018 ASR workshop, please read
+## Workshop preparation
 
-- [Preparing your computer](2018-summer-workshop-preparation)
-- [Elpis workshop steps](2018-summer-workshop-elpis-steps)
+Please follow the steps on the [Preparing your computer](2018-summer-workshop-preparation) wiki page before the CoEDL Summer School 2018 ASR workshop.
 
+## Workshop guides
+
+- [Elpis workshop](2018-summer-workshop-elpis-steps)
+- Persephone workshop
+- ...
 

@@ -30,27 +30,28 @@ Contents of this document
 
 **Docker** is a program which helps standardise the way we do computational tasks with data, regardless of the operating systems of all the people who might want to run those tasks. Rather than building separate code for Windows, Linux, Mac operating systems, we can write once and run it on a myriad of operating systems using Docker. For more information about Docker, view [Nay San's slides](http://goo.gl/qxQDPP).
 
-Run the Docker installer. You may be prompted to authenticate the installer with your computer's password.
+After you have installed Docker, start it. On a mac, you will see a little whale icon in the top menu bar. On Windows you'll see a whale icon in the system tray.
 
-Once Docker is installed, start it. On a mac, you will see a little whale icon in the top menu bar. On Windows you'll see a whale icon in the system tray.
-
-For the rest of the workshop, we will be using a **terminal** to interact with Docker and Elpis. 
+For the rest of the workshop, we will be using a **terminal** to interact with Docker and Elpis by typing instructions, or **commands** at the **command prompt**. 
 
  > A terminal is a program you need to use in order to control Docker. Docker itself will run on your computer and you communicate with it via simple, one-line text commands entered within your terminal application. When you use an application like Elan or Word, you are using a 'graphical user interface (GUI)' to do stuff to your data via menus and buttons. Another way of doing stuff with your data is by running software scripts that don't have a GUI, via a terminal, also known as a command line or command prompt.
 
-On Mac, use the *Terminal* app in your *Applications > Utilities* folder. For Windows, type  `command` or `cmd` into the search field in your taskbar. Then, click or tap on the *Command Prompt* result.
+ > A command is an instruction that tells a program to do something. 
 
-Let's make sure that Docker has installed. Open your terminal, and type the following **command** at the **prompt**. 
+ > On mac, the prompt is `$` and Windows it is `>`. You'll see in this guide that the commands we write are prefixed by the prompt. You don't need to type the `$` or `>` when you use the commands, just type what follows. Also, press Return (or Enter) after typing the command.
+
+
+On Mac, open the *Terminal* app in your *Applications > Utilities* folder. 
+
+For Windows, type  `command` or `cmd` into the search field in your taskbar. Then, click or tap on the *Command Prompt* result to open it.
+
+Let's write a command to check that Docker is installed. Open your terminal, and type the following command at the prompt. Remember, you don't need to type the prompt character.
 
 ```
 $ docker --version
 ```
 
-![](images/terminal.png)
-
- > A command is an instruction that tells a program to do something. 
-
- > On mac, the prompt is `$` and Windows it is `>`. You'll see in this guide that the commands we write are prefixed by the prompt. You don't need to type the `$` or `>` when you use the commands, just type what follows. Also, press Return (or Enter) after typing the command.
+![](images/terminal-command.png)
 
 In this command, `docker` is the name of the program we want to use, `—version` is an option (also known as an argument, flag or switch). When we work with command line programs, we don't have buttons or menus to interact with the program, so we use options to control what the program does. 
 
@@ -58,7 +59,7 @@ After running that command, we should see some version information. Hooray! Dock
 
 
 ## Exercise 1 Getting familiar with Docker
-Let's get a taste of using Docker images and containers by playing with a very simple one first. In your terminal, type this command (remember, you don't include the prompt):
+Let's get a taste of using Docker images and containers by playing with a very simple one first. In your terminal, type this command.
 
 ```
 $ docker run hello-world

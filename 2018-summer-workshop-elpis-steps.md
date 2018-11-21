@@ -1,11 +1,11 @@
 This workshop covers the steps required to install and use an **automatic speech recognition** system, to obtain a transcription for an un-transcribed audio file. 
 
-We will use **Elpis**, a collection of small tools which will help us to prepare our language data in the format required to use a speech recognition tool called **Kaldi**. Elpis is a wrapper, or interface, to Kaldi.
+We will use 'Elpis', a collection of small tools which will help us to prepare our language data in the format required to use a speech recognition tool called 'Kaldi'. Elpis is a wrapper, or interface, to Kaldi.
 
-Please refer to the glossary for more information about particular terms used in the workshop, and let us know if there are other terms which need to be explained. 
+Please refer to the *Glossary* for more information about particular terms used in the workshop, and let us know if there are other terms which need to be explained. 
 
 **EEEEK… What to do if you run into a problem?**
-First, check the Questions document. As we find answers to common problems, we will add information to this doc. If your problem is not described, please add it and let us know. 
+First, check the *Questions* document. As we find answers to common problems, we will add information to this doc. If your problem is not described, please add it and let us know. 
 
 
 ## Contents of this document  
@@ -28,7 +28,7 @@ Once Docker is installed, start it. On a mac, you will see a little whale icon i
 
 For the rest of the workshop, we will be using a **terminal** to interact with Docker and Elpis. 
 
- > A terminal is a program you need to use in order to control Docker. Docker itself will run on your computer and you communicate with it via simple, one-line text commands entered within your terminal application. When you use an application like Elan or Word, you are using a "graphical user interface (GUI)" to do stuff to your data via menus and buttons. Another way of doing stuff with your data is by running software scripts that don't have a GUI, via a terminal, also known as a command line or command prompt.
+ > A terminal is a program you need to use in order to control Docker. Docker itself will run on your computer and you communicate with it via simple, one-line text commands entered within your terminal application. When you use an application like Elan or Word, you are using a 'graphical user interface (GUI)' to do stuff to your data via menus and buttons. Another way of doing stuff with your data is by running software scripts that don't have a GUI, via a terminal, also known as a command line or command prompt.
 
 On Mac, use the *Terminal* app in your *Applications > Utilities* folder. For Windows, type  `command` or `cmd` into the search field in your taskbar. Then, click or tap on the *Command Prompt* result.
 

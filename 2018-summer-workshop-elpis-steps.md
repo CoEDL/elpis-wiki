@@ -104,7 +104,7 @@ Well, that’s all this exercise does. Once it has output the information to the
 
 To work with our own data in the container, we share a folder containing our data with the container. 
 
-Open a terminal window and change into the Abui data directory on your desktop (if it's not there, jump back up to the [Download some toy data][] section above).
+Open a terminal window and change into the Abui data directory on your desktop (if it's not there, jump back up to the (Download some toy data)[#download-some-toy-data] section above).
 
 Mac
 ```

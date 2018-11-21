@@ -1,4 +1,4 @@
-# Recipes
+**Please note that these recipes are for version 0.2, they need to be updated for the latest version.**
 
 ## The ideal base ingredients
   

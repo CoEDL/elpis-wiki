@@ -48,4 +48,4 @@ docker pull coedl/kaldi-helpers:0.64
 
 This might take a while, it should give you some information about progress. Please get in touch on the Slack channel if you get stuck. 
 
-
+![Layers of the Docker image downloading](images/docker-layers.jpg)

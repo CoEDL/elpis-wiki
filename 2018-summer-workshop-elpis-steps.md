@@ -7,6 +7,13 @@ Please refer to the *Glossary* for more information about particular terms used 
 **EEEEK… What to do if you run into a problem?**
 First, check the *Questions* document (refer to Slack for the link). As we find answers to common problems, we will add information to this doc. If your problem is not described, please add it and let us know. 
 
+Prepare for the workshop by
+
+- [Installing Docker](2018-summer-workshop-preparation#install-docker-on-your-computer)
+- [Downloading the coedl/kaldi-helpers docker image](2018-summer-workshop-preparation#download-the-workshop-code)
+- [Downloading a toy corpus](2018-summer-workshop-preparation#download-some-toy-data)
+
+
 Contents of this document
 
 - [The tools](#the-tools)
@@ -17,13 +24,6 @@ Contents of this document
 - [Exercise 5 Using your own Elan data with the Kaldi container](#exercise-5-using-your-own-elan-data-with-the-kaldi-container)
 - [Using data formats other than Elan](#using-data-formats-other-than-elan)
 - [Further reading](#further-reading)
-
-
-Prepare for the workshop by
-
-- [Installing Docker](2018-summer-workshop-preparation#install-docker-on-your-computer)
-- [Downloading the coedl/kaldi-helpers docker image](2018-summer-workshop-preparation#download-the-workshop-code)
-- [Downloading a toy corpus](2018-summer-workshop-preparation#download-some-toy-data)
 
 
 ## The tools

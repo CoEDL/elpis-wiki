@@ -54,7 +54,7 @@ $ docker --version
 
 In this command, `docker` is the name of the program we want to use, `—version` is an option (also known as an argument, flag or switch). When we work with command line programs, we don't have buttons or menus to interact with the program, so we use options to control what the program does. 
 
-After running that command, we should see some version information. Hooray! Now let's start working with Docker images.
+After running that command, we should see some version information. Hooray! Docker is set up OK. Now let's start working with Docker images.
 
 
 ## Exercise 1 Getting familiar with Docker

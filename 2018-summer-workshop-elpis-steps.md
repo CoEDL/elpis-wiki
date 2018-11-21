@@ -42,15 +42,15 @@ On Mac, use the *Terminal* app in your *Applications > Utilities* folder. For Wi
 
 Let's make sure that Docker has installed. Open your terminal, and type the following **command** at the **prompt**. 
 
+```
+$ docker --version
+```
+
 ![](images/terminal.png)
 
  > A command is an instruction that tells a program to do something. 
 
  > On mac, the prompt is `$` and Windows it is `>`. You'll see in this guide that the commands we write are prefixed by the prompt. You don't need to type the `$` or `>` when you use the commands, just type what follows. Also, press Return (or Enter) after typing the command.
-
-```
-$ docker --version
-```
 
 In this command, `docker` is the name of the program we want to use, `—version` is an option (also known as an argument, flag or switch). When we work with command line programs, we don't have buttons or menus to interact with the program, so we use options to control what the program does. 
 

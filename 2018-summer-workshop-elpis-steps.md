@@ -11,6 +11,10 @@ First, check the Questions document. As we find answers to common problems, we w
 ## Contents of this document  
 TBC
 
+## Download some toy data
+
+.. desktop
+
 ## Installing the tools
 
 **Docker** is a program which helps standardise the way we do computational tasks with data, regardless of the operating systems of all the people who might want to run those tasks. Rather than building separate code for Windows, Linux, Mac operating systems, we can write once and run it on a myriad of operating systems using Docker. For more information about Docker, view [Nay San's slides](http://goo.gl/qxQDPP).
@@ -72,65 +76,40 @@ This means that the words ended up showing in your terminal.
 Well, that’s all this exercise does. Once it has output the information to the screen, Docker will exit, closing the container.
 
 
-## Exercise 2 Using a Docker container
-In this exercise we will create a small container and peek inside.
+## Exercise 2 Sharing data with a Docker container
 
-```
-$ docker run -it alpine
-```
+To work with our own data in the container, we share a folder containing our data with the container. 
 
-Again, Docker will look for a previously downloaded image, and not finding one, download one. Once the image has downloaded, and the container has been created, the terminal will now show a `#` (hash) prompt, rather than the `$` or `>` symbols. When you see the hash, you know you are inside the container. When you exit the container, you will return to the normal prompt.
+Get the Abui 'toy' data. Open a web browser and go to [https://github.com/CoEDL/toy-corpora](https://github.com/CoEDL/toy-corpora)
 
-```
-/ #
-```
+On that page, click the green *Clone or Download* button, then *Download ZIP*. Unzip the files and put the *abui-toy-corpus* folder on your Desktop.
 
-At the hash, let's type `ls`, which is a command to show a list of the files in the folder we are currently in, inside the container (by the way, that's a lowercase L and lowercase S)...
+Open a terminal window and change into the Abui data directory on your desktop.
 
+Mac
 ```
-/ # ls
-```
-...which shows us the files and folders of the operating system.
-
-```
-bin    dev    etc    home   lib    media  mnt    proc   root   run    sbin   srv    sys    tmp    usr    var
+$ cd ~/Desktop/abui-toy-corpus
 ```
 
-To get out of the container, type exit...
-
+Windows (replace username with your username)
 ```
-/ # exit
+$ cd C:\Users\username\Desktop\abui-toy-corpus
 ```
 
-...which will return you to the regular command prompt.
-
-
-## Exercise 3 Sharing data with a Docker container
-To work with our own data in the container, we share a folder containing our data with the container when we run it. 
-
-Make a new folder on the Desktop. Put some files in it. Open this location in Terminal [XXX how?]. 
-
-The next command extends what we have used so far, adding a new option (-v) with a value, being the path to the local data joined to a name by which we will be able to access the folder inside the container.
-
-First, check where you are with `pwd`. This shows your present working directory (your current folder).
+The next command extends what we have used so far, adding a new option `-v` with a value, being the path to the local data joined to a name by which we will be able to access the folder inside the container.
 
 ```
 $ docker run -it -v `pwd`:/docs-inside-docker alpine
 ```
 
-```
--v
-```
-
-This is an option, it tells docker that we want to share a volume.
+`-v` is an *option*, it tells docker that we want to share a volume
 
 ```
 `pwd`:/docs-inside-docker
 ```
 
 These are parameters for the `v` option. The information before the colon is the path to your local data (also known as the source). The information after the colon is where it ends up in the container (also known as the target).
-
-**pwd** is an alias for the present working directory. When you start your terminal, the present working directory is your home folder. You can check by typing `pwd` at the terminal, it will write the path to the current folder in the terminal.
+You can give a full path to your data, or use the `pwd` shortcut to your *present working directory* (your current folder).
 
 You may need to copy and paste the command as the backtick things may not be on your particular keyboard! They aren't on the German keyboard for instance. Remember that you don't need to copy the `$`, just what follows it.
 
@@ -146,31 +125,25 @@ This will list the files in the container's *docs-inside-docker* folder. They sh
 / # exit
 ```
 
-## Exercise 4 Loading data into a container with Elpis and Kaldi installed
+
+## Exercise 3 Loading data into a container with Elpis and Kaldi installed
 In this exercise, we will load some example data into a container that has Elpis and Kaldi installed.
 
-First, get some toy data to play with. Open an web browser and go to [https://github.com/CoEDL/toy-corpora](https://github.com/CoEDL/toy-corpora)
-
-On that page, click the green *Clone or Download* button, then *Download ZIP*. Unzip the files and put the *abui-toy-corpus* folder on your Desktop.
-
-Next, get the Docker image. So far, the images we have downloaded have been small, but make sure you are on a good internet connection, as the Docker image we download in this exercise is about 5GB! Use the following pull command if you want to update the image later too, when you hear that we have made some changes to the pipeline. Back in the terminal, type:
+Get the Docker image for Elpis. So far, the images we have downloaded have been small, but make sure you are on a good internet connection, as the Docker image we download in this exercise is about 5GB! Use the following pull command if you want to update the image later too, when you hear that we have made some changes to the pipeline. Back in the terminal, type:
 
 ```
 $ docker pull coedl/kaldi-helpers:0.XXXX
 ```
 
-Wait while it downloads, then we can run a container from it. The following command will load the present working directory into the container, using our Elpis image. We also introduce a new option `--rm` which cleans up when we exit the container.
+Wait while it downloads, then we can run a container from it. The following command will load the present working directory into the container. We also introduce a new option `--rm` which cleans up when we exit the container.
 
-
-On **Mac** it might be like this (Type or copy and paste the command all on one line, change the path to your toy corpus to suit)
-
+Mac
 ```
 $ docker run -it --rm -v ~/Desktop/abui_toy_corpus/:/kaldi-helpers/input coedl/kaldi-helpers:0.XXXX
 ```
 
 
-On **Windows** it may be like this (all on one line, and change your username and path to the corpus to suit):
-
+Windows (all on one line, and change your username and path to the corpus to suit)
 ```
 > docker run -it --rm -v C:\Users\Billy\Desktop\abui_toy_corpus/:/kaldi-helpers/input coedl/kaldi-helpers:0.XXXX
 ```
@@ -206,7 +179,7 @@ When this task has completed, you should see a 'Done' message. At this point, Ka
 
 When this has completed, you will see a list of WER and SER values.
 
-Interpret the results. [add info here]
+Interpret the results!
 
 Exit the container to close it.
 
@@ -215,9 +188,8 @@ Exit the container to close it.
 ```
 
 ## Using your own Elan data with the Kaldi container
-Prepare your data. Read more about that here.
+Prepare your data. [Read more about that here](cleaning-data).
 
-[https://github.com/CoEDL/kaldi-helpers/blob/master/guides/2018-workshop-preparation.md](https://github.com/CoEDL/kaldi-helpers/blob/master/guides/2018-workshop-preparation.md)
 
 You need to create two new folders on the Desktop, call one **input**, the other **output**. Inside input, make two folders: a **config** folder, and a **data** folder. Leave **output** folder empty. 
 

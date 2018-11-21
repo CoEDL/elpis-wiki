@@ -15,7 +15,7 @@ Contents of this document
 - [Exercise 3 Loading data into a container with Elpis and Kaldi installed](#exercise-3-Loading-data-into-a-container-with-Elpis-and-Kaldi-installed)
 - [Exercise 4 Running Kaldi with a toy corpus](#exercise-4-running-kaldi-with-a-toy-corpus)
 - [Exercise 5 Using your own Elan data with the Kaldi container](#exercise-5-using-your-own-elan-data-with-the-kaldi-container)
-- [Using your own data formats other than Elan](#using-your-own-data-formats-other-than-elan)
+- [Using data formats other than Elan](#using-data-formats-other-than-elan)
 - [Further reading](#further-reading)
 
 
@@ -230,7 +230,7 @@ $ docker run -it --rm -v ~/Desktop/abui_toy_corpus/:/kaldi-helpers/input coedl/k
 - Put your sentence audio in there (for the demo, use a short sentence - 10 or 20 seconds)
 
 
-## Using your own data formats other than Elan
+## Using data formats other than Elan
 To work with Praat Textgrid files, Transcriber trs files, or if you need to resample your data, use one of the [recipes](recipes) according to the particular type and condition of your data.
 
 For information about the pipeline data processing options, run the `task` command inside the Docker image to show a list of helper tasks available, or read more about the [tasks here](tasks).

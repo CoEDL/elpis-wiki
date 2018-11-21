@@ -2,10 +2,10 @@ This workshop covers the steps required to install and use an **automatic speech
 
 We will use 'Elpis', a collection of small tools which will help us to prepare our language data in the format required to use a speech recognition tool called 'Kaldi'. Elpis is a wrapper, or interface, to Kaldi.
 
-Please refer to the *Glossary* for more information about particular terms used in the workshop, and let us know if there are other terms which need to be explained. 
+Please refer to the *Glossary* for more information about particular terms used in the workshop, and let us know if there are other terms which need to be explained. The link to the Glossary is in the Slack channel.
 
 **EEEEK… What to do if you run into a problem?**
-First, check the *Questions* document. As we find answers to common problems, we will add information to this doc. If your problem is not described, please add it and let us know. 
+First, check the *Questions* document (refer to Slack for the link). As we find answers to common problems, we will add information to this doc. If your problem is not described, please add it and let us know. 
 
 Contents of this document
 
@@ -21,9 +21,9 @@ Contents of this document
 
 Prepare for the workshop by
 
-- [installing Docker](2018-summer-workshop-preparation#install-docker-on-your-computer)
-- [downloading the coedl/kaldi-helpers docker image](2018-summer-workshop-preparation#download-the-workshop-code)
-- [downloading a toy corpus](2018-summer-workshop-preparation#download-some-toy-data)
+- [Installing Docker](2018-summer-workshop-preparation#install-docker-on-your-computer)
+- [Downloading the coedl/kaldi-helpers docker image](2018-summer-workshop-preparation#download-the-workshop-code)
+- [Downloading a toy corpus](2018-summer-workshop-preparation#download-some-toy-data)
 
 
 ## The tools

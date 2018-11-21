@@ -1,7 +1,3 @@
-# 2018 Summer School ASR/Elpis Workshop
-*docker-kaldi version 0.3*
-
-
 This workshop covers the steps required to install and use an **automatic speech recognition** system, to obtain a transcription for an un-transcribed audio file. 
 
 We will use **Elpis**, a collection of small tools which will help us to prepare our language data in the format required to use a speech recognition tool called **Kaldi**. Elpis is a wrapper, or interface, to Kaldi.

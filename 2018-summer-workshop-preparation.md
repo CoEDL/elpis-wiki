@@ -1,5 +1,3 @@
-# 2018 Summer School preparation
-
 ## Installing Docker
 
 Docker is the environment in which we will run Kaldi, one of the speech recognition systems. To install Docker, see the guides below for your system. It should install easily, please get in touch if you have issues with the installation.

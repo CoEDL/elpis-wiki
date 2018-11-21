@@ -124,21 +124,21 @@ $ docker run -it -v `pwd`:/docs-inside-docker alpine
 
 What's it all mean?
 
-`docker run` loads an image in Docker
+`docker run` loads an image in Docker.
 
-`-it` is an *option*, which tells Docker to allow us to interact with the container that is created
+`-it` is an *option*, which tells Docker to allow us to interact with the container that is created.
 
-`-v` tells docker that we want to share a volume
+`-v` tells docker that we want to share a volume.
 
 `pwd:/docs-inside-docker` are parameters for the `v` option. The information before the colon is the path to your local data (also known as the source). The information after the colon is where it ends up in the container (also known as the target).
 You can give a full path to your data, or use the `pwd` shortcut to your *present working directory* (your current folder).
 
-`alpine` is the name of the image we are running
+`alpine` is the name of the image we are running.
 
 
 You may need to copy and paste the command as the backtick things around `pwd` may not be on your particular keyboard! They aren't on the German keyboard for instance. Remember that you don't need to copy the `$`, just what follows it.
 
-After you type (or paste) that command into terminal, and press return, we can verify that the local data has been shared with the container
+After you type (or paste) that command into terminal, and press return, we can verify that the local data has been shared with the container with this command.
 
 ```
 / # ls docs-inside-docker/
@@ -155,11 +155,8 @@ This will list the files in the container's *docs-inside-docker* folder. They sh
 
 In this exercise, we will load some example data into a container that has Elpis and Kaldi installed.
 
-Get the Docker image for Elpis. So far, the images we have downloaded have been small, but make sure you are on a good internet connection, as the Docker image we download in this exercise is about 5GB! Use the following pull command if you want to update the image later too, when you hear that we have made some changes to the pipeline. Back in the terminal, type:
+Refer to the workshop preparation guide for how to [download the image](2018-summer-workshop-preparation#download-the-workshop-code). 
 
-```
-$ docker pull coedl/kaldi-helpers:0.XXXX
-```
 
 Wait while it downloads, then we can run a container from it. The following command will load the present working directory into the container. We also introduce a new option `--rm` which cleans up when we exit the container.
 

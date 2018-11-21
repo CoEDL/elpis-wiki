@@ -42,7 +42,7 @@ After you have installed Docker, let's get the code that we'll use in the worksh
 3. In the terminal window, type the following just to check that docker is happy, and press *Enter* or *Return*.  
 
     ```
-    docker --version
+    $ docker --version
     ```
 
     The result should be something like:
@@ -55,7 +55,7 @@ After you have installed Docker, let's get the code that we'll use in the worksh
 4. Now download the workshop code by typing or copy-and-pasting this into your terminal, and press *Enter* or *Return*.
 
     ```
-    docker pull coedl/kaldi-helpers:0.64
+    $ docker pull coedl/kaldi-helpers:0.64
     ```
 
     This might take a while, it should give you some information about progress. The code is made of lots of layers, you'll see the status of each layer downloading.

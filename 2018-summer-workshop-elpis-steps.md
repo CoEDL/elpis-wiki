@@ -124,16 +124,19 @@ $ docker run -it -v `pwd`:/docs-inside-docker alpine
 
 What's it all mean?
 
-`-v` is an *option*, it tells docker that we want to share a volume
+`docker run` loads an image in Docker
 
-```
-`pwd`:/docs-inside-docker
-```
+`-it` is an *option*, which tells Docker to allow us to interact with the container that is created
 
-These are parameters for the `v` option. The information before the colon is the path to your local data (also known as the source). The information after the colon is where it ends up in the container (also known as the target).
+`-v` tells docker that we want to share a volume
+
+`pwd:/docs-inside-docker` are parameters for the `v` option. The information before the colon is the path to your local data (also known as the source). The information after the colon is where it ends up in the container (also known as the target).
 You can give a full path to your data, or use the `pwd` shortcut to your *present working directory* (your current folder).
 
-You may need to copy and paste the command as the backtick things may not be on your particular keyboard! They aren't on the German keyboard for instance. Remember that you don't need to copy the `$`, just what follows it.
+`alpine` is the name of the image we are running
+
+
+You may need to copy and paste the command as the backtick things around `pwd` may not be on your particular keyboard! They aren't on the German keyboard for instance. Remember that you don't need to copy the `$`, just what follows it.
 
 After you type (or paste) that command into terminal, and press return, we can verify that the local data has been shared with the container
 
@@ -177,15 +180,15 @@ Pulling apart what it means:
 $ docker run -it --rm -v ~/Desktop/abui_toy_corpus/:/kaldi-helpers/input coedl/kaldi-helpers:0.2
 ```
 
-* `$` this is the prompt, after which we type our commands. Will be `>` on Windows
-* `docker run` this runs a docker image
-* `-it` interactive mode (so that you can stay inside while working. Otherwise it will immediately EXIT the docker container after running this command)
-* `--rm` clean up/fully close the container after it's done (when you exit it)
-* `-v`  mount (kind of like sharing) a volume (essentially a folder or directory)
-* `~/Desktop/abui_toy_corpus/` the source (location) of the folder on your computer that you want to use inside the container. This is the folder that has our config, data and output folders in it.
-* `:` …will be shared into…
-* `/kaldi-helpers/input` the target location, where we want the source folder to be within the docker container.
-* `coedl/kaldi-helpers:0.XXXX` the name and version number of the docker image that you want to build a container from
+- `$` this is the prompt, after which we type our commands. Will be `>` on Windows
+- `docker run` this runs a docker image
+- `-it` interactive mode (so that you can stay inside while working. Otherwise it will immediately EXIT the docker container after running this command)
+- `--rm` clean up/fully close the container after it's done (when you exit it)
+- `-v`  mount (kind of like sharing) a volume (essentially a folder or directory)
+- `~/Desktop/abui_toy_corpus/` the source (location) of the folder on your computer that you want to use inside the container. This is the folder that has our config, data and output folders in it.
+- `:` …will be shared into…
+- `/kaldi-helpers/input` the target location, where we want the source folder to be within the docker container.
+- `coedl/kaldi-helpers:0.XXXX` the name and version number of the docker image that you want to build a container from
 
 
 ## Exercise 4 Running Kaldi with a toy corpus

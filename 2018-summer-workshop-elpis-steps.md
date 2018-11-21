@@ -4,16 +4,16 @@ We will use **Elpis**, a collection of small tools which will help us to prepare
 
 Please refer to the glossary for more information about particular terms used in the workshop, and let us know if there are other terms which need to be explained. 
 
-
 **EEEEK… What to do if you run into a problem?**
 First, check the Questions document. As we find answers to common problems, we will add information to this doc. If your problem is not described, please add it and let us know. 
 
 
 ## Contents of this document  
+TBC
 
+## Installing the tools
 
-## Installing tools
-**Docker** is a computer program which helps standardise the way we do computational tasks with data, regardless of the operating systems of all the people who might want to run those tasks. Rather than building separate code for Windows, Linux, Mac operating systems, we can write once and run it on a myriad of operating systems using Docker. For more information about Docker, view [Nay San's slides](http://goo.gl/qxQDPP).
+**Docker** is a program which helps standardise the way we do computational tasks with data, regardless of the operating systems of all the people who might want to run those tasks. Rather than building separate code for Windows, Linux, Mac operating systems, we can write once and run it on a myriad of operating systems using Docker. For more information about Docker, view [Nay San's slides](http://goo.gl/qxQDPP).
 
 Before we can use the Docker image, we need to install the Docker program. Download the Docker installer from:
 
@@ -21,15 +21,17 @@ Before we can use the Docker image, we need to install the Docker program. Downl
 * Windows: [https://docs.docker.com/docker-for-windows/install/](https://docs.docker.com/docker-for-windows/install/)
 * Linux (Ubuntu): [https://docs.docker.com/engine/installation/linux/ubuntu/](https://docs.docker.com/engine/installation/linux/ubuntu/)
 
-Run the installer. You may be prompted to authenticate the installer with your computer's password.
+You'll need to register an account on the Docker website to be able to download the installer.
+
+Run the Docker installer. You may be prompted to authenticate the installer with your computer's password.
 
 Once Docker is installed, start it. On a mac, you will see a little whale icon in the top menu bar. On a PC you'll see XXXX
 
 For the rest of the workshop, we will be using a **terminal** to interact with Docker and Elpis. 
 
-A terminal is a program you need to use in order to control Docker. Docker itself will run on your computer and you communicate with it via simple, one-line text commands entered within your terminal application. When you use an application like Elan or Word, you are using a “graphical user interface (GUI)” to do stuff to your data via menus and buttons. Another way of doing stuff with your data is by running software scripts that don't have a GUI, via a terminal.
+ > A terminal is a program you need to use in order to control Docker. Docker itself will run on your computer and you communicate with it via simple, one-line text commands entered within your terminal application. When you use an application like Elan or Word, you are using a "graphical user interface (GUI)" to do stuff to your data via menus and buttons. Another way of doing stuff with your data is by running software scripts that don't have a GUI, via a terminal, also known as a command line or command prompt.
 
-On Mac, use the *Terminal* app in your *Applications > Utilities* folder. For Windows, use XXXX
+On Mac, use the *Terminal* app in your *Applications > Utilities* folder. For Windows, type  `command` or `cmd` into the search field in your taskbar. Then, click or tap on the *Command Prompt* result.
 
 Let's make sure that Docker has installed. Open your terminal, and type the following command at the **command line prompt** (on OSX, the prompt is `$` and Windows it is `>`). You don't need to type the `$` or `>`, the commands in this guide are prefixed with them, just type what follows. Press Return (or Enter) after typing the command.
 

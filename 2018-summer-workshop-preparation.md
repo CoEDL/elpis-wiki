@@ -37,7 +37,7 @@ After you have installed Docker, let's get the code that we'll use in the worksh
     * On Windows, type  `command` or `cmd` into the search field in your taskbar. Then, click or tap on the Command Prompt result.
 
     > *What is a terminal or command prompt?*
-    > The terminal (also known as command line or command prompt) is a way to run computer programs that don't have a graphical user interface (menus and buttons).
+    > When you use an application like Elan or Word, you are using a "graphical user interface (GUI)" to do stuff to your data via menus and buttons. Another way of doing stuff with your data is by running software scripts that don't have a GUI, via a terminal, also known as a command line or command prompt.
     > Note: When you start your terminal, it will display a `$` or `>` sign at the start of the line. Hence, when you see something like `$ blah blah blah` in the workshop steps, you don’t need to type the `$` sign, just type the words in the instruction that follow it. 
 
 

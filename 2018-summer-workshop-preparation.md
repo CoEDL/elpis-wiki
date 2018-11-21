@@ -60,7 +60,7 @@ After you have installed Docker, let's get the code that we'll use in the worksh
 
     This might take a while, it should give you some information about progress. The code is made of lots of layers, you'll see the status of each layer downloading.
 
-    ![Layers of the Docker image downloading](images/docker-layers.png)
+    ![](images/docker-layers.png)
 
     When it has downloaded, the terminal will show `Status: Downloaded newer image for coedl/kaldi-helpers:0.64`
 

@@ -32,7 +32,7 @@ Contents of this document
 
 Run the Docker installer. You may be prompted to authenticate the installer with your computer's password.
 
-Once Docker is installed, start it. On a mac, you will see a little whale icon in the top menu bar. On a PC you'll see XXXX
+Once Docker is installed, start it. On a mac, you will see a little whale icon in the top menu bar. On Windows you'll see a whale icon in the system tray.
 
 For the rest of the workshop, we will be using a **terminal** to interact with Docker and Elpis. 
 
@@ -40,21 +40,42 @@ For the rest of the workshop, we will be using a **terminal** to interact with D
 
 On Mac, use the *Terminal* app in your *Applications > Utilities* folder. For Windows, type  `command` or `cmd` into the search field in your taskbar. Then, click or tap on the *Command Prompt* result.
 
-Let's make sure that Docker has installed. Open your terminal, and type the following command at the **command line prompt** (on OSX, the prompt is `$` and Windows it is `>`). You don't need to type the `$` or `>`, the commands in this guide are prefixed with them, just type what follows. Press Return (or Enter) after typing the command.
+Let's make sure that Docker has installed. Open your terminal, and type the following **command** at the **prompt**. 
+
+![](images/terminal.png)
+
+ > A command is an instruction that tells a program to do something. 
+
+ > On mac, the prompt is `$` and Windows it is `>`. You'll see in this guide that the commands we write are prefixed by the prompt. You don't need to type the `$` or `>` when you use the commands, just type what follows. Also, press Return (or Enter) after typing the command.
 
 ```
 $ docker --version
 ```
 
-In this command, `docker` is the name of the program, `—version` is an option (also known as an argument, flag or switch). When we work with command line programs, we don't have buttons or menus to interact with the program, so we use options to control what the program does. After running that command, we should see some version information. Hooray! Now let's start working with Docker images.
+In this command, `docker` is the name of the program we want to use, `—version` is an option (also known as an argument, flag or switch). When we work with command line programs, we don't have buttons or menus to interact with the program, so we use options to control what the program does. 
+
+After running that command, we should see some version information. Hooray! Now let's start working with Docker images.
 
 
 ## Exercise 1 Getting familiar with Docker
-Let's get a taste of using Docker images and containers by playing with a very simple one first. At your command prompt, type:
+Let's get a taste of using Docker images and containers by playing with a very simple one first. In your terminal, type this command (remember, you don't include the prompt):
 
 ```
 $ docker run hello-world
 ```
+
+All going well, you should get some words in your terminal like this.
+
+    Hello from Docker!
+    This message shows that your installation appears to be working correctly.
+
+    To generate this message, Docker took the following steps:
+     1. The Docker client contacted the Docker daemon.
+     2. The Docker daemon pulled the "hello-world" image from the Docker Hub. (amd64)
+     3. The Docker daemon created a new container from that image which runs the executable that produces the output you are currently reading.
+     4. The Docker daemon streamed that output to the Docker client, which sent it to your terminal.
+
+What does that mean?
 
 The first time you run this command, Docker will look for a local, previously downloaded version of the “hello-world” image. You should see a message that Docker was “Unable to find image 'hello-world:latest' locally”. It will then attempt to download the image from the Docker Hub.
 
@@ -62,7 +83,7 @@ If you see "*Hello from Docker! This message shows that your installation appear
 
 1. *The Docker client contacted the Docker daemon*.
 
-The client is the program that you ran when you typed 'docker' at the prompt. The daemon is the software that runs in the background, accessible by the whale icon in the menu on mac, or by XXX in Windows.
+The client is the program that you ran when you typed 'docker' at the prompt. The daemon is the software that runs in the background, accessible by the whale icon in the top menubar on mac, or by the whale icon in the Windows system tray.
 
 2. *The Docker daemon pulled the "hello-world" image from the Docker Hub*.
 

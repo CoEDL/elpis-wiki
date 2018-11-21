@@ -1,17 +1,20 @@
-# Installing Docker
-Docker is the environment in which we will run Kaldi, one of the speech recognition systems. To install Docker, see the guides for your system. It should install easily, please get in touch if you have issues with the installation.
+# 2018 Summer School preparation
+
+## Installing Docker
+
+Docker is the environment in which we will run Kaldi, one of the speech recognition systems. To install Docker, see the guides below for your system. It should install easily, please get in touch if you have issues with the installation.
 
 * OS X: https://docs.docker.com/docker-for-mac/install/
 * Linux (Ubuntu): https://docs.docker.com/engine/installation/linux/ubuntu/
 * Windows: https://docs.docker.com/docker-for-windows/install/
 
-Note that the Windows version of Docker is designed for 64bit Windows 10 Pro. For older or non-pro (home) versions of Windows, try installing Docker Toolbox: https://docs.docker.com/toolbox/toolbox_install_windows/
+> Note that the Windows version of Docker is designed for 64bit Windows 10 Pro. For older or non-pro (home) versions of Windows, try installing Docker Toolbox: https://docs.docker.com/toolbox/toolbox_install_windows/
+
+
+
+## Get the workshop code
 
 Now you have Docker installed, let's get the code that we'll use in the workshop. We'll go through what these steps mean on the day, but it would be good to do this before you get to Canberra as it can take a while to download. The image we are downloading is about 1GB in size.
-
-
-## Steps:
-
 
 1) Start the Docker application you have just installed.
 

@@ -48,10 +48,13 @@ After you have installed Docker, let's get the code that we'll use in the worksh
     docker pull coedl/kaldi-helpers:0.64
     ```
 
-This might take a while, it should give you some information about progress. The code is made of lots of layers, you'll see the status of each layer downloading.
+    This might take a while, it should give you some information about progress. The code is made of lots of layers, you'll see the status of each layer downloading.
 
-![Layers of the Docker image downloading](images/docker-layers.png)
+    ![Layers of the Docker image downloading](images/docker-layers.png)
 
-When it has downloaded, the terminal will show `Status: Downloaded newer image for coedl/kaldi-helpers:0.64`. Now you can close the terminal application.
+    When it has downloaded, the terminal will show `Status: Downloaded newer image for coedl/kaldi-helpers:0.64`
 
-Please get in touch on the Slack channel if you get stuck.
+---
+
+Done! Now you can close the terminal application.  
+And remember, please get in touch on the Slack channel if you get stuck.

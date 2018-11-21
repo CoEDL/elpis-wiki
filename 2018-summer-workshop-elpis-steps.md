@@ -7,8 +7,7 @@ Please refer to the *Glossary* for more information about particular terms used 
 **EEEEK… What to do if you run into a problem?**
 First, check the *Questions* document. As we find answers to common problems, we will add information to this doc. If your problem is not described, please add it and let us know. 
 
-
-## Contents of this document  
+Contents of this document
 
 - [The tools][]
 - [Exercise 1 Getting familiar with Docker][]

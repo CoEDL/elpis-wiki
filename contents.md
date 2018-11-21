@@ -1,8 +1,0 @@
-- [The tools](#the-tools)
-- [Exercise 1 Getting familiar with Docker](#exercise-1-getting-familiar-with-docker)
-- [Exercise 2 Sharing data with a Docker container](#exercise-2-sharing-data-with-a-Docker-container)
-- [Exercise 3 Loading data into a container with Elpis and Kaldi installed](#exercise-3-Loading-data-into-a-container-with-Elpis-and-Kaldi-installed)
-- [Exercise 4 Running Kaldi with a toy corpus](#exercise-4-running-kaldi-with-a-toy-corpus)
-- [Exercise 5 Using your own Elan data with the Kaldi container](#exercise-5-using-your-own-elan-data-with-the-kaldi-container)
-- [Using data formats other than Elan](#using-data-formats-other-than-elan)
-- [Further reading](#further-reading)

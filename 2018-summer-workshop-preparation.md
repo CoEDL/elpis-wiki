@@ -8,6 +8,9 @@ Docker is the environment in which we will run Kaldi, one of the speech recognit
 
 > Note that the Windows version of Docker is designed for 64bit Windows 10 Pro. For older or non-pro (home) versions of Windows, try installing Docker Toolbox: https://docs.docker.com/toolbox/toolbox_install_windows/
 
+> You may need to create an account with Docker in order to log in and download the application.
+
+
 
 ## Download the workshop code
 

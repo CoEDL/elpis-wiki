@@ -11,7 +11,6 @@ b) Mac OS X El Capitan 10.11 on a 2010 or newer machine.
 * A good internet connection, to download the Docker image.
 
 
-
 ## Install Docker on your computer
 
 Docker is the environment in which we will run Kaldi, one of the speech recognition systems. To install Docker, see the guides below for your system. It should install easily, please get in touch if you have issues with the installation.
@@ -23,7 +22,6 @@ Docker is the environment in which we will run Kaldi, one of the speech recognit
 > Note that the Windows version of Docker is designed for 64bit Windows 10 Pro. For older or non-pro (home) versions of Windows, try installing Docker Toolbox: https://docs.docker.com/toolbox/toolbox_install_windows/
 
 > You may need to create an account with Docker in order to log in and download the application.
-
 
 
 ## Download the workshop code
@@ -66,7 +64,17 @@ After you have installed Docker, let's get the code that we'll use in the worksh
 
     When it has downloaded, the terminal will show `Status: Downloaded newer image for coedl/kaldi-helpers:0.64`
 
+Done! Now you can close the terminal application.  
+
+
+## Download some toy data
+
+For some of these exercises we will use a 'toy corpus'. This is a very minimal set of data which is enough to test that the systems work without the long processing time that large quantities of data would incur.
+
+Open a web browser and go to [https://github.com/CoEDL/toy-corpora](https://github.com/CoEDL/toy-corpora) to download the Abui 'toy' data.
+
+On that page, click the green *Clone or Download* button, then *Download ZIP*. Unzip the files and put the *abui-toy-corpus* folder on your Desktop.
+
 ---
 
-Done! Now you can close the terminal application.  
 And remember, please get in touch on the Slack channel if you get stuck.

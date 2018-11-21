@@ -11,25 +11,16 @@ First, check the Questions document. As we find answers to common problems, we w
 ## Contents of this document  
 TBC
 
-## Download some toy data
+Prepare for the workshop by
 
-For some of these exercises we will use a 'toy corpus'. This is a very minimal set of data which is enough to test that the systems work without the long processing time that large quantities of data would incur.
+- [installing Docker](2018-summer-workshop-preparation#install-docker-on-your-computer)
+- [downloading the coedl/kaldi-helpers docker image](2018-summer-workshop-preparation#download-the-workshop-code)
+- [downloading a toy corpus](2018-summer-workshop-preparation#download-some-toy-data)
 
-Open a web browser and go to [https://github.com/CoEDL/toy-corpora](https://github.com/CoEDL/toy-corpora) to download the Abui 'toy' data.
 
-On that page, click the green *Clone or Download* button, then *Download ZIP*. Unzip the files and put the *abui-toy-corpus* folder on your Desktop.
-
-## Installing the tools
+## The tools
 
 **Docker** is a program which helps standardise the way we do computational tasks with data, regardless of the operating systems of all the people who might want to run those tasks. Rather than building separate code for Windows, Linux, Mac operating systems, we can write once and run it on a myriad of operating systems using Docker. For more information about Docker, view [Nay San's slides](http://goo.gl/qxQDPP).
-
-Before we can use the Docker image, we need to install the Docker program. Download the Docker installer from:
-
-* OS X: [https://docs.docker.com/docker-for-mac/install/](https://docs.docker.com/docker-for-mac/install/)
-* Windows: [https://docs.docker.com/docker-for-windows/install/](https://docs.docker.com/docker-for-windows/install/)
-* Linux (Ubuntu): [https://docs.docker.com/engine/installation/linux/ubuntu/](https://docs.docker.com/engine/installation/linux/ubuntu/)
-
-You'll need to register an account on the Docker website to be able to download the installer.
 
 Run the Docker installer. You may be prompted to authenticate the installer with your computer's password.
 
@@ -234,6 +225,89 @@ $ docker run -it --rm -v ~/Desktop/abui_toy_corpus/:/kaldi-helpers/input coedl/k
 ## Using your own data formats other than Elan
 To work with Praat Textgrid files, Transcriber trs files, or if you need to resample your data, use one of the [recipes](recipes) according to the particular type and condition of your data.
 
-And for information about the pipeline options, read more about the [tasks](tasks).
+For information about the pipeline data processing options, run the `task` command inside the Docker image to show a list of helper tasks available, or read more about the [tasks here](tasks).
 
-Further reading
+<!--
+task: Available tasks for this project:
+* _build:           Run through only the build stage with default settings (i.e. not the clean/filter/extract stage)
+* _infer:           Run Kaldi inference_scripts on test data
+* _infer-align:         Run Kaldi inference_scripts on test data and output_scripts ctm aligned files
+* _rebuild-no-wav:      Run through only the build stage with default settings (i.e. not the clean/filter/extract stage)
+* _run-elan:            Run through processing pipeline for Elan transcriptions
+* _run-elan-split:      Segment audio and text by Elan annotation start/end times then run through processing pipeline with default settings
+* _run-textgrid:        Run through processing pipeline for TRS transcriptions
+* _run-trs:             Run through processing pipeline for TRS transcriptions
+* _show-lattice:        Create pdf of the lattice graph
+* _train-test:          Run Kaldi train and test stages on default settings
+* cat-all-json:         Concatenate all .json files into one .json file
+* clean-json:           Clean corpus of problematic characters before passing data to Kaldi
+* clean-output-folder:      Delete all files and folders inside output_scripts directory
+* copy-generated-files:     Copy generated files to appropriate (sub)directories under /output_scripts/kaldi
+* copy-helper-scripts:      Copy the necessary scripts from Kaldi
+* copy-phones-configs:      Copy provided silence/optional silence configuration files
+* elan-to-json:         Convert a folder of .eaf files to a single JSON file
+* extract-wavs:         Extract all wav files into kaldi folder
+* gather-wavs:          Gather all wav files inside input_scripts/data into output_scripts/media.zip
+* generate-kaldi-configs:   Generate config files for Kaldi from KALDI_TEMPLATES, populate with Taskvars
+* generate-kaldi-files:     Generate corpus-related files for Kaldi from JSON data
+* infer-full:           Prepare and run a test inference (so I don't have to)
+* json-to-kaldi:        Generate files for the Kaldi format
+* make-kaldi-subfolders:    Makes subfolder structure which Kaldi expects
+* make-nonsil-phones:       Generate non-silence phones file from LETTER_TO_SOUND_PATH file defined in Taskfile.yml
+* make-prn-dict:        Make pronunciation dictionary
+* make-wordlist:        Make a list of unique words that occur in the corpus
+* ready-example:        Prepares the Abui toy corpus for use with Kaldi/kaldi-helpers
+* resample-audio:       Change audio to 16 bit 44.1kHz mono WAV
+* silence-audio:        Silence audio that has an annotion in matching Elan file 'Silence' tier
+* split-eafs:           Read Elan files, slices matching WAVs by start and end times of annotations on a particular tier, outputting separate clips and text. Skips annotations with value '*PUB' on the main tier, or annotations that have a ref annotation on the 'Silence' tier.
+* textgrid-to-json:         Convert a folder of .textgrid files to a single JSON file
+* tmp-delete:           Delete all files in tmp directory
+* tmp-makedir:          Make the tmp directory, if it does not exist
+* trs-to-json:          Convert a folder of .trs files to a single JSON file
+-->
+![](images/tasks.png)
+
+## Further reading
+
+### Want to learn more about Kaldi?
+
+From the official docs, this is a good place to start.
+
+- [Kaldi for dummies tutorial](http://kaldi-asr.org/doc/kaldi_for_dummies.html)
+
+These sites have good intros to Kaldi. Well explained, with guides and tutorials for getting started. Worth digging through, and Josh's installation guide is good to have while installing (if you aren't using the Docker image).
+
+- [Eleanor Chodroff](https://eleanorchodroff.com/tutorial/kaldi/index.html)
+- [Josh Meyer](http://jrmeyer.github.io/asr/2016/01/26/Installing-Kaldi.html)
+- [Lyndon White](http://white.ucc.asn.au/Kaldi-Notes/resources)
+- [A good Kaldi tutorial](https://groups.google.com/forum/#!topic/kaldi-help/tzyCwt7zgMQ)
+
+Looking for particular features? 
+
+- [Check the forums](https://groups.google.com/forum/#!forum/kaldi-help)
+- [More info about Kaldi lattices](https://senarvi.github.io/kaldi-lattices/)
+- [Kaldi lectures by Dan Povey](https://danielpovey.com/kaldi-lectures.html)
+
+### Data
+
+- [Unicode article](https://medium.com/@apiltamang/unicode-utf-8-and-ascii-encodings-made-easy-5bfbe3a1c45a)
+- [Information about data standards, text encoding etc](https://www.sil.org/language-technology/standards)
+- [voxforge open source data](https://www.voxforge.org)
+- [openslr open source data](https://www.openslr.org)
+
+### ASR tools
+
+- [CMU Sphinx](https://cmusphinx.github.io/wiki/tutorial/)
+- [Persephone](https://persephone-asr.org)
+
+### Books
+
+- *Natural Language Annotation for Machine Learning* by James Pustejovsky and Amber Stubbs  
+- *Natural Language Processing with Python* by Steven Bird, Ewan Klein and Edward Loper  
+- *Speech and Language Processing* by Daniel Jurafsky and James Martin  
+- *Foundations of Statistical Natural Language Processing* by Christopher Manning and Hinrich Schuetze  
+- *Text-to-Speech Synthesis* by Paul Taylor  
+- *The HTK Book* by Steve Young etal  
+
+
+

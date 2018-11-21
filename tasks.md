@@ -1,5 +1,7 @@
 # Kaldi Pipeline tasks
 
+**Please note that these recipes are for version 0.2, they need to be updated for the latest version.**
+
 The pipeline uses a program in the Docker container named [task](https://github.com/go-task/task) to run Python scripts for data cleaning and preparation, and to organise the cleaned data into the folders that Kaldi expects.
 
 We have a task `resample-audio` that can change the sample rate, bit depth and number of channels of audio to 44.1kHz, 16 bit, mono (which is what the Kaldi config is set to).

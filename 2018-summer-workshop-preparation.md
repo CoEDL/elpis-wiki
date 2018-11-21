@@ -11,7 +11,7 @@ Docker is the environment in which we will run Kaldi, one of the speech recognit
 
 ## Download the workshop code
 
-After you have installed Docker, let's get the code that we'll use in the workshop. We'll go through what these steps mean in the workshop step, but it would be good to do this before you get to Canberra as it can take a while to download. The image we are downloading is about 1GB in size.
+After you have installed Docker, let's get the code that we'll use in the workshop. We'll go through what these instructions mean in the workshop step, but it would be good to do this before you get to Canberra as it can take a while to download. The image we are downloading is about 1GB in size.
 
 1) Start the Docker application you have just installed.
 
@@ -43,6 +43,6 @@ Docker version 18.06.1-ce, build e68fc7a
 docker pull coedl/kaldi-helpers:0.64
 ```
 
-This might take a while, it should give you some information about progress.
+This might take a while, it should give you some information about progress. Please get in touch on the Slack channel if you get stuck. 
 
 

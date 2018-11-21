@@ -155,7 +155,7 @@ This will list the files in the container's *docs-inside-docker* folder. They sh
 
 In this exercise, we will load some example data into a container that has Elpis and Kaldi installed.
 
-Refer to the workshop preparation guide for how to [download the image](2018-summer-workshop-preparation#download-the-workshop-code). 
+Refer to the workshop preparation guide for how to [download the code](2018-summer-workshop-preparation#download-the-workshop-code). 
 
 
 Wait while it downloads, then we can run a container from it. The following command will load the present working directory into the container. We also introduce a new option `--rm` which cleans up when we exit the container.
@@ -166,7 +166,7 @@ $ docker run -it --rm -v ~/Desktop/abui_toy_corpus/:/kaldi-helpers/input coedl/k
 ```
 
 
-Windows (all on one line, and change your username and path to the corpus to suit)
+Windows (change your username and path to the corpus to suit)
 ```
 > docker run -it --rm -v C:\Users\Billy\Desktop\abui_toy_corpus/:/kaldi-helpers/input coedl/kaldi-helpers:0.XXXX
 ```
@@ -212,7 +212,7 @@ $ docker run -it --rm -v ~/Desktop/abui_toy_corpus/:/kaldi-helpers/input coedl/k
 
 ## Exercise 5 Using your own Elan data with the Kaldi container
 
-5.1 Prepare your data. [Read more about that here](cleaning-data).
+5.1 Clean your data. [Read more about that here](cleaning-data).
 
 5.2 Set up your folders
     - On the Desktop, create a new folder, name it **elpis_workshop**.

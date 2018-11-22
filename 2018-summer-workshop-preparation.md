@@ -15,11 +15,11 @@ b) Mac OS X El Capitan 10.11 on a 2010 or newer machine.
 
 Docker is the environment in which we will run Kaldi, one of the speech recognition systems. To install Docker, see the guides below for your system. It should install easily, please get in touch if you have issues with the installation.
 
-You will need to create an account with Docker in order to log in and download the application.
+You will need to create an account with Docker in order to log in and download the application. Sign up at the [Docker Store](https://store.docker.com/signup), check your email to verify your account. Then you'll be able to sign in, download, and install Docker for your system:
 
-* OS X: https://docs.docker.com/docker-for-mac/install/
-* Linux (Ubuntu): https://docs.docker.com/engine/installation/linux/ubuntu/
-* Windows: https://docs.docker.com/docker-for-windows/install/
+* [Apple MacOS](https://docs.docker.com/docker-for-mac/install/)
+* [Linux (Ubuntu)](https://docs.docker.com/engine/installation/linux/ubuntu/)
+* [Windows](https://docs.docker.com/docker-for-windows/install/)
 
 > Note that the Windows version of Docker is designed for 64bit Windows 10 Pro. For older or non-pro (home) versions of Windows, try installing Docker Toolbox: https://docs.docker.com/toolbox/toolbox_install_windows/
 

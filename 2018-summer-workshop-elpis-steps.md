@@ -68,6 +68,8 @@ Let's get a taste of using Docker images and containers by playing with a very s
 $ docker run hello-world
 ```
 
+The first time you run this command, Docker will look for a local, previously downloaded version of the “hello-world” image. You should see a message that Docker was “Unable to find image 'hello-world:latest' locally”. It will then attempt to download the image from the Docker Hub.
+
 All going well, you should get some words in your terminal like this.
 
     Hello from Docker!
@@ -79,9 +81,7 @@ All going well, you should get some words in your terminal like this.
      3. The Docker daemon created a new container from that image which runs the executable that produces the output you are currently reading.
      4. The Docker daemon streamed that output to the Docker client, which sent it to your terminal.
 
-What does that mean?
-
-The first time you run this command, Docker will look for a local, previously downloaded version of the “hello-world” image. You should see a message that Docker was “Unable to find image 'hello-world:latest' locally”. It will then attempt to download the image from the Docker Hub.
+What does that all that mean?
 
 If you see "*Hello from Docker! This message shows that your installation appears to be working correctly*." it is a sign that all is working well. Let's unpack the messages of what has happened.
 
@@ -95,13 +95,14 @@ This means that an image was downloaded from the Docker cloud server to your com
 
 3. *The Docker daemon created a new container from that image which runs the executable that produces the output you are currently reading*.
 
-Docker unpacked the image and made a container. Then it ran a little program that output some words.
+Docker unpacked the image and made a container. Then it ran a little program that output some text.
 
 4. *The Docker daemon streamed that output to the Docker client, which sent it to your terminal*.
 
-This means that the words ended up showing in your terminal.
+In other words, the text ended up showing on your screen.
 
-Well, that’s all this exercise does. Once it has output the information to the screen, Docker will exit, closing the container.
+
+Well, that’s all this exercise does :relieved:.  Once it has output the information to the screen, Docker will exit, closing the container.
 
 
 ## Exercise 2 Sharing data with a Docker container

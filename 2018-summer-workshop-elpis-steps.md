@@ -27,6 +27,7 @@ Contents of this document
 - [Further reading](#further-reading)
 
 
+
 ## The tools
 
 **Docker** is a program which helps standardise the way we do computational tasks with data, regardless of the operating systems of all the people who might want to run those tasks. Rather than building separate code for Windows, Linux, Mac operating systems, we can write once and run it on a myriad of operating systems using Docker. For more information about Docker, view [Nay San's slides](http://goo.gl/qxQDPP).
@@ -60,6 +61,8 @@ After running that command, we should see some version information. Hooray! Dock
 
  > Think of a Docker image as a box with stuff inside. In our case, the stuff will be an operating system, some code, some data. The image makes it easy to share this stuff around and use on a myriad of computers.
  > Containers are the 'unpacked' version of an image.
+
+
 
 ## Exercise 1 Getting familiar with Docker
 Let's get a taste of using Docker images and containers by playing with a very simple one first. In your terminal, type this command.
@@ -98,14 +101,15 @@ If you see "*Hello from Docker! This message shows that your installation appear
     In other words, the text ended up showing on your screen.
 
 
-Well, that’s all this exercise does :relieved:.  Once it has output the information to the screen, Docker will exit, closing the container.
+Well, that’s all this exercise does :relieved:.  Once it has output the information to the screen, Docker will automatically exit, closing the container.
+
 
 
 ## Exercise 2 Sharing data with a Docker container
 
 To work with our own data in the container, we share a folder containing our data with the container.  
 
-2.1. Follow the steps in the [Download some toy data](2018-summer-workshop-preparation#download-some-toy-data) section to get the Abui toy corpus if you don't already have it. Put the *abui_toy_corpus* folder on your *Desktop*.
+2.1. Follow the steps in the [Download some toy data](2018-summer-workshop-preparation#download-some-toy-data) notes to get the Abui toy corpus if you don't already have it. Put the *abui_toy_corpus* folder on your *Desktop*.
 
 2.2. Open a terminal window and change into the Abui data directory on your desktop.
 
@@ -139,8 +143,6 @@ What's it all mean?
 
 You may need to copy and paste the command as the backtick things around `pwd` may not be on your particular keyboard! They aren't on the German keyboard for instance. Remember that you don't need to copy the `$`, just what follows it.
 
-
-
 After you type (or paste) that command into terminal, and press return, you should see something like:
 
     Unable to find image 'alpine:latest' locally
@@ -151,8 +153,6 @@ After you type (or paste) that command into terminal, and press return, you shou
     / # 
 
 This tells us that the alpine image is being downloaded, and eventually we end up with a different command prompt `/ # `, INSIDE the container.
-
-
 
 We can verify that our local data has been shared with the container with this command.
 
@@ -185,6 +185,7 @@ Type `exit` at the command prompt to close the container.
 ```
 
 
+
 ## Exercise 3 Loading data into a container with Kaldi installed
 
 Refer to the workshop preparation guide for how to [download the kaldi-helpers image](2018-summer-workshop-preparation#download-the-workshop-code) if you don't already have it. (Kaldi-helpers is the name of the bunch of scripts which we use to prepare our data for Kaldi.)
@@ -200,7 +201,8 @@ Mac
 $ docker run -it --rm -v ~/Desktop/abui_toy_corpus/:/kaldi-helpers/input coedl/kaldi-helpers:0.64
 ```
 
-Windows (change your username from Billy to whatever yours is)  
+Windows  
+    - change your username from Billy to whatever yours is
     - you can try replacing it with `%username%`  
     - or find your username by doing `echo %username%`
 
@@ -214,9 +216,9 @@ Pulling apart what it means:
 $ docker run -it --rm -v ~/Desktop/abui_toy_corpus/:/kaldi-helpers/input coedl/kaldi-helpers:0.2
 ```
 
-- `$` this is the prompt, after which we type our commands. Will be `>` on Windows
-- `docker run` this runs a docker image
-- `-it` interactive mode (so that you can stay inside while working. Otherwise it will immediately EXIT the docker container after running this command)
+- `$` this is the prompt, after which we type our commands. You'll see `>` on Windows
+- `docker run` this creates a container from a docker image
+- `-it` interactive mode (so that you can stay inside the container while working. Otherwise it will immediately EXIT the docker container after running this command)
 - `--rm` clean up/fully close the container after it's done (when you exit it)
 - `-v`  mount (kind of like sharing) a volume (essentially a folder or directory)
 - `~/Desktop/abui_toy_corpus/` the source (location) of the folder on your computer that you want to use inside the container. This is the folder that has our config, data and output folders in it.
@@ -227,21 +229,85 @@ $ docker run -it --rm -v ~/Desktop/abui_toy_corpus/:/kaldi-helpers/input coedl/k
 
 ## Exercise 4 Running Kaldi with a toy corpus
 
-4.1 Now we have the data shared with a Kaldi image that has our pipeline tasks, we can build and run the ASR system.
+4.1 Now we have the data shared with a Kaldi container that has our pipeline tasks, we can build and run the ASR system.
 
     / # task _run-elan
 
-4.2 When this task has completed, you should see a 'Done' message. At this point, Kaldi has been set up with files in the right places for it to begin learning. Run the train-test task.
+4.2 When this task has completed, you should see a 'Done' message. At this point, Kaldi has been set up with files in the right places for it to begin learning. Ready to run the train-test task to build the ASR models.
 
     / # task _train-test
 
-4.3 When this has completed, you will see a list of WER and SER values.
+4.3 After building the models, this task will score them using a test data set. When this has completed you will see a list of score values. Interpret these results!
 
-4.4 Interpret the results!
+    %WER 83.33 [ 5 / 6, 1 ins, 2 del, 2 sub ]
 
-4.5 Now, try inference
+- ins = words inserted that were not in the original
+- del = words that were not recognised
+- sub = words that were mistakenly recognised
 
-4.6 Exit the container to close it.
+Here's an example, courtesy of Zara Maxwell-Smith.
+
+| type      | results                                                                                     |
+|---------------------------------------------------------------------------------------------------------|
+| Human     | **siapa** yang mau **menterjemahkan** direktur **pendidikan** **dasar** dan **menengah**    |
+| Ind 3gram | **siapa** em em en terjemahkan di ketua **pendidikan** **dasar** ada **menengah** xx        |
+| Bi 3gram  | xx **siapa** umm all **menterjemahkan** di there tua **pendidikan** **dasar** the mana ngeh |
+| Bi 1gram  | xx siap ah mau **menterjemahkan** did add tua **pendidikan** **dasar** the **menengah**     |
+
+
+4.4 Now we have trained models, we can use them to decode or infer a trancription for untranscribed audio.
+
+4.4.1 Run the build-infer task to generate the folders and files we need. 
+
+    / # task build-infer
+
+You should end up with a new folder named *infer* containing four files.
+
+```
+├── abui_toy_corpus
+│   ├── infer
+│   │   ├── spk2utt
+│   │   ├── utt2spk
+│   │   ├── wav.scp
+│   │   └── audio.wav
+│   ├── input
+│   │   ├── config
+│   │   └── data
+│   └── output
+│       ├── kaldi
+│       └── tmp
+.
+```
+
+The files are in this format:
+
+    spk2utt
+    <speaker-id> <utterance-id>
+
+    utt2spk
+    <utterance-id> <speaker-id>
+
+    wav.scp  
+    decode data/infer/audio.wav
+
+
+4.4.2 Run the infer task to get a transcription...
+
+    / # task _infer-align
+
+After decoding, you'll see the results in the terminal, and an Elan file containing the hypothesis will be created in the infer folder. The format of the results is `<utterance-id> <confidence> <start-time> <duration> <word>`.
+
+```
+3a2a6f18-5822-4d0d-b6cc-89f47b47b097-1f03785c-b6f3-4cf4-b660-3c50312f081b 1 0.000 0.310 mai 
+3a2a6f18-5822-4d0d-b6cc-89f47b47b097-1f03785c-b6f3-4cf4-b660-3c50312f081b 1 0.310 0.160 kaai 
+3a2a6f18-5822-4d0d-b6cc-89f47b47b097-1f03785c-b6f3-4cf4-b660-3c50312f081b 1 0.470 0.220 deina 
+3a2a6f18-5822-4d0d-b6cc-89f47b47b097-1f03785c-b6f3-4cf4-b660-3c50312f081b 1 0.690 0.350 dapakdi 
+3a2a6f18-5822-4d0d-b6cc-89f47b47b097-1f03785c-b6f3-4cf4-b660-3c50312f081b 1 1.040 0.130 lung 
+3a2a6f18-5822-4d0d-b6cc-89f47b47b097-1f03785c-b6f3-4cf4-b660-3c50312f081b 1 1.170 0.160 lung 
+3a2a6f18-5822-4d0d-b6cc-89f47b47b097-1f03785c-b6f3-4cf4-b660-3c50312f081b 1 1.330 0.120 ya 
+```
+
+4.5 Exit the container to close it.
 
     / # exit
 
@@ -252,41 +318,55 @@ $ docker run -it --rm -v ~/Desktop/abui_toy_corpus/:/kaldi-helpers/input coedl/k
 5.1 Clean your data. [Read more about that here](cleaning-data).
 
 5.2 Set up your folders
-    - On the Desktop, create a new folder, name it **elpis_workshop**.
-    - Note: In Windows Home, if you're using Docker Toolbox version, you need to do this is Users/[Username]/
-    - Inside it create two new folders, call one **input**, the other **output**. 
-    - Inside *input*, make two folders: a **config** folder, and a **data** folder. 
-    - Leave the **output** folder empty. 
 
-    ├── elpis_workshop
-    │   ├── input
-    │   │   ├── config
-    │   │   └── data
-    │   └── output
+- On the Desktop, create a new folder, name it *elpis_workshop*. 
+> In Windows Home, if you're using Docker Toolbox version, you need to do this is Users/[Username]
+- Inside it create two new folders, call one *input*, the other *output*. 
+- Inside *input*, make two folders: a *config* folder, and a *data*folder. 
+- Leave the *output* folder empty. 
+
+```
+├── elpis_workshop
+│   ├── input
+│   │   ├── config
+│   │   └── data
+│   └── output
+```
 
 5.3 Add the config files
-    - Copy the *optional_silence.txt* and *silence_phones.txt* files from the Abui toy corpus config folder into your *config* folder.
-    - In your *config* folder we need to create a text file which has a letter to sound map...
+
+- Copy the *optional_silence.txt* and *silence_phones.txt* files from the Abui toy corpus config folder into your *config* folder.
+- In your *config* folder we also need to create a text file which has a letter to sound map...
 
 5.4 Add your data
-    - Put your audio and transcription files inside the *data* folder.
 
-5.5 Now we will share the project directory with a new Docker container.
+- Put your audio and transcription files inside the *data* folder.
 
-    $ docker run -it --rm -v ~/Desktop/elpis_workshop/:/kaldi-helpers/input coedl/kaldi-helpers:0.XXXX
+5.5 Start up a new Docker container, sharing your data.
 
-5.6 Now you can run the tasks...
-- If your data is in Elan format, and clean, use the default tasks. These tasks will build the project, train and test on your own data, using transcriptions from tiers named 'Phrase'.
+    $ docker run -it --rm -v ~/Desktop/elpis_workshop/:/kaldi-helpers/input coedl/kaldi-helpers:0.64
 
-```
-/ # task _run-elan
-/ # task _train-test
-```
+5.6 Now you can use the tasks to process your data, and build the models. If your data is in Elan format, and is clean, you can use the default tasks. These tasks will build the project, train and test on your own data, using transcriptions from tiers named 'Phrase'.
 
-5.7 Once the models have been trained, you can get a hypothesis for untranscribed audio.
-- Make a new folder in input called **infer**
-- Put your sentence audio in there (for the demo, use a short sentence - 10 or 20 seconds)
+    / # task _run-elan
+    / # task _train-test
 
+5.7 Once the models have been trained, you can get a hypothesis for untranscribed audio. 
+
+5.7.1 Set it up with the same build task as before. 
+
+    / # task _build-infer
+
+5.7.2 Replace *audio.wav* in the *data/infer* folder with your sentence audio. Kaldi works best with short audio clips, utterances about 10 seconds long. We are planning to improve support for longer audio over summer - stay tuned! For now, please use a single audio file, max 10 seconds duration.
+
+5.7.3 Decode the audio
+
+    / # task _infer-align
+
+5.7.4 Review the results
+
+
+---
 
 ## Using data formats other than Elan
 To work with Praat Textgrid files, Transcriber trs files, or if you need to resample your data, use one of the [recipes](recipes) according to the particular type and condition of your data.

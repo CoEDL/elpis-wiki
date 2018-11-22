@@ -248,7 +248,7 @@ $ docker run -it --rm -v ~/Desktop/abui_toy_corpus/:/kaldi-helpers/input coedl/k
 Here's an example, courtesy of Zara Maxwell-Smith.
 
 | type      | results                                                                                     |
-|---------------------------------------------------------------------------------------------------------|
+|-----------|---------------------------------------------------------------------------------------------|
 | Human     | **siapa** yang mau **menterjemahkan** direktur **pendidikan** **dasar** dan **menengah**    |
 | Ind 3gram | **siapa** em em en terjemahkan di ketua **pendidikan** **dasar** ada **menengah** xx        |
 | Bi 3gram  | xx **siapa** umm all **menterjemahkan** di there tua **pendidikan** **dasar** the mana ngeh |

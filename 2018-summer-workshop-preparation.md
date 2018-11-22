@@ -62,10 +62,21 @@ After you have installed Docker, let's get the code that we'll use in the worksh
 
     ![](images/docker-layers.png)
 
-    When it has downloaded, the terminal will show `Status: Downloaded newer image for coedl/kaldi-helpers:0.64`
+    When it has downloaded, the terminal will show a message like: 
+
+    ```
+    Status: Downloaded newer image for coedl/kaldi-helpers:0.64
+    ```
+
+    Note: if you are doing this during the workshop, and the network isn't up to downloading the image, grab one of the workshop USB drives that have the image on. Copy the `coedl-kaldi-helpers.tar` file from the USB to your desktop, open terminal at your desktop and load the image using this command...
+
+    ```
+    $ docker load –input coedl-kaldi-helpers.tar
+    ```
+
+
 
 Done! Now you can close the terminal application.  
-
 
 ## Download some toy data
 

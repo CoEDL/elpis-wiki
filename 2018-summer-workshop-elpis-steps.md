@@ -198,7 +198,7 @@ Use the following command to load the current working directory into the contain
 
 Mac
 ```
-$ docker run -it --rm -v ~/Desktop/abui_toy_corpus/:/kaldi-helpers/input coedl/kaldi-helpers:0.64
+$ docker run -it --rm -v ~/Desktop/abui_toy_corpus/:/kaldi-helpers/working_dir/input coedl/kaldi-helpers:0.73
 ```
 
 Windows  
@@ -207,13 +207,13 @@ Windows
     - or find your username by doing `echo %username%`
 
 ```
-> docker run -it --rm -v C:\Users\Billy\Desktop\abui_toy_corpus:/kaldi-helpers/input coedl/kaldi-helpers:0.64
+> docker run -it --rm -v C:\Users\Billy\Desktop\abui_toy_corpus:/kaldi-helpers/working_dir/input coedl/kaldi-helpers:0.73
 ```
 
 Pulling apart what it means:
 
 ```
-$ docker run -it --rm -v ~/Desktop/abui_toy_corpus/:/kaldi-helpers/input coedl/kaldi-helpers:0.2
+$ docker run -it --rm -v ~/Desktop/abui_toy_corpus/:/kaldi-helpers/working_dir/input coedl/kaldi-helpers:0.73
 ```
 
 - `$` this is the prompt, after which we type our commands. You'll see `>` on Windows
@@ -223,8 +223,8 @@ $ docker run -it --rm -v ~/Desktop/abui_toy_corpus/:/kaldi-helpers/input coedl/k
 - `-v`  mount (kind of like sharing) a volume (essentially a folder or directory)
 - `~/Desktop/abui_toy_corpus/` the source (location) of the folder on your computer that you want to use inside the container. This is the folder that has our config, data and output folders in it.
 - `:` …will be shared into…
-- `/kaldi-helpers/input` the target location, where we want the source folder to be within the docker container.
-- `coedl/kaldi-helpers:0.XXXX` the name and version number of the docker image that you want to build a container from
+- `/kaldi-helpers/working_dir/input` the target location, where we want the source folder to be within the docker container.
+- `coedl/kaldi-helpers:0.XX` the name and version number (0.XX) of the docker image that you want to build a container from
 
 
 ## Exercise 4 Running Kaldi with a toy corpus
@@ -298,14 +298,14 @@ Here's an example, courtesy of Zara Maxwell-Smith.
 - Put your audio and transcription files inside the *data* folder.
 
 5.5 Start up a new Docker container, sharing your data.
-
-    $ docker run -it --rm -v ~/Desktop/elpis_workshop/:/kaldi-helpers/input coedl/kaldi-helpers:0.64
-
+```
+    $ docker run -it --rm -v ~/Desktop/elpis_workshop/:/kaldi-helpers/working_dir/input coedl/kaldi-helpers:0.64
+```
 5.6 Now you can use the tasks to process your data, and build the models. If your data is in Elan format, and is clean, you can use the default tasks. These tasks will build the project, train and test on your own data, using transcriptions from tiers named 'Phrase'.
-
+```
     / # task _run-elan
     / # task _train-test
-
+```
 5.7 Once the models have been trained, you can get a hypothesis for untranscribed audio. 
 
 ** The inference steps are waiting for an update to the docker image. They don't run yet. **

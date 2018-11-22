@@ -120,7 +120,7 @@ $ cd ~/Desktop/abui_toy_corpus
 
 Windows (replace username with your username)
 ```
-$ cd C:\Users\username\Desktop\abui_toy_corpus
+> cd C:\Users\username\Desktop\abui_toy_corpus
 ```
 
 2.3. The next command extends what we have used so far, adding a new option `-v` with a value, being the path to the local data joined to a name by which we will be able to access the folder inside the container. This will create a new container based on the alpine image, and share our current working directory with the container.
@@ -154,19 +154,19 @@ After you type (or paste) that command into terminal, and press return, you shou
 
 This tells us that the alpine image is being downloaded, and eventually we end up with a different command prompt `/ # `, INSIDE the container.
 
-We can verify that our local data has been shared with the container with this command.
+We can verify that our local data has been shared with the container with this command. Type the following command, you don't need to type the `/ #` bit because that is a command prompt, just like `$` or `>`.
 
 ```
-/ # ls /docs-inside-docker
+/ # ls docs-inside-docker
 ```
 
-This will list the files in the container's *docs-inside-docker* folder. They should be the names of the files and folders that you see in your *Finder* or *Windows Explorer* view of the input folder. 
+This will list the files in the container's *docs-inside-docker* folder. They should be the names of the files and folders that you see in your *Finder* or *Windows Explorer* when looking in the abui_toy_corpus folder. 
 
 ```
 README.md  config     data       output
 ```
 
-Try moving a file into the folder using Finder or Windows Explorer...
+Try moving a file into the folder using Finder or Windows Explorer. Here, I've added a really funny music video file.
 
 ![](images/ls-files.png)
 
@@ -233,7 +233,7 @@ $ docker run -it --rm -v ~/Desktop/abui_toy_corpus/:/kaldi-helpers/input coedl/k
 
     / # task _run-elan
 
-4.2 When this task has completed, you should see a 'Done' message. At this point, Kaldi has been set up with files in the right places for it to begin learning. Ready to run the train-test task to build the ASR models.
+4.2 When this task has completed, you should see a 'Build task completed without errors' message. At this point, Kaldi has been set up with files in the right places for it to begin learning. Ready to run the train-test task to build the ASR models.
 
     / # task _train-test
 
@@ -246,6 +246,9 @@ $ docker run -it --rm -v ~/Desktop/abui_toy_corpus/:/kaldi-helpers/input coedl/k
 - sub = words that were mistakenly recognised
 
 Here's an example, courtesy of Zara Maxwell-Smith.
+
+** Coming soon **
+
 <!-- 
 | type      | results                                                                                     |
 |-----------|---------------------------------------------------------------------------------------------|
@@ -257,55 +260,7 @@ Here's an example, courtesy of Zara Maxwell-Smith.
  -->
 4.4 Now we have trained models, we can use them to decode or infer a trancription for untranscribed audio.
 
-4.4.1 Run the build-infer task to generate the folders and files we need. 
-
-    / # task build-infer
-
-You should end up with a new folder named *infer* containing four files.
-
-```
-├── abui_toy_corpus
-│   ├── infer
-│   │   ├── spk2utt
-│   │   ├── utt2spk
-│   │   ├── wav.scp
-│   │   └── audio.wav
-│   ├── input
-│   │   ├── config
-│   │   └── data
-│   └── output
-│       ├── kaldi
-│       └── tmp
-.
-```
-
-The files are in this format:
-
-    spk2utt
-    <speaker-id> <utterance-id>
-
-    utt2spk
-    <utterance-id> <speaker-id>
-
-    wav.scp  
-    decode data/infer/audio.wav
-
-
-4.4.2 Run the infer task to get a transcription...
-
-    / # task _infer-align
-
-After decoding, you'll see the results in the terminal, and an Elan file containing the hypothesis will be created in the infer folder. The format of the results is `<utterance-id> <confidence> <start-time> <duration> <word>`.
-
-```
-3a2a6f18-5822-4d0d-b6cc-89f47b47b097-1f03785c-b6f3-4cf4-b660-3c50312f081b 1 0.000 0.310 mai 
-3a2a6f18-5822-4d0d-b6cc-89f47b47b097-1f03785c-b6f3-4cf4-b660-3c50312f081b 1 0.310 0.160 kaai 
-3a2a6f18-5822-4d0d-b6cc-89f47b47b097-1f03785c-b6f3-4cf4-b660-3c50312f081b 1 0.470 0.220 deina 
-3a2a6f18-5822-4d0d-b6cc-89f47b47b097-1f03785c-b6f3-4cf4-b660-3c50312f081b 1 0.690 0.350 dapakdi 
-3a2a6f18-5822-4d0d-b6cc-89f47b47b097-1f03785c-b6f3-4cf4-b660-3c50312f081b 1 1.040 0.130 lung 
-3a2a6f18-5822-4d0d-b6cc-89f47b47b097-1f03785c-b6f3-4cf4-b660-3c50312f081b 1 1.170 0.160 lung 
-3a2a6f18-5822-4d0d-b6cc-89f47b47b097-1f03785c-b6f3-4cf4-b660-3c50312f081b 1 1.330 0.120 ya 
-```
+** The inference steps are waiting for an update to the docker image. They don't run yet. **
 
 4.5 Exit the container to close it.
 
@@ -353,15 +308,7 @@ After decoding, you'll see the results in the terminal, and an Elan file contain
 
 5.7 Once the models have been trained, you can get a hypothesis for untranscribed audio. 
 
-5.7.1 Set it up with the same build task as before. 
-
-    / # task _build-infer
-
-5.7.2 Replace *audio.wav* in the *data/infer* folder with your sentence audio. Kaldi works best with short audio clips, utterances about 10 seconds long. We are planning to improve support for longer audio over summer - stay tuned! For now, please use a single audio file, max 10 seconds duration.
-
-5.7.3 Decode the audio
-
-    / # task _infer-align
+** The inference steps are waiting for an update to the docker image. They don't run yet. **
 
 5.7.4 Review the results
 

@@ -237,13 +237,13 @@ $ docker run -it --rm -v ~/Desktop/abui_toy_corpus/:/kaldi-helpers/working_dir/i
 
     / # task _train-test
 
-4.3 After building the models, this task will score them using a test data set. When this has completed you will see a list of score values. Interpret these results!
+4.3 After building the models, this task will score them using a test data set. When this has completed you will see a list of score values. Interpret these results! Lower % is better.
 
     %WER 83.33 [ 5 / 6, 1 ins, 2 del, 2 sub ]
 
 - ins = words inserted that were not in the original
-- del = words that were not recognised
-- sub = words that were mistakenly recognised
+- del = words deleted from the original
+- sub = words that were incorrectly substituted for the original
 
 Here's an example, courtesy of Zara Maxwell-Smith.
 

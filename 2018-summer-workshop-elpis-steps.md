@@ -23,6 +23,7 @@ Contents of this document
 - [Exercise 4 Running Kaldi with a toy corpus](#exercise-4-running-kaldi-with-a-toy-corpus)
 - [Exercise 5 Using your own Elan data with the Kaldi container](#exercise-5-using-your-own-elan-data-with-the-kaldi-container)
 - [Using data formats other than Elan](#using-data-formats-other-than-elan)
+- [Cleaning up](#cleaning-up)
 - [Further reading](#further-reading)
 
 
@@ -55,8 +56,10 @@ $ docker --version
 
 In this command, `docker` is the name of the program we want to use, `—version` is an option (also known as an argument, flag or switch). When we work with command line programs, we don't have buttons or menus to interact with the program, so we use options to control what the program does. 
 
-After running that command, we should see some version information. Hooray! Docker is set up OK. Now let's start working with Docker images.
+After running that command, we should see some version information. Hooray! Docker is set up OK. Now let's start working with **Docker images** and **containers**.
 
+ > Think of a Docker image as a box with stuff inside. In our case, the stuff will be an operating system, some code, some data. The image makes it easy to share this stuff around and use on a myriad of computers.
+ > Containers are the 'unpacked' version of an image.
 
 ## Exercise 1 Getting familiar with Docker
 Let's get a taste of using Docker images and containers by playing with a very simple one first. In your terminal, type this command.
@@ -296,6 +299,27 @@ task: Available tasks for this project:
 * trs-to-json:          Convert a folder of .trs files to a single JSON file
 -->
 ![](images/tasks.png)
+
+## Cleaning up
+
+After the workshop, you can delete the docker image to free up space on your computer. Only do this if you aren't using Docker for other work -- these commands will remove all containers and images.
+
+Have a look at what containers may still be running with this command.
+
+`$ docker container ls`
+
+Prune (remove) the containers.
+
+`$ docker container prune`
+
+Next, time to prune images.
+
+`$ docker image prune -a`
+
+Check that images have been removed 
+
+`$ docker images`
+
 
 ## Further reading
 

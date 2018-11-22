@@ -246,7 +246,7 @@ $ docker run -it --rm -v ~/Desktop/abui_toy_corpus/:/kaldi-helpers/input coedl/k
 - sub = words that were mistakenly recognised
 
 Here's an example, courtesy of Zara Maxwell-Smith.
-
+<!-- 
 | type      | results                                                                                     |
 |-----------|---------------------------------------------------------------------------------------------|
 | Human     | **siapa** yang mau **menterjemahkan** direktur **pendidikan** **dasar** dan **menengah**    |
@@ -254,7 +254,7 @@ Here's an example, courtesy of Zara Maxwell-Smith.
 | Bi 3gram  | xx **siapa** umm all **menterjemahkan** di there tua **pendidikan** **dasar** the mana ngeh |
 | Bi 1gram  | xx siap ah mau **menterjemahkan** did add tua **pendidikan** **dasar** the **menengah**     |
 
-
+ -->
 4.4 Now we have trained models, we can use them to decode or infer a trancription for untranscribed audio.
 
 4.4.1 Run the build-infer task to generate the folders and files we need. 

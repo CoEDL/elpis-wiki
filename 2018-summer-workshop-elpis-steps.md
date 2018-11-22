@@ -83,23 +83,19 @@ All going well, you should get some words in your terminal like this.
 
 What does that all that mean?
 
-If you see "*Hello from Docker! This message shows that your installation appears to be working correctly*." it is a sign that all is working well. Let's unpack the messages of what has happened.
+If you see "*Hello from Docker! This message shows that your installation appears to be working correctly*." it is a sign that all is working well. Let's unpack the messages of what has happened.  
 
-1. *The Docker client contacted the Docker daemon*.
+1.1. *The Docker client contacted the Docker daemon*
+    The client is the program that you ran when you typed 'docker' at the prompt. The daemon is the software that runs in the background, accessible by the whale icon in the top menubar on mac, or by the whale icon in the Windows system tray.  
 
-The client is the program that you ran when you typed 'docker' at the prompt. The daemon is the software that runs in the background, accessible by the whale icon in the top menubar on mac, or by the whale icon in the Windows system tray.
+1.2. *The Docker daemon pulled the "hello-world" image from the Docker Hub*
+    This means that an image was downloaded from the Docker cloud server to your computer. You can check which images you have by typing `docker images` at the command prompt, and it will show a list in the terminal of the images that are available.  
 
-2. *The Docker daemon pulled the "hello-world" image from the Docker Hub*.
+1.3. *The Docker daemon created a new container from that image which runs the executable that produces the output you are currently reading*
+    Docker unpacked the image and made a container. Then it ran a little program that output some text.  
 
-This means that an image was downloaded from the Docker cloud server to your computer. You can check which images you have by typing `docker images` at the command prompt, and it will show a list in the terminal of the images that are available.
-
-3. *The Docker daemon created a new container from that image which runs the executable that produces the output you are currently reading*.
-
-Docker unpacked the image and made a container. Then it ran a little program that output some text.
-
-4. *The Docker daemon streamed that output to the Docker client, which sent it to your terminal*.
-
-In other words, the text ended up showing on your screen.
+1.4. *The Docker daemon streamed that output to the Docker client, which sent it to your terminal*
+    In other words, the text ended up showing on your screen.
 
 
 Well, that’s all this exercise does :relieved:.  Once it has output the information to the screen, Docker will exit, closing the container.
@@ -107,21 +103,23 @@ Well, that’s all this exercise does :relieved:.  Once it has output the inform
 
 ## Exercise 2 Sharing data with a Docker container
 
-To work with our own data in the container, we share a folder containing our data with the container. 
+To work with our own data in the container, we share a folder containing our data with the container.  
 
-Open a terminal window and change into the Abui data directory on your desktop. If it's not there, follow the steps in the [Download some toy data](2018-summer-workshop-preparation#download-some-toy-data) section.
+2.1. Follow the steps in the [Download some toy data](2018-summer-workshop-preparation#download-some-toy-data) section to get the Abui toy corpus if you don't already have it. 
+
+2.2. Open a terminal window and change into the Abui data directory on your desktop.
 
 Mac
 ```
-$ cd ~/Desktop/abui-toy-corpus
+$ cd ~/Desktop/abui_toy_corpus
 ```
 
 Windows (replace username with your username)
 ```
-$ cd C:\Users\username\Desktop\abui-toy-corpus
+$ cd C:\Users\username\Desktop\abui_toy_corpus
 ```
 
-The next command extends what we have used so far, adding a new option `-v` with a value, being the path to the local data joined to a name by which we will be able to access the folder inside the container.
+2.3. The next command extends what we have used so far, adding a new option `-v` with a value, being the path to the local data joined to a name by which we will be able to access the folder inside the container.
 
 ```
 $ docker run -it -v `pwd`:/docs-inside-docker alpine
@@ -133,23 +131,54 @@ What's it all mean?
 
 `-it` is an *option*, which tells Docker to allow us to interact with the container that is created.
 
-`-v` tells docker that we want to share a volume.
+`-v` is another *option*, which tells docker that we want to share a volume.
 
-`pwd:/docs-inside-docker` are parameters for the `v` option. The information before the colon is the path to your local data (also known as the source). The information after the colon is where it ends up in the container (also known as the target).
-You can give a full path to your data, or use the `pwd` shortcut to your *present working directory* (your current folder).
+`pwd:/docs-inside-docker` are *parameters* for the `v` *option*. The information before the colon is the path to your local data (also known as the source). The information after the colon is where it ends up in the container (also known as the target). You can give a full path to your data, or use the `pwd` shortcut to your *present working directory* (your current folder).
 
 `alpine` is the name of the image we are running.
 
-
 You may need to copy and paste the command as the backtick things around `pwd` may not be on your particular keyboard! They aren't on the German keyboard for instance. Remember that you don't need to copy the `$`, just what follows it.
 
-After you type (or paste) that command into terminal, and press return, we can verify that the local data has been shared with the container with this command.
+
+
+After you type (or paste) that command into terminal, and press return, you should see something like:
+
+    Unable to find image 'alpine:latest' locally
+    latest: Pulling from library/alpine
+    4fe2ade4980c: Pull complete 
+    Digest: sha256:621c2f39f8133acb8e64023a94dbdf0d5ca81896102b9e57c0dc184cadaf5528
+    Status: Downloaded newer image for alpine:latest
+    / # 
+
+This tells us that the alpine image is being downloaded, and eventually we end up with a different command prompt `/ # `, INSIDE the container.
+
+
+
+We can verify that our local data has been shared with the container with this command.
 
 ```
 / # ls docs-inside-docker/
 ```
 
-This will list the files in the container's *docs-inside-docker* folder. They should be the names of the files that you see in your Finder or Windows Explorer view of the input folder. Type `exit` at the command prompt to close the container.
+This will list the files in the container's *docs-inside-docker* folder. They should be the names of the files that you see in your *Finder* or *Windows Explorer* view of the input folder. 
+
+```
+README.md  config     data       output
+```
+
+Try moving a file into the folder using Finder or Windows Explorer...
+
+![](images/ls-files.png)
+
+And then do `ls docs-inside-docker/` again... 
+
+```
+README.md       baby-shark.mov  config          data            output
+```
+
+:smirk: 
+
+Type `exit` at the command prompt to close the container.
 
 ```
 / # exit

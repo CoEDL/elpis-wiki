@@ -105,7 +105,7 @@ Well, that’s all this exercise does :relieved:.  Once it has output the inform
 
 To work with our own data in the container, we share a folder containing our data with the container.  
 
-2.1. Follow the steps in the [Download some toy data](2018-summer-workshop-preparation#download-some-toy-data) section to get the Abui toy corpus if you don't already have it. 
+2.1. Follow the steps in the [Download some toy data](2018-summer-workshop-preparation#download-some-toy-data) section to get the Abui toy corpus if you don't already have it. Put the *abui_toy_corpus* folder on your *Desktop*.
 
 2.2. Open a terminal window and change into the Abui data directory on your desktop.
 
@@ -119,7 +119,7 @@ Windows (replace username with your username)
 $ cd C:\Users\username\Desktop\abui_toy_corpus
 ```
 
-2.3. The next command extends what we have used so far, adding a new option `-v` with a value, being the path to the local data joined to a name by which we will be able to access the folder inside the container.
+2.3. The next command extends what we have used so far, adding a new option `-v` with a value, being the path to the local data joined to a name by which we will be able to access the folder inside the container. This will create a new container based on the alpine image, and share our current working directory with the container.
 
 ```
 $ docker run -it -v `pwd`:/docs-inside-docker alpine
@@ -127,7 +127,7 @@ $ docker run -it -v `pwd`:/docs-inside-docker alpine
 
 What's it all mean?
 
-`docker run` loads an image in Docker.
+`docker run` tells docker to create an instance of an image, creating a container.
 
 `-it` is an *option*, which tells Docker to allow us to interact with the container that is created.
 
@@ -157,10 +157,10 @@ This tells us that the alpine image is being downloaded, and eventually we end u
 We can verify that our local data has been shared with the container with this command.
 
 ```
-/ # ls docs-inside-docker/
+/ # ls /docs-inside-docker
 ```
 
-This will list the files in the container's *docs-inside-docker* folder. They should be the names of the files that you see in your *Finder* or *Windows Explorer* view of the input folder. 
+This will list the files in the container's *docs-inside-docker* folder. They should be the names of the files and folders that you see in your *Finder* or *Windows Explorer* view of the input folder. 
 
 ```
 README.md  config     data       output

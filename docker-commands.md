@@ -7,15 +7,19 @@ Remove images.
 
     $ docker image prune -a
 
-You may need to prune containers first, then re-run image prune.
+Verify that the images have been removed by doing `docker images` again.
+
+
+If the images are still there, you may need to remove stopped containers first, then re-run image prune.
 
     $ docker container prune
 
-Save image to USB.
+
+Save an image to USB.
 
     $ docker save alpine > alpine.tar
 
-Load image by name from pwd.
+Load a docker image from disk. First cd to where the image file is, then...
 
     $ docker load -input alpine.tar
 

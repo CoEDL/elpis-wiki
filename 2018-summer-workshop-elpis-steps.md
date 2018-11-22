@@ -185,24 +185,27 @@ Type `exit` at the command prompt to close the container.
 ```
 
 
-## Exercise 3 Loading data into a container with Elpis and Kaldi installed
+## Exercise 3 Loading data into a container with Kaldi installed
 
-In this exercise, we will load some example data into a container that has Elpis and Kaldi installed.
+Refer to the workshop preparation guide for how to [download the kaldi-helpers image](2018-summer-workshop-preparation#download-the-workshop-code) if you don't already have it. (Kaldi-helpers is the name of the bunch of scripts which we use to prepare our data for Kaldi.)
 
-Refer to the workshop preparation guide for how to [download the code](2018-summer-workshop-preparation#download-the-workshop-code). 
+Wait while it downloads, then we can run a container from it. 
 
+Your terminal should still be in the Desktop/abui_toy_corpus folder.
 
-Wait while it downloads, then we can run a container from it. The following command will load the present working directory into the container. We also introduce a new option `--rm` which cleans up when we exit the container.
+Use the following command to load the current working directory into the container. We also introduce a new option `--rm` which cleans up when we exit the container.
 
 Mac
 ```
-$ docker run -it --rm -v ~/Desktop/abui_toy_corpus/:/kaldi-helpers/input coedl/kaldi-helpers:0.XXXX
+$ docker run -it --rm -v ~/Desktop/abui_toy_corpus/:/kaldi-helpers/input coedl/kaldi-helpers:0.64
 ```
 
+Windows (change your username from Billy to whatever yours is)  
+    - you can try replacing it with `%username%`  
+    - or find your username by doing `echo %username%`
 
-Windows (change your username and path to the corpus to suit)
 ```
-> docker run -it --rm -v C:\Users\Billy\Desktop\abui_toy_corpus/:/kaldi-helpers/input coedl/kaldi-helpers:0.XXXX
+> docker run -it --rm -v C:\Users\Billy\Desktop\abui_toy_corpus:/kaldi-helpers/input coedl/kaldi-helpers:0.64
 ```
 
 Pulling apart what it means:

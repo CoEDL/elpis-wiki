@@ -22,6 +22,7 @@ You will need to create an account with Docker in order to log in and download t
 * [Windows](https://docs.docker.com/docker-for-windows/install/)
 
 > Note that the Windows version of Docker is designed for 64bit Windows 10 Pro. For older or non-pro (home) versions of Windows, try installing Docker Toolbox: https://docs.docker.com/toolbox/toolbox_install_windows/
+
 > Windows users, Docker should install in Linux container mode by default. Resist the tempation to switch to Windows container mode, as we will be using Linux containers in the workshop.
 
 

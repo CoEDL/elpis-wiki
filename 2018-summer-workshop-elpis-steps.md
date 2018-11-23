@@ -134,7 +134,7 @@ $ docker run -it -v `pwd`:/docs-inside-docker alpine
 
 Windows
 ```
-$ docker run -it -v C:\Users\%username%\Desktop\abui_toy_corpus:/docs-inside-docker alpine
+> docker run -it -v C:\Users\%username%\Desktop\abui_toy_corpus:/docs-inside-docker alpine
 ```
 
  > If you get an error that the "image operating system linux cannot be used on this platform", change Docker to use Linux mode by clicking the whale icon in the system tray and choosing *Switch to Linux containers* from the menu. [See the Docker info page for more info](https://docs.docker.com/docker-for-windows/#switch-between-windows-and-linux-containers).
@@ -315,7 +315,7 @@ Here's an example, courtesy of Zara Maxwell-Smith.
 ```
 
 ```
-    $ docker run -it --rm -v C:\Users\%username%\Desktop\elpis_workshop:/kaldi-helpers/working_dir/input coedl/kaldi-helpers:0.73
+    > docker run -it --rm -v C:\Users\%username%\Desktop\elpis_workshop:/kaldi-helpers/working_dir/input coedl/kaldi-helpers:0.73
 ```
 
 5.6 Now you can use the tasks to process your data, and build the models. If your data is in Elan format, and is clean, you can use the default tasks. These tasks will build the project, train and test on your own data, using transcriptions from tiers named 'Phrase'.

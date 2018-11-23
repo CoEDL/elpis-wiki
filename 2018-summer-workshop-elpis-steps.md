@@ -109,6 +109,8 @@ Well, that’s all this exercise does :relieved:.  Once it has output the inform
 
 To work with our own data in the container, we share a folder containing our data with the container.  
 
+ > For Windows, you will need to enable permissions for sharing your drive. Go to the taskbar, and right-click on the docker icon (the whale icon). Select Settings. Select Shared Drives. Then click on the check-box of the drive you want to share (C drive for most users). Your windows log-in password will be requested for you to authorize the sharing process. Input your password and then click apply.
+
 2.1. Follow the steps in the [Download some toy data](2018-summer-workshop-preparation#download-some-toy-data) notes to get the Abui toy corpus if you don't already have it. Put the *abui_toy_corpus* folder on your *Desktop*.
 
 2.2. Open a terminal window and change into the Abui data directory on your desktop.

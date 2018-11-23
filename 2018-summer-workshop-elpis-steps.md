@@ -257,9 +257,6 @@ $ docker run -it --rm -v ~/Desktop/abui_toy_corpus:/kaldi-helpers/working_dir/in
 
 Here's an example, courtesy of Zara Maxwell-Smith.
 
-** Coming soon **
-
-<!-- 
 | type      | results                                                                                     |
 |-----------|---------------------------------------------------------------------------------------------|
 | Human     | **siapa** yang mau **menterjemahkan** direktur **pendidikan** **dasar** dan **menengah**    |
@@ -267,7 +264,6 @@ Here's an example, courtesy of Zara Maxwell-Smith.
 | Bi 3gram  | xx **siapa** umm all **menterjemahkan** di there tua **pendidikan** **dasar** the mana ngeh |
 | Bi 1gram  | xx siap ah mau **menterjemahkan** did add tua **pendidikan** **dasar** the **menengah**     |
 
- -->
 4.4 Now we have trained models, we can use them to decode or infer a trancription for untranscribed audio.
 
 ** The inference steps are waiting for an update to the docker image. They don't run yet. **

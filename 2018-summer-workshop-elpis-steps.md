@@ -237,11 +237,15 @@ $ docker run -it --rm -v ~/Desktop/abui_toy_corpus:/kaldi-helpers/working_dir/in
 
 4.1 Now we have the data shared with a Kaldi container that has our pipeline tasks, we can build and run the ASR system.
 
+```
     / # task _run-elan
+```
 
 4.2 When this task has completed, you should see a 'Build task completed without errors' message. At this point, Kaldi has been set up with files in the right places for it to begin learning. Ready to run the train-test task to build the ASR models.
 
+```
     / # task _train-test
+```
 
 4.3 After building the models, this task will score them using a test data set. When this has completed you will see a list of score values. Interpret these results! Lower % is better.
 
@@ -270,8 +274,9 @@ Here's an example, courtesy of Zara Maxwell-Smith.
 
 4.5 Exit the container to close it.
 
+```
     / # exit
-
+```
 
 
 ## Exercise 5 Using your own Elan data with the Kaldi container
@@ -281,7 +286,7 @@ Here's an example, courtesy of Zara Maxwell-Smith.
 5.2 Set up your folders
 
 - On the Desktop, create a new folder, name it *elpis_workshop*. 
-> In Windows Home, if you're using Docker Toolbox version, you need to do this is Users/[Username]
+> In Windows Home, if you're using Docker Toolbox version, you need to do this in Users/[Username]
 - Inside it create two new folders, call one *input*, the other *output*. 
 - Inside *input*, make two folders: a *config* folder, and a *data*folder. 
 - Leave the *output* folder empty. 
@@ -305,10 +310,13 @@ Here's an example, courtesy of Zara Maxwell-Smith.
 
 5.5 Start up a new Docker container, sharing your data. 
 
+```
     $ docker run -it --rm -v ~/Desktop/elpis_workshop:/kaldi-helpers/working_dir/input coedl/kaldi-helpers:0.73
+```
 
+```
     $ docker run -it --rm -v C:\Users\%username%\Desktop\elpis_workshop:/kaldi-helpers/working_dir/input coedl/kaldi-helpers:0.73
-
+```
 
 5.6 Now you can use the tasks to process your data, and build the models. If your data is in Elan format, and is clean, you can use the default tasks. These tasks will build the project, train and test on your own data, using transcriptions from tiers named 'Phrase'.
 ```

@@ -54,7 +54,7 @@ After you have installed Docker, let's get the code that we'll use in the worksh
     ```
 
 
-4. Now download the workshop code by typing or copy-and-pasting this into your terminal, and press *Enter* or *Return*.
+4. Now download the workshop code by typing or copy-and-pasting this into your terminal, and press *Enter* or *Return*. First we'll download an image called alpine...
 
     ```
     $ docker pull coedl/kaldi-helpers:0.73

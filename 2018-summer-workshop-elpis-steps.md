@@ -70,7 +70,7 @@ Let's get a taste of using Docker images and containers by playing with a very s
 ```
 $ docker run hello-world
 ```
-
+  
 The first time you run this command, Docker will look for a local, previously downloaded version of the “hello-world” image. You should see a message that Docker was “Unable to find image 'hello-world:latest' locally”. It will then attempt to download the image from the Docker Hub.
 
 All going well, you should get some words in your terminal like this.
@@ -181,7 +181,7 @@ Try moving a file into the folder using Finder or Windows Explorer. Here, I've a
 
 ![](images/ls-files.png)
 
-And then do `ls docs-inside-docker/` again... 
+And then do `ls docs-inside-docker` again... 
 
 ```
 README.md       baby-shark.mov  config          data            output

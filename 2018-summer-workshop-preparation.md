@@ -60,7 +60,7 @@ After you have installed Docker, let's get the code that we'll use in the worksh
     $ docker pull coedl/kaldi-helpers:0.64
     ```
 
- > If you get an error that the "image operating system linux cannot be used on this platform", change Docker to use Linux mode by clicking the whale icon in the system tray and choosing *Switch to Linux containers* from the menu. [See the Docker info page for more info](https://docs.docker.com/docker-for-windows/#switch-between-windows-and-linux-containers).
+    > If you get an error that the "image operating system linux cannot be used on this platform", change Docker to use Linux mode by clicking the whale icon in the system tray and choosing *Switch to Linux containers* from the menu. [See the Docker info page for more info](https://docs.docker.com/docker-for-windows/#switch-between-windows-and-linux-containers).
 
     This might take a while, it should give you some information about progress. The code is made of lots of layers, you'll see the status of each layer downloading.
 
@@ -72,7 +72,7 @@ After you have installed Docker, let's get the code that we'll use in the worksh
     Status: Downloaded newer image for coedl/kaldi-helpers:0.64
     ```
 
-    Note: if you are doing this during the workshop, and the network isn't up to downloading the image, grab one of the workshop USB drives that have the image on. Copy the `coedl-kaldi-helpers.tar` file from the USB to your desktop, open terminal at your desktop and load the image using this command...
+    > Note: if you are doing this during the workshop, and the network isn't up to downloading the image, grab one of the workshop USB drives that have the image on. Copy the `coedl-kaldi-helpers.tar` file from the USB to your desktop, open terminal at your desktop and load the image using this command...
 
     ```
     $ docker load –-input coedl-kaldi-helpers.tar

@@ -22,6 +22,8 @@ You will need to create an account with Docker in order to log in and download t
 * [Windows](https://docs.docker.com/docker-for-windows/install/)
 
 > Note that the Windows version of Docker is designed for 64bit Windows 10 Pro. For older or non-pro (home) versions of Windows, try installing Docker Toolbox: https://docs.docker.com/toolbox/toolbox_install_windows/
+> Windows users, Docker should install in Linux container mode by default. Resist the tempation to switch to Windows container mode, as we will be using Linux containers in the workshop.
+
 
 ## Download the workshop code
 
@@ -56,6 +58,8 @@ After you have installed Docker, let's get the code that we'll use in the worksh
     ```
     $ docker pull coedl/kaldi-helpers:0.64
     ```
+
+ > If you get an error that the "image operating system linux cannot be used on this platform", change Docker to use Linux mode by clicking the whale icon in the system tray and choosing *Switch to Linux containers* from the menu. [See the Docker info page for more info](https://docs.docker.com/docker-for-windows/#switch-between-windows-and-linux-containers).
 
     This might take a while, it should give you some information about progress. The code is made of lots of layers, you'll see the status of each layer downloading.
 

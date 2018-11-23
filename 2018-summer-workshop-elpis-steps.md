@@ -107,7 +107,7 @@ Well, that’s all this exercise does :relieved:.  Once it has output the inform
 
 ## Exercise 2 Sharing data with a Docker container
 
-To work with our own data in the container, we share a folder containing our data with the container.  
+To work with our own data in the container, we share a folder containing our data with the container. In Docker language, this is referred to as working with a *volume*. Volumes are a way to persist the data that a container works with and creates. The volume remains after you close a container.
 
  > For Windows, you will need to enable permissions for sharing your drive. Go to the taskbar, and right-click on the docker icon (the whale icon). Select Settings. Select Shared Drives. Then click on the check-box of the drive you want to share (C drive for most users). Your windows log-in password will be requested for you to authorize the sharing process. Input your password and then click apply.
 
@@ -283,16 +283,14 @@ Here's an example, courtesy of Zara Maxwell-Smith.
 
 - On the Desktop, create a new folder, name it *elpis_workshop*. 
 > In Windows Home, if you're using Docker Toolbox version, you need to do this in Users/[Username]
-- Inside it create two new folders, call one *input*, the other *output*. 
-- Inside *input*, make two folders: a *config* folder, and a *data*folder. 
-- Leave the *output* folder empty. 
+
+- Inside it, make three folders: named *config*, *data* and *output*.
 
 ```
 ├── elpis_workshop
-│   ├── input
-│   │   ├── config
-│   │   └── data
-│   └── output
+│       ├── config
+│       ├── data
+│       └── output
 ```
 
 5.3 Add the config files
@@ -315,6 +313,7 @@ Here's an example, courtesy of Zara Maxwell-Smith.
 ```
 
 5.6 Now you can use the tasks to process your data, and build the models. If your data is in Elan format, and is clean, you can use the default tasks. These tasks will build the project, train and test on your own data, using transcriptions from tiers named 'Phrase'.
+
 ```
     / # task _run-elan
     / # task _train-test
@@ -322,10 +321,54 @@ Here's an example, courtesy of Zara Maxwell-Smith.
 
 5.7 Once the models have been trained, you can get a hypothesis for untranscribed audio. 
 
-** The inference steps are waiting for an update to the docker image. They don't run yet. **
+**The inference tasks are waiting for an update to the docker image.**
+**They don't run yet. They will be updated before the workshop.**
+**In the meantime, if you're super keen, you can do it manually...**
+
+Prepare the files:
+
+*spk2utt*
+Gets the test speaker id, concatenates with a dummy utterance id. By the way, a new line is added by default at the end of the file.
+```
+/ # cat working_dir/input/output/kaldi/data/test/spk2utt | awk '{print $1,"decode"}'> working_dir/input/infer/spk2utt
+```
+
+*utt2spk*
+Same as above, but in reverse.
+```
+/ # cat working_dir/input/output/kaldi/data/test/spk2utt | awk '{print "decode", $1}'> working_dir/input/infer/utt2spk
+```
+
+*wav.scp*
+Format is <utterance-id> <path/and/filename>
+```
+/ # echo -e "decode data/infer/audio.wav" >> working_dir/input/infer/wav.scp
+```
+
+Rename the audio file
+```
+/ # mv working_dir/input/infer/*.wav working_dir/input/infer/audio.wav
+```
+
+Clear out previous inference results
+```
+/ # rm -rf working_dir/input/infer/results working_dir/input/output/kaldi/data/infer
+```
+
+Transcribe!
+```
+/ # task _transcribe-align
+```
+
+Copy results back up to working dir
+```
+/ # mkdir -p working_dir/input/infer/results && cp -r working_dir/input/output/kaldi/data/infer/* $_
+```
+
 
 5.7.4 Review the results
 
+...hmmm
 
 ---
 

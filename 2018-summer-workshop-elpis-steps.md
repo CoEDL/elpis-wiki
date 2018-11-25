@@ -209,17 +209,17 @@ Use the following command to load the current working directory into the contain
 
 Mac
 ```
-$ docker run -it --rm -v ~/Desktop/abui_toy_corpus:/kaldi-helpers/working_dir/input coedl/kaldi-helpers:0.73
+$ docker run -it --rm -v ~/Desktop/abui_toy_corpus:/kaldi-helpers/working_dir/input coedl/kaldi-helpers:0.77
 ```
 
 Windows
 ```
-> docker run -it --rm -v C:\Users\%username%\Desktop\abui_toy_corpus:/kaldi-helpers/working_dir/input coedl/kaldi-helpers:0.73
+> docker run -it --rm -v C:\Users\%username%\Desktop\abui_toy_corpus:/kaldi-helpers/working_dir/input coedl/kaldi-helpers:0.77
 ```
 
 Pulling apart what it means:
 ```
-$ docker run -it --rm -v ~/Desktop/abui_toy_corpus:/kaldi-helpers/working_dir/input coedl/kaldi-helpers:0.73
+$ docker run -it --rm -v ~/Desktop/abui_toy_corpus:/kaldi-helpers/working_dir/input coedl/kaldi-helpers:0.77
 ```
 
 - `$` this is the prompt, after which we type our commands. You'll see `>` on Windows
@@ -397,11 +397,11 @@ When this completes, an Elan file should be copied back to your infer folder. Yo
 5.5 Start up a new Docker container, sharing your data. 
 
 ```
-    $ docker run -it --rm -v ~/Desktop/elpis_workshop:/kaldi-helpers/working_dir/input coedl/kaldi-helpers:0.73
+    $ docker run -it --rm -v ~/Desktop/elpis_workshop:/kaldi-helpers/working_dir/input coedl/kaldi-helpers:0.77
 ```
 
 ```
-    > docker run -it --rm -v C:\Users\%username%\Desktop\elpis_workshop:/kaldi-helpers/working_dir/input coedl/kaldi-helpers:0.73
+    > docker run -it --rm -v C:\Users\%username%\Desktop\elpis_workshop:/kaldi-helpers/working_dir/input coedl/kaldi-helpers:0.77
 ```
 
 

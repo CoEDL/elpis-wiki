@@ -16,6 +16,6 @@
 | / # task                                                                                          | Lists all possible tasks                                                                                                                                      |
 | / # task _run-elan                                                                                | Running the _run-elan task which sets up all the stuff and analyses the data                                                                                  |
 | / # task _train-test                                                                              | Trains the model and creates a bunch of log files with information about the performance                                                                      |
-| $ tail -f ~/Desktop/abui_toy_corpus/output/kaldi /exp/make_mfcc/train/make_mfcc_train.1.log       | Kaldi's steps/make_mfcc.sh script can take a while! Use this to look at the training log while training happens (delete the space after kaldi!)               |
+| $ tail -f ~/Desktop/abui_toy_corpus/output/kaldi /exp/make_mfcc/train/make_mfcc_train.1.log       | Kaldi's steps/make_mfcc.sh script can take a while! Use this to look at the training log while training happens (copy this command into a text editor, replace the `abui_toy_corpus` with the name of your working data folder, oh, and delete the space after `kaldi` .. I added it so the text could wrap!)               |
 
 Thanks Wolfgang for documenting these in the 2018 workshop.

@@ -1,3 +1,5 @@
+# 2018 CoEDL Summer School Elpis workshop preparation
+
 ## Requirements
 
 * To install Docker, you will need a computer with at least:

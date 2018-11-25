@@ -1,3 +1,5 @@
+# 2018 CoEDL Summer School Elpis workshop steps 
+
 This workshop covers the steps required to install and use an automatic speech recognition system, to obtain a transcription for an untranscribed audio file. 
 
 We will use *Elpis*, a collection of small tools which will help us to prepare our language data in the format required to use a speech recognition tool called *Kaldi*. Elpis is a wrapper, or interface, to Kaldi.

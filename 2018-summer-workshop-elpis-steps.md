@@ -209,17 +209,17 @@ Refer to the workshop preparation guide for how to [download the kaldi-helpers i
 
 Mac
 ```
-$ docker run -it --rm -v ~/Desktop/abui_toy_corpus:/kaldi-helpers/working_dir/input coedl/kaldi-helpers:0.79
+$ docker run -it --rm -v ~/Desktop/abui_toy_corpus:/kaldi-helpers/working_dir/input coedl/kaldi-helpers:0.80
 ```
 
 Windows
 ```
-> docker run -it --rm -v C:\Users\%username%\Desktop\abui_toy_corpus:/kaldi-helpers/working_dir/input coedl/kaldi-helpers:0.79
+> docker run -it --rm -v C:\Users\%username%\Desktop\abui_toy_corpus:/kaldi-helpers/working_dir/input coedl/kaldi-helpers:0.80
 ```
 
 Pulling apart what it means:
 ```
-$ docker run -it --rm -v ~/Desktop/abui_toy_corpus:/kaldi-helpers/working_dir/input coedl/kaldi-helpers:0.79
+$ docker run -it --rm -v ~/Desktop/abui_toy_corpus:/kaldi-helpers/working_dir/input coedl/kaldi-helpers:0.80
 ```
 
 - `$` this is the prompt, after which we type our commands. You'll see `>` on Windows
@@ -230,7 +230,10 @@ $ docker run -it --rm -v ~/Desktop/abui_toy_corpus:/kaldi-helpers/working_dir/in
 - `~/Desktop/abui_toy_corpus/` the source (location) of the folder on your computer that you want to use inside the container. This is the folder that has our config, data and output folders in it.
 - `:` …will be shared into…
 - `/kaldi-helpers/working_dir/input` the target location, where we want the source folder to be within the docker container.
-- `coedl/kaldi-helpers:0.XX` the name and version number (0.XX) of the docker image that you want to build a container from
+- `coedl/kaldi-helpers:0.XX` the name and version number (0.XX) of the docker image that you want to build a container from. 
+
+
+3.2. Keep an eye on the image's version number. As we release fixes and new features this number will increment. To download new releases, change the version number when you do `docker run ..`. Docker is pretty clever and will just update the code that has changed.
 
 
 
@@ -398,11 +401,11 @@ When this completes, an Elan file should be copied back to your infer folder. Yo
 5.5. Start up a new Docker container, sharing your data. 
 
 ```
-    $ docker run -it --rm -v ~/Desktop/elpis_workshop:/kaldi-helpers/working_dir/input coedl/kaldi-helpers:0.79
+    $ docker run -it --rm -v ~/Desktop/elpis_workshop:/kaldi-helpers/working_dir/input coedl/kaldi-helpers:0.80
 ```
 
 ```
-    > docker run -it --rm -v C:\Users\%username%\Desktop\elpis_workshop:/kaldi-helpers/working_dir/input coedl/kaldi-helpers:0.79
+    > docker run -it --rm -v C:\Users\%username%\Desktop\elpis_workshop:/kaldi-helpers/working_dir/input coedl/kaldi-helpers:0.80
 ```
 
 

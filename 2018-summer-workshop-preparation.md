@@ -57,7 +57,7 @@ After you have installed Docker, let's get the code that we'll use in the worksh
 4. Now download the workshop code by typing or copy-and-pasting this into your terminal, and press *Enter* or *Return*. First we'll download an image called alpine...
 
     ```
-    $ docker pull coedl/kaldi-helpers:0.79
+    $ docker pull coedl/kaldi-helpers:0.80
     ```
 
     > If you get an error that the "image operating system linux cannot be used on this platform", change Docker to use Linux mode by clicking the whale icon in the system tray and choosing *Switch to Linux containers* from the menu. [See the Docker info page for more info](https://docs.docker.com/docker-for-windows/#switch-between-windows-and-linux-containers).
@@ -69,7 +69,7 @@ After you have installed Docker, let's get the code that we'll use in the worksh
     When it has downloaded, the terminal will show a message like: 
 
     ```
-    Status: Downloaded newer image for coedl/kaldi-helpers:0.79
+    Status: Downloaded newer image for coedl/kaldi-helpers:0.80
     ```
 
     > Note: if you are doing this during the workshop, and the network isn't up to downloading the image, grab one of the workshop USB drives that have the image on. Copy the `coedl-kaldi-helpers.tar` file from the USB to your desktop, open terminal at your desktop and load the image using this command...

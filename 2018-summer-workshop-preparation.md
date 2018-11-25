@@ -4,9 +4,9 @@
 a) Windows 10 Pro, Enterprise or Education 64 bit (note that Docker installs best on non-home versions of Windows)
 b) Mac OS X El Capitan 10.11 on a 2010 or newer machine.
 
-* Admin access to your computer to enable folder sharing for Docker [add more info here].
+* Admin access to your computer to enable folder sharing for Docker.
 
-* Clean data. We can use a toy corpus to check that everything is working. When you are ready to use your own data, check that audio is in the right format, and you have some text annotations in Elan, Transcriber or Praat format [add more info here].
+* Clean data. We can use a toy corpus to check that everything is working. When you are ready to use your own data, check that audio is in the right format, and you have some text annotations in Elan, Transcriber or Praat format. We'll talk more about this in the workshop.
 
 * A good internet connection, to download the Docker image.
 

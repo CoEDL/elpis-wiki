@@ -111,7 +111,9 @@ To work with our own data in the container, we share a folder containing our dat
 
  > For Windows, you will need to enable permissions for sharing your drive. Go to the taskbar, and right-click on the docker icon (the whale icon). Select Settings. Select Shared Drives. Then click on the check-box of the drive you want to share (C drive for most users). Your windows log-in password will be requested for you to authorize the sharing process. Input your password and then click apply.
 
+
 2.1. Follow the steps in the [Download some toy data](2018-summer-workshop-preparation#download-some-toy-data) notes to get the Abui toy corpus if you don't already have it. Put the *abui_toy_corpus* folder on your *Desktop*.
+
 
 2.2. Open a terminal window and change into the Abui data directory on your desktop.
 
@@ -124,6 +126,7 @@ Windows
 ```
 > cd C:\Users\%username%\Desktop\abui_toy_corpus
 ```
+
 
 2.3. The next command extends what we have used so far, adding a new option `-v` with a value, being the path to the local data joined to a name by which we will be able to access the folder inside the container. This will create a new container based on the alpine image, and share our current working directory with the container.
 
@@ -199,27 +202,24 @@ Type `exit` at the command prompt to close the container.
 
 ## Exercise 3 Loading data into a container with Kaldi installed
 
-Refer to the workshop preparation guide for how to [download the kaldi-helpers image](2018-summer-workshop-preparation#download-the-workshop-code) if you don't already have it. (Kaldi-helpers is the name of the bunch of scripts which we use to prepare our data for Kaldi.)
+Refer to the workshop preparation guide for how to [download the kaldi-helpers image](2018-summer-workshop-preparation#download-the-workshop-code) if you don't already have it. You'll also need to download the toy corpus and put the abui_toy_corpus folder on your Desktop if you haven't done that.
 
-Wait while it downloads, then we can run a container from it. 
 
-Your terminal should still be in the Desktop/abui_toy_corpus folder.
-
-Use the following command to load the current working directory into the container. We also introduce a new option `--rm` which cleans up when we exit the container.
+3.1. Use the following command to load the abui_toy_corpus directory into a new Docker container. We also introduce a new option `--rm` which cleans up when we exit the container.
 
 Mac
 ```
-$ docker run -it --rm -v ~/Desktop/abui_toy_corpus:/kaldi-helpers/working_dir/input coedl/kaldi-helpers:0.77
+$ docker run -it --rm -v ~/Desktop/abui_toy_corpus:/kaldi-helpers/working_dir/input coedl/kaldi-helpers:0.79
 ```
 
 Windows
 ```
-> docker run -it --rm -v C:\Users\%username%\Desktop\abui_toy_corpus:/kaldi-helpers/working_dir/input coedl/kaldi-helpers:0.77
+> docker run -it --rm -v C:\Users\%username%\Desktop\abui_toy_corpus:/kaldi-helpers/working_dir/input coedl/kaldi-helpers:0.79
 ```
 
 Pulling apart what it means:
 ```
-$ docker run -it --rm -v ~/Desktop/abui_toy_corpus:/kaldi-helpers/working_dir/input coedl/kaldi-helpers:0.77
+$ docker run -it --rm -v ~/Desktop/abui_toy_corpus:/kaldi-helpers/working_dir/input coedl/kaldi-helpers:0.79
 ```
 
 - `$` this is the prompt, after which we type our commands. You'll see `>` on Windows
@@ -233,23 +233,24 @@ $ docker run -it --rm -v ~/Desktop/abui_toy_corpus:/kaldi-helpers/working_dir/in
 - `coedl/kaldi-helpers:0.XX` the name and version number (0.XX) of the docker image that you want to build a container from
 
 
+
 ## Exercise 4 Running Kaldi with a toy corpus
 
-4.1 Now we have the data shared with a Kaldi container that has our pipeline tasks, we can build and run the ASR system.
+4.1. Now we have the data shared with a Kaldi container that has our pipeline tasks, we can build and run the ASR system.
 
 ```
     / # task _run-elan
 ```
 
 
-4.2 When this task has completed, you should see a 'Build task completed without errors' message. At this point, Kaldi has been set up with files in the right places for it to begin learning. Ready to run the train-test task to build the ASR models.
+4.2. When this task has completed, you should see a 'Build task completed without errors' message. At this point, Kaldi has been set up with files in the right places for it to begin learning. Ready to run the train-test task to build the ASR models.
 
 ```
     / # task _train-test
 ```
 
 
-4.3 After building the models, this task will score them using a test data set. When this has completed you will see a list of score values. Interpret these results! Lower % is better.
+4.3. After building the models, this task will score them using a test data set. When this has completed you will see a list of score values. Interpret these results! Lower % is better.
 
     %WER 83.33 [ 5 / 6, 1 ins, 2 del, 2 sub ]
 
@@ -267,7 +268,7 @@ Here's an example, courtesy of Zara Maxwell-Smith.
 | Bi 1gram  | xx siap ah mau **menterjemahkan** did add tua **pendidikan** **dasar** the **menengah**     |
 
 
-4.4 Now we have trained models, we can use them to decode (or infer) a trancription for untranscribed audio. Prepare for this by making a folder, named *infer*, in your input directory (next to the *config*, *data* and *output* folders). Put an untranscribed audio file in there. 
+4.4. Now we have trained models, we can use them to decode (or infer) a trancription for untranscribed audio. Prepare for this by making a folder, named *infer*, in your input directory (next to the *config*, *data* and *output* folders). Put an untranscribed audio file in there. 
 
  > For this toy corpus exercise, just copy one of the audio files from the data folder into the infer folder. 
 
@@ -298,7 +299,7 @@ Here's an example, courtesy of Zara Maxwell-Smith.
 
 
 
-4.4.1 Run this task to generate the files we need for the system to be able to process a new audio file, and do the decoding.
+4.4.1. Run this task to generate the files we need for the system to be able to process a new audio file, and do the decoding.
 
     / # task _transcribe
 
@@ -334,7 +335,7 @@ The files are in this format:
     <recording_id> data/infer/audio.wav
 
 
-4.4.2 After decoding, you'll see the results in the terminal, and a file containing the hypothesis will be copied back into the infer folder. The format of the results is `<utterance_id> <confidence> <start_ms> <duration> <word>`.
+4.4.2. After decoding, you'll see the results in the terminal, and a file containing the hypothesis will be copied back into the infer folder. The format of the results is `<utterance_id> <confidence> <start_ms> <duration> <word>`.
 
 ```
 3a2a6f18-5822-4d0d-b6cc-89f47b47b097-1f03785c-b6f3-4cf4-b660-3c50312f081b 1 0.000 0.310 mai 
@@ -347,7 +348,7 @@ The files are in this format:
 ```
 
 
-4.4.3 To get a time-aligned inference, clear out the files in the infer folder (leave the audio file) and run this task
+4.4.3. To get a time-aligned inference, clear out the files in the infer folder (leave the audio file) and run this task
 
     / # task _transcribe-align
 
@@ -356,7 +357,7 @@ When this completes, an Elan file should be copied back to your infer folder. Yo
  > If you are using a toy corpus, please don't expect that the results are even close to correct! There isn't enough data in a toy corpus to train a useful model.
 
 
-4.5 Exit the container to close it.
+4.5. Exit the container to close it.
 
 ```
     / # exit
@@ -366,10 +367,10 @@ When this completes, an Elan file should be copied back to your infer folder. Yo
 ## Exercise 5 Using your own Elan data with the Kaldi container
 
 
-5.1 Clean your data. [Read more about that here](cleaning-data).
+5.1. Clean your data. [Read more about that here](cleaning-data).
 
 
-5.2 Set up your folders
+5.2. Set up your folders
 
 - On the Desktop, create a new folder, name it *elpis_workshop*. 
 > In Windows Home, if you're using Docker Toolbox version, you need to do this in Users/[Username]
@@ -385,27 +386,27 @@ When this completes, an Elan file should be copied back to your infer folder. Yo
 ```
 
 
-5.3 Add the config files
+5.3. Add the config files
 
 - Copy the *optional_silence.txt* and *silence_phones.txt* files from the Abui toy corpus config folder into your *config* folder.
 - In your *config* folder we also need to create a text file which has a letter to sound map...
 
 
-5.4 Add your data. Put your audio and transcription files inside the *data* folder.
+5.4. Add your data. Put your audio and transcription files inside the *data* folder.
 
 
-5.5 Start up a new Docker container, sharing your data. 
-
-```
-    $ docker run -it --rm -v ~/Desktop/elpis_workshop:/kaldi-helpers/working_dir/input coedl/kaldi-helpers:0.77
-```
+5.5. Start up a new Docker container, sharing your data. 
 
 ```
-    > docker run -it --rm -v C:\Users\%username%\Desktop\elpis_workshop:/kaldi-helpers/working_dir/input coedl/kaldi-helpers:0.77
+    $ docker run -it --rm -v ~/Desktop/elpis_workshop:/kaldi-helpers/working_dir/input coedl/kaldi-helpers:0.79
+```
+
+```
+    > docker run -it --rm -v C:\Users\%username%\Desktop\elpis_workshop:/kaldi-helpers/working_dir/input coedl/kaldi-helpers:0.79
 ```
 
 
-5.6 Now you can use the tasks to process your data, and build the models. If your data is in Elan format, and is clean, you can use the default tasks. These tasks will build the project, train and test on your own data, using transcriptions from tiers named 'Phrase'.
+5.6. Now you can use the tasks to process your data, and build the models. If your data is in Elan format, and is clean, you can use the default tasks. These tasks will build the project, train and test on your own data, using transcriptions from tiers named 'Phrase'.
 
 ```
     / # task _run-elan
@@ -413,18 +414,18 @@ When this completes, an Elan file should be copied back to your infer folder. Yo
 ```
 
 
-5.7 Once the models have been trained, you can get a hypothesis for untranscribed audio. 
+5.7. Once the models have been trained, you can get a hypothesis for untranscribed audio. 
 
 
-5.7.1 Prepare the files. Kaldi works best with short audio clips, utterances about 10 seconds long. We are planning to improve support for longer audio over summer - stay tuned! For now, please use a single audio file, max 10 seconds duration.
+5.7.1. Prepare the files. Kaldi works best with short audio clips, utterances about 10 seconds long. We are planning to improve support for longer audio over summer - stay tuned! For now, please use a single audio file, max 10 seconds duration.
 
 
-5.7.2 As before, run the `_transcribe` or `_transcribe-align` tasks. The helper files will be created, and after decoding, the results will be copied back into the infer folder. 
+5.7.2. As before, run the `_transcribe` or `_transcribe-align` tasks. The helper files will be created, and after decoding, the results will be copied back into the infer folder. 
 
     / # task _transcribe-align
 
 
-5.7.3 Review the results
+5.7.3. Review the results
 
 ...hmmm
 

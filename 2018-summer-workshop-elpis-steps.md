@@ -241,11 +241,13 @@ $ docker run -it --rm -v ~/Desktop/abui_toy_corpus:/kaldi-helpers/working_dir/in
     / # task _run-elan
 ```
 
+
 4.2 When this task has completed, you should see a 'Build task completed without errors' message. At this point, Kaldi has been set up with files in the right places for it to begin learning. Ready to run the train-test task to build the ASR models.
 
 ```
     / # task _train-test
 ```
+
 
 4.3 After building the models, this task will score them using a test data set. When this has completed you will see a list of score values. Interpret these results! Lower % is better.
 
@@ -264,9 +266,95 @@ Here's an example, courtesy of Zara Maxwell-Smith.
 | Bi 3gram  | xx **siapa** umm all **menterjemahkan** di there tua **pendidikan** **dasar** the mana ngeh |
 | Bi 1gram  | xx siap ah mau **menterjemahkan** did add tua **pendidikan** **dasar** the **menengah**     |
 
-4.4 Now we have trained models, we can use them to decode or infer a trancription for untranscribed audio.
 
-** The inference steps are waiting for an update to the docker image. They don't run yet. **
+4.4 Now we have trained models, we can use them to decode (or infer) a trancription for untranscribed audio. Prepare for this by making a folder, named *infer*, in your input directory (next to the *config*, *data* and *output* folders). Put an untranscribed audio file in there. 
+
+ > For this toy corpus exercise, just copy one of the audio files from the data folder into the infer folder. 
+
+```
+├── abui_toy_corpus
+│   ├── config
+│   │   ├── letter_to_sound.txt
+│   |   ├── silence_phones.txt
+│   |   └── optional_silence.txt
+│   ├── data
+│   |   ├── 1_1_1.eaf
+│   |   ├── 1_1_1.wav
+│   |   ├── 1_1_2.eaf
+│   |   ├── 1_1_2.wav
+│   |   ├── 1_1_3.eaf
+│   |   ├── 1_1_3.wav
+│   |   ├── 1_1_4.eaf
+│   |   ├── 1_1_4.wav
+│   |   ├── 1_1_5.eaf
+│   |   └── 1_1_5.wav
+│   ├── infer
+│   │   └── audio.wav
+│   └── output
+│       ├── kaldi
+│       └── tmp
+:
+```
+
+
+
+4.4.1 Run this task to generate the files we need for the system to be able to process a new audio file, and do the decoding.
+
+    / # task _transcribe
+
+
+Your *infer* folder should end up with a few more files...
+
+```
+├── abui_toy_corpus
+│   :   
+│   ├── infer
+│   │   ├── audio.wav
+│   │   ├── segments
+│   │   ├── spk2utt
+│   │   ├── utt2spk
+│   │   └── wav.scp
+│   :
+:
+```
+
+
+The files are in this format:
+
+    segments 
+    <utterance_id> <recording_id> <start_time_milliseconds> <stop_time_milliseconds>
+
+    spk2utt
+    <speaker_id> <utterance_id>
+
+    utt2spk
+    <utterance_id> <speaker_id>
+
+    wav.scp  
+    <recording_id> data/infer/audio.wav
+
+
+4.4.2 After decoding, you'll see the results in the terminal, and a file containing the hypothesis will be copied back into the infer folder. The format of the results is `<utterance_id> <confidence> <start_ms> <duration> <word>`.
+
+```
+3a2a6f18-5822-4d0d-b6cc-89f47b47b097-1f03785c-b6f3-4cf4-b660-3c50312f081b 1 0.000 0.310 mai 
+3a2a6f18-5822-4d0d-b6cc-89f47b47b097-1f03785c-b6f3-4cf4-b660-3c50312f081b 1 0.310 0.160 kaai 
+3a2a6f18-5822-4d0d-b6cc-89f47b47b097-1f03785c-b6f3-4cf4-b660-3c50312f081b 1 0.470 0.220 deina 
+3a2a6f18-5822-4d0d-b6cc-89f47b47b097-1f03785c-b6f3-4cf4-b660-3c50312f081b 1 0.690 0.350 dapakdi 
+3a2a6f18-5822-4d0d-b6cc-89f47b47b097-1f03785c-b6f3-4cf4-b660-3c50312f081b 1 1.040 0.130 lung 
+3a2a6f18-5822-4d0d-b6cc-89f47b47b097-1f03785c-b6f3-4cf4-b660-3c50312f081b 1 1.170 0.160 lung 
+3a2a6f18-5822-4d0d-b6cc-89f47b47b097-1f03785c-b6f3-4cf4-b660-3c50312f081b 1 1.330 0.120 ya 
+```
+
+
+4.4.3 To get a time-aligned inference, clear out the files in the infer folder (leave the audio file) and run this task
+
+    / # task _transcribe-align
+
+When this completes, an Elan file should be copied back to your infer folder. You can open it to check.. 
+ 
+ > If you are using a toy corpus, please don't expect that the results are even close to correct! There isn't enough data in a toy corpus to train a useful model.
+
 
 4.5 Exit the container to close it.
 
@@ -277,7 +365,9 @@ Here's an example, courtesy of Zara Maxwell-Smith.
 
 ## Exercise 5 Using your own Elan data with the Kaldi container
 
+
 5.1 Clean your data. [Read more about that here](cleaning-data).
+
 
 5.2 Set up your folders
 
@@ -291,16 +381,18 @@ Here's an example, courtesy of Zara Maxwell-Smith.
 │       ├── config
 │       ├── data
 │       └── output
+:
 ```
+
 
 5.3 Add the config files
 
 - Copy the *optional_silence.txt* and *silence_phones.txt* files from the Abui toy corpus config folder into your *config* folder.
 - In your *config* folder we also need to create a text file which has a letter to sound map...
 
-5.4 Add your data
 
-- Put your audio and transcription files inside the *data* folder.
+5.4 Add your data. Put your audio and transcription files inside the *data* folder.
+
 
 5.5 Start up a new Docker container, sharing your data. 
 
@@ -312,6 +404,7 @@ Here's an example, courtesy of Zara Maxwell-Smith.
     > docker run -it --rm -v C:\Users\%username%\Desktop\elpis_workshop:/kaldi-helpers/working_dir/input coedl/kaldi-helpers:0.73
 ```
 
+
 5.6 Now you can use the tasks to process your data, and build the models. If your data is in Elan format, and is clean, you can use the default tasks. These tasks will build the project, train and test on your own data, using transcriptions from tiers named 'Phrase'.
 
 ```
@@ -319,54 +412,19 @@ Here's an example, courtesy of Zara Maxwell-Smith.
     / # task _train-test
 ```
 
+
 5.7 Once the models have been trained, you can get a hypothesis for untranscribed audio. 
 
-**The inference tasks are waiting for an update to the docker image.**
-**They don't run yet. They will be updated before the workshop.**
-**In the meantime, if you're super keen, you can do it manually...**
 
-Prepare the files:
-
-*spk2utt*
-Gets the test speaker id, concatenates with a dummy utterance id. By the way, a new line is added by default at the end of the file.
-```
-/ # cat working_dir/input/output/kaldi/data/test/spk2utt | awk '{print $1,"decode"}'> working_dir/input/infer/spk2utt
-```
-
-*utt2spk*
-Same as above, but in reverse.
-```
-/ # cat working_dir/input/output/kaldi/data/test/spk2utt | awk '{print "decode", $1}'> working_dir/input/infer/utt2spk
-```
-
-*wav.scp*
-Format is <utterance-id> <path/and/filename>
-```
-/ # echo -e "decode data/infer/audio.wav" >> working_dir/input/infer/wav.scp
-```
-
-Rename the audio file
-```
-/ # mv working_dir/input/infer/*.wav working_dir/input/infer/audio.wav
-```
-
-Clear out previous inference results
-```
-/ # rm -rf working_dir/input/infer/results working_dir/input/output/kaldi/data/infer
-```
-
-Transcribe!
-```
-/ # task _transcribe-align
-```
-
-Copy results back up to working dir
-```
-/ # mkdir -p working_dir/input/infer/results && cp -r working_dir/input/output/kaldi/data/infer/* $_
-```
+5.7.1 Prepare the files. Kaldi works best with short audio clips, utterances about 10 seconds long. We are planning to improve support for longer audio over summer - stay tuned! For now, please use a single audio file, max 10 seconds duration.
 
 
-5.7.4 Review the results
+5.7.2 As before, run the `_transcribe` or `_transcribe-align` tasks. The helper files will be created, and after decoding, the results will be copied back into the infer folder. 
+
+    / # task _transcribe-align
+
+
+5.7.3 Review the results
 
 ...hmmm
 

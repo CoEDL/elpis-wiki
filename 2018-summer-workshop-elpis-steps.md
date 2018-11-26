@@ -130,8 +130,10 @@ $ docker run -it -v ~/Desktop/abui_toy_corpus:/docs-inside-docker alpine
 ```
 
 Windows
+
+Replace `your_username` with your Windows username.
 ```
-> docker run -it -v C:\Users\%username%\Desktop\abui_toy_corpus:/docs-inside-docker alpine
+> docker run -it -v "C:\Users\your_username\Desktop\abui_toy_corpus":/docs-inside-docker alpine
 ```
 
  > If you get an error that the "image operating system linux cannot be used on this platform", change Docker to use Linux mode by clicking the whale icon in the system tray and choosing *Switch to Linux containers* from the menu. [See the Docker info page for more info](https://docs.docker.com/docker-for-windows/#switch-between-windows-and-linux-containers).
@@ -211,8 +213,10 @@ $ docker run -it --rm -v ~/Desktop/abui_toy_corpus:/kaldi-helpers/working_dir/in
 ```
 
 Windows
+
+Replace `your_username` with your Windows username.
 ```
-> docker run -it --rm -v C:\Users\%username%\Desktop\abui_toy_corpus:/kaldi-helpers/working_dir/input coedl/kaldi-helpers:0.80
+> docker run -it --rm -v "C:\Users\your_username\Desktop\abui_toy_corpus":/kaldi-helpers/working_dir/input coedl/kaldi-helpers:0.80
 ```
 
 
@@ -433,8 +437,10 @@ Mac
 ```
 
 Windows
+
+Replace `your_username` with your Windows username.
 ```
-    > docker run -it --rm -v C:\Users\%username%\Desktop\elpis_workshop:/kaldi-helpers/working_dir/input coedl/kaldi-helpers:0.80
+    > docker run -it --rm -v "C:\Users\your_username\Desktop\elpis_workshop":/kaldi-helpers/working_dir/input coedl/kaldi-helpers:0.80
 ```
 
 

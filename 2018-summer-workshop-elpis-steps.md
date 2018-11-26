@@ -440,9 +440,18 @@ Windows
 
 5.6. Now you can use the tasks to process your data, and build the models. If your data is in Elan format, and is clean, you can use the default tasks. These tasks will build the project, train and test on your own data, using transcriptions from tiers named 'Phrase'.
 
+If you are using the abui-trs data, the training data was transcribed using a program called Transcribed, not Elan, so we need to use a different task.. instead of _run-elan use _run-trs.
+
 ```
     / # task _run-elan
 ```
+
+(or)
+```
+    / # task _run-trs
+```
+
+
 
 Wait...
 

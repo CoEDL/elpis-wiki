@@ -11,6 +11,7 @@ First, check the *Questions* document (refer to Slack for the link). As we find 
 
 Prepare for the workshop by
 
+- Getting online
 - [Installing Docker](2018-summer-workshop-preparation#install-docker-on-your-computer)
 - [Downloading the coedl/kaldi-helpers docker image](2018-summer-workshop-preparation#download-the-workshop-code)
 - [Downloading a toy corpus](2018-summer-workshop-preparation#download-some-toy-data)
@@ -34,7 +35,7 @@ Contents of this document
 
 **Docker** is a program which helps standardise the way we do computational tasks with data, regardless of the operating systems of all the people who might want to run those tasks. Rather than building separate code for Windows, Linux, Mac operating systems, we can write once and run it on a myriad of operating systems using Docker. For more information about Docker, view [Nay San's slides](http://goo.gl/qxQDPP).
 
-After you have installed Docker, start it. On a mac, you will see a little whale icon in the top menu bar. On Windows you'll see a whale icon in the system tray.
+After you have installed Docker, start it. On a Mac, you will see a little whale icon in the top menu bar. On Windows you'll see a whale icon in the system tray.
 
 For the rest of the workshop, we will be using a **terminal** to interact with Docker and Elpis by typing instructions, or **commands** at the **command prompt**. 
 
@@ -42,12 +43,12 @@ For the rest of the workshop, we will be using a **terminal** to interact with D
 
  > A command is an instruction that tells a program to do something. 
 
- > On mac, the prompt is `$` and Windows it is `>`. You'll see in this guide that the commands we write are prefixed by the prompt. You don't need to type the `$` or `>` when you use the commands, just type what follows. Also, press Return (or Enter) after typing the command.
+ > On Mac, the prompt is `$` and Windows it is `>`. You'll see in this guide that the commands we write are prefixed by the prompt. You don't need to type the `$` or `>` when you use the commands, just type what follows. Also, press Return (or Enter) after typing the command.
 
 
 On Mac, open the *Terminal* app in your *Applications > Utilities* folder. 
 
-For Windows, type  `command` or `cmd` into the search field in your taskbar. Then, click or tap on the *Command Prompt* result to open it.
+For Windows, open the search field in your taskbar, type  `command` or `cmd` into it. Then, click or tap on the *Command Prompt* result to open it.
 
 Let's write a command to check that Docker is installed. Open your terminal, and type the following command at the prompt. Remember, you don't need to type the prompt character.
 
@@ -61,21 +62,26 @@ In this command, `docker` is the name of the program we want to use, `—version
 
 After running that command, we should see some version information. Hooray! Docker is set up OK. Now let's start working with **Docker images** and **containers**.
 
- > Think of a Docker image as a box with stuff inside. In our case, the stuff will be an operating system, some code, some data. The image makes it easy to share this stuff around and use on a myriad of computers.
+ > Think of a Docker image as a being like a zip file with stuff inside. In our case, the stuff will be an operating system, some code, some data. The image makes it easy to share this stuff around and use on a myriad of computers.
  > Containers are the 'unpacked' version of an image.
 
 
 
 ## Exercise 1 Getting familiar with Docker
-Let's get a taste of using Docker images and containers by playing with a very simple one first. In your terminal, type this command.
+
+Let's get a taste of using Docker images and containers by playing with a very simple one first. 
+
+This exercise runs a Docker image (making a container) and writes some text to the screen. It automatically closes when it is done. 
+
+In your terminal, type this command.
 
 ```
 $ docker run hello-world
 ```
   
-The first time you run this command, Docker will look for a local, previously downloaded version of the “hello-world” image. You should see a message that Docker was “Unable to find image 'hello-world:latest' locally”. It will then attempt to download the image from the Docker Hub.
+The first time you run this command, Docker will look for a local, previously downloaded version of the “hello-world” image. If you haven't done this exercise before, you should see a message that Docker was “Unable to find image 'hello-world:latest' locally”. After a seemingly endless pause, it will then attempt to download the image from the Docker Hub.
 
-All going well, you should get some words in your terminal like this.
+All going well, it will run, and you should get some words in your terminal like this.
 
     Hello from Docker!
     This message shows that your installation appears to be working correctly.
@@ -91,7 +97,7 @@ What does that all that mean?
 If you see "*Hello from Docker! This message shows that your installation appears to be working correctly*." it is a sign that all is working well. Let's unpack the messages of what has happened.  
 
 1.1. *The Docker client contacted the Docker daemon*
-    The client is the program that you ran when you typed 'docker' at the prompt. The daemon is the software that runs in the background, accessible by the whale icon in the top menubar on mac, or by the whale icon in the Windows system tray.  
+    The client is the program that you ran when you typed 'docker' at the prompt. The daemon is the software that runs in the background, accessible by the whale icon in the top menubar on Mac, or by the whale icon in the Windows system tray.  
 
 1.2. *The Docker daemon pulled the "hello-world" image from the Docker Hub*
     This means that an image was downloaded from the Docker cloud server to your computer. You can check which images you have by typing `docker images` at the command prompt, and it will show a list in the terminal of the images that are available.  
@@ -109,32 +115,18 @@ Well, that’s all this exercise does :relieved:.  Once it has output the inform
 
 ## Exercise 2 Sharing data with a Docker container
 
-To work with our own data in the container, we share a folder containing our data with the container. In Docker language, this is referred to as working with a *volume*. Volumes are a way to persist the data that a container works with and creates. The volume remains after you close a container.
+To work with our own data in a container, we share a folder containing our data with the container. In Docker language, this is referred to as working with a *volume*. Volumes are a way to persist the data that a container works with and creates. The volume remains after you close a container.
 
  > For Windows, you will need to enable permissions for sharing your drive. Go to the taskbar, and right-click on the docker icon (the whale icon). Select Settings. Select Shared Drives. Then click on the check-box of the drive you want to share (C drive for most users). Your windows log-in password will be requested for you to authorize the sharing process. Input your password and then click apply.
 
-
-2.1. Follow the steps in the [Download some toy data](2018-summer-workshop-preparation#download-some-toy-data) notes to get the Abui toy corpus if you don't already have it. Put the *abui_toy_corpus* folder on your *Desktop*.
-
-
-2.2. Open a terminal window and change into the Abui data directory on your desktop.
-
-Mac
-```
-$ cd ~/Desktop/abui_toy_corpus
-```
-
-Windows
-```
-> cd C:\Users\%username%\Desktop\abui_toy_corpus
-```
+2.1. Follow the steps in the [Download some toy data](2018-summer-workshop-preparation#download-some-toy-data) notes to get the Abui toy corpus if you don't already have it. Put the *abui_toy_corpus* folder from inside the downloaded folder on your *Desktop*.
 
 
-2.3. The next command extends what we have used so far, adding a new option `-v` with a value, being the path to the local data joined to a name by which we will be able to access the folder inside the container. This will create a new container based on the alpine image, and share our current working directory with the container.
+2.2. The next command extends what we have used so far, adding a new option `-v` with a value, being the path to the local data joined to a name by which we will be able to access the folder inside the container. This will create a new container based on the alpine image, and share our data directory with the container.
 
 Mac
 ```
-$ docker run -it -v `pwd`:/docs-inside-docker alpine
+$ docker run -it -v ~/Desktop/abui_toy_corpus:/docs-inside-docker alpine
 ```
 
 Windows
@@ -144,7 +136,6 @@ Windows
 
  > If you get an error that the "image operating system linux cannot be used on this platform", change Docker to use Linux mode by clicking the whale icon in the system tray and choosing *Switch to Linux containers* from the menu. [See the Docker info page for more info](https://docs.docker.com/docker-for-windows/#switch-between-windows-and-linux-containers).
 
-
 What's it all mean?
 
 `docker run` tells docker to create an instance of an image, creating a container.
@@ -153,13 +144,13 @@ What's it all mean?
 
 `-v` is another *option*, which tells docker that we want to share a volume.
 
-`pwd:/docs-inside-docker` are *parameters* for the `v` *option*. The information before the colon is the path to your local data (also known as the source). The information after the colon is where it ends up in the container (also known as the target). You can give a full path to your data, or use the `pwd` shortcut to your *present working directory* (your current folder).
+`some/path:/docs-inside-docker` are *parameters* for the `v` *option*. The information before the colon is the path to your local data (also known as the source). The information after the colon is where it ends up in the container (also known as the target).
 
 `alpine` is the name of the image we are running.
 
 You may need to copy and paste the command as the backtick things around `pwd` may not be on your particular keyboard! They aren't on the German keyboard for instance. Remember that you don't need to copy the `$`, just what follows it.
 
-After you type (or paste) that command into terminal, and press return, you should see something like:
+2.3. After you type (or paste) that command into terminal, and press return, you should see something like:
 
     Unable to find image 'alpine:latest' locally
     latest: Pulling from library/alpine
@@ -170,7 +161,9 @@ After you type (or paste) that command into terminal, and press return, you shou
 
 This tells us that the alpine image is being downloaded, and eventually we end up with a different command prompt `/ # `, INSIDE the container.
 
-We can verify that our local data has been shared with the container with this command. Type the following command, you don't need to type the `/ #` bit because that is a command prompt, just like `$` or `>`.
+If you have done this exercise before, it should go stright into the prompt, skipping the pull step.
+
+2.4. We can verify that our local data has been shared with the container with this command. Type the following command, you don't need to type the `/ #` bit because that is a command prompt, just like `$` or `>`.
 
 ```
 / # ls docs-inside-docker
@@ -179,7 +172,7 @@ We can verify that our local data has been shared with the container with this c
 This will list the files in the container's *docs-inside-docker* folder. They should be the names of the files and folders that you see in your *Finder* or *Windows Explorer* when looking in the abui_toy_corpus folder. 
 
 ```
-README.md  config     data       output
+README.md    config    data    output
 ```
 
 Try moving a file into the folder using Finder or Windows Explorer. Here, I've added a really funny music video file.
@@ -189,7 +182,7 @@ Try moving a file into the folder using Finder or Windows Explorer. Here, I've a
 And then do `ls docs-inside-docker` again... 
 
 ```
-README.md       baby-shark.mov  config          data            output
+README.md    baby-shark.mov    config    data    output
 ```
 
 :smirk: 
@@ -202,10 +195,13 @@ Type `exit` at the command prompt to close the container.
 
 
 
-## Exercise 3 Loading data into a container with Kaldi installed
+## Exercise 3 Demo with toy data in a container with Kaldi installed
 
-Refer to the workshop preparation guide for how to [download the kaldi-helpers image](2018-summer-workshop-preparation#download-the-workshop-code) if you don't already have it. You'll also need to download the toy corpus and put the abui_toy_corpus folder on your Desktop if you haven't done that.
+This exercise will share our toy corpus with a container, and run a demo task to prepare our data into the right format, train an ASR system, and get a hypothesis for new data.
 
+Refer to the workshop preparation guide for how to [download the kaldi-helpers image](2018-summer-workshop-preparation#download-the-workshop-code) if you don't already have it. 
+
+You'll also need to download the toy corpus and put the abui_toy_corpus folder on your Desktop if you haven't done that.
 
 3.1. Use the following command to load the abui_toy_corpus directory into a new Docker container. We also introduce a new option `--rm` which cleans up when we exit the container.
 
@@ -219,7 +215,9 @@ Windows
 > docker run -it --rm -v C:\Users\%username%\Desktop\abui_toy_corpus:/kaldi-helpers/working_dir/input coedl/kaldi-helpers:0.80
 ```
 
-Pulling apart what it means:
+
+3.2. Pulling apart what it means:
+
 ```
 $ docker run -it --rm -v ~/Desktop/abui_toy_corpus:/kaldi-helpers/working_dir/input coedl/kaldi-helpers:0.80
 ```
@@ -234,34 +232,57 @@ $ docker run -it --rm -v ~/Desktop/abui_toy_corpus:/kaldi-helpers/working_dir/in
 - `/kaldi-helpers/working_dir/input` the target location, where we want the source folder to be within the docker container.
 - `coedl/kaldi-helpers:0.XX` the name and version number (0.XX) of the docker image that you want to build a container from. 
 
+Keep an eye on the image's version number. As we release fixes and new features this number will increment. To download new releases, change the version number when you do `docker run ..`. Docker is pretty clever and will just update the code that has changed.
 
-3.2. Keep an eye on the image's version number. As we release fixes and new features this number will increment. To download new releases, change the version number when you do `docker run ..`. Docker is pretty clever and will just update the code that has changed.
+3.3. Now the container is running, we can use a **task** to start the pipeline! Type:
+
+```
+    / # task _demo
+```
+
+This will race through the stages of 
+
+- preparing the data into the formats that Kaldi requires
+- training the models
+- testing the models
+- inferring a hypothesis for an audio file
+
+
+Done? Don't close the container just yet, let's do that again a little slower, to understand more about the stages.
 
 
 
-## Exercise 4 Running Kaldi with a toy corpus
+## Exercise 4 Deconstructing the demo 
 
-4.1. Now we have the data shared with a Kaldi container that has our pipeline tasks, we can build and run the ASR system.
+In this exercise, we will use the same data and the same container. Rather than using the demo task, we will use individual processing tasks. If you happen to have closed your container/terminal window, do step 3.1 again to create a new one.
+
+4.1. Now we have the data shared with a container that has our pipeline scripts and Kaldi toolkit, we can build and use an ASR system.
+
+The first task helps with preparing the data that we give it, into the formats that Kaldi expects. This stage
+ 
+- reads the annotations from the Elan files in our corpus, making a wordlist and a json data file
+- generates the lexicon from the wordlist and letter to sound map
+- moves the files that Kaldi needs into the places that Kaldi expects
 
 ```
     / # task _run-elan
 ```
 
-
-4.2. When this task has completed, you should see a 'Build task completed without errors' message. At this point, Kaldi has been set up with files in the right places for it to begin learning. Ready to run the train-test task to build the ASR models.
+4.2. When this task has completed, you should see a 'Build task completed without errors' message. At this point, Kaldi has been set up with files in the right places for it to begin learning, ready to run the train-test task to build the ASR models.
 
 ```
     / # task _train-test
 ```
 
+(For more gory details about what happens in this stage, please refer to Daan's slides.)
 
-4.3. After building the models, this task will score them using a test data set. When this has completed you will see a list of score values. Interpret these results! Lower % is better.
+4.3. After building the models, this task will **score** them using a test data set. When this has completed you will see a list of score values. Interpret these results! Lower % is better.
 
     %WER 83.33 [ 5 / 6, 1 ins, 2 del, 2 sub ]
 
-- ins = words inserted that were not in the original
-- del = words deleted from the original
-- sub = words that were incorrectly substituted for the original
+- **ins** = words inserted that were not in the original
+- **del** = words deleted from the original
+- **sub** = words that were incorrectly substituted for the original
 
 Here's an example, courtesy of Zara Maxwell-Smith.
 
@@ -353,7 +374,7 @@ The files are in this format:
 ```
 
 
-4.4.3. To get a time-aligned inference, clear out the files in the infer folder (leave the audio file) and run this task
+4.4.3. To get a time-aligned inference, clear out the files in the infer folder (leave the audio file) and run this task.
 
     / # task _transcribe-align
 
@@ -371,14 +392,13 @@ When this completes, an Elan file should be copied back to your infer folder. Yo
 
 ## Exercise 5 Using your own Elan data with the Kaldi container
 
+This exercise shows how to set up the initial folders with your own data. The commands are just like what we did in exercise 4. 
 
 5.1. Clean your data. [Read more about that here](cleaning-data).
-
 
 5.2. Set up your folders
 
 - On the Desktop, create a new folder, name it *elpis_workshop*. 
-> In Windows Home, if you're using Docker Toolbox version, you need to do this in Users/[Username]
 
 - Inside it, make three folders: named *config*, *data* and *output*.
 
@@ -391,21 +411,28 @@ When this completes, an Elan file should be copied back to your infer folder. Yo
 ```
 
 
-5.3. Add the config files
+5.3. Add the config files. You can reuse the the silence files, but you have to create the letter to sound file to suit your language data.
 
 - Copy the *optional_silence.txt* and *silence_phones.txt* files from the Abui toy corpus config folder into your *config* folder.
 - In your *config* folder we also need to create a text file which has a letter to sound map...
 
 
-5.4. Add your data. Put your audio and transcription files inside the *data* folder.
+
+5.4. Add your data. 
+
+Put your audio and transcription files inside the *data* folder. Elpis can handle Elan .eaf files, Transcriber .trs files and Praat .TextGrid files. 
+
+Please use 16bit 44.1kHz mono WAV files.
 
 
 5.5. Start up a new Docker container, sharing your data. 
 
+Mac
 ```
     $ docker run -it --rm -v ~/Desktop/elpis_workshop:/kaldi-helpers/working_dir/input coedl/kaldi-helpers:0.80
 ```
 
+Windows
 ```
     > docker run -it --rm -v C:\Users\%username%\Desktop\elpis_workshop:/kaldi-helpers/working_dir/input coedl/kaldi-helpers:0.80
 ```
@@ -415,11 +442,18 @@ When this completes, an Elan file should be copied back to your infer folder. Yo
 
 ```
     / # task _run-elan
+```
+
+Wait...
+
+```
     / # task _train-test
 ```
 
+Wait some more...
 
-5.7. Once the models have been trained, you can get a hypothesis for untranscribed audio. 
+
+5.7. Once the models have been trained, you can get a hypothesis for untranscribed audio.
 
 
 5.7.1. Prepare the files. Kaldi works best with short audio clips, utterances about 10 seconds long. We are planning to improve support for longer audio over summer - stay tuned! For now, please use a single audio file, max 10 seconds duration.

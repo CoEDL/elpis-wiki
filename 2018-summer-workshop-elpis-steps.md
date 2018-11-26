@@ -124,13 +124,12 @@ To work with our own data in a container, we share a folder containing our data 
 
 2.2. The next command extends what we have used so far, adding a new option `-v` with a value, being the path to the local data joined to a name by which we will be able to access the folder inside the container. This will create a new container based on the alpine image, and share our data directory with the container.
 
-Mac
+#### Mac/Linux
 ```
 $ docker run -it -v ~/Desktop/abui_toy_corpus:/docs-inside-docker alpine
 ```
 
-Windows
-
+#### Windows
 Replace `your_username` with your Windows username.
 ```
 > docker run -it -v "C:\Users\your_username\Desktop\abui_toy_corpus":/docs-inside-docker alpine
@@ -207,12 +206,12 @@ You'll also need to download the toy corpus and put the abui_toy_corpus folder o
 
 3.1. Use the following command to load the abui_toy_corpus directory into a new Docker container. We also introduce a new option `--rm` which cleans up when we exit the container.
 
-Mac
+#### Mac/Linux
 ```
 $ docker run -it --rm -v ~/Desktop/abui_toy_corpus:/kaldi-helpers/working_dir/input coedl/kaldi-helpers:0.80
 ```
 
-Windows
+#### Windows
 
 Replace `your_username` with your Windows username.
 ```
@@ -431,12 +430,12 @@ Please use 16bit 44.1kHz mono WAV files.
 
 5.5. Start up a new Docker container, sharing your data. 
 
-Mac
+#### Mac/Linux
 ```
     $ docker run -it --rm -v ~/Desktop/elpis_workshop:/kaldi-helpers/working_dir/input coedl/kaldi-helpers:0.80
 ```
 
-Windows
+#### Windows
 
 Replace `your_username` with your Windows username.
 ```

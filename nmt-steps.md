@@ -88,3 +88,19 @@ python -m nmt.nmt \
 ```
 cat /tmp/nmt_model/output_infer
 ```
+
+
+5.4 Exit
+
+```
+exit
+```
+
+### 6. Returning to previous work 
+
+Redo steps 1 and 3
+
+```
+cd ~
+docker run -it --rm -v $PWD:/tmp -w /tmp tensorflow/tensorflow bash
+```

@@ -1,12 +1,26 @@
 # Tensorflow NMT tutorial
 
 
-This is a summary of the commands in the [Tensorflow NMT tutorial](https://github.com/tensorflow/nmt#hands-on--lets-train-an-nmt-model)
+This is a summary of the commands in the [Tensorflow NMT tutorial](https://github.com/tensorflow/nmt#hands-on--lets-train-an-nmt-model). Read the tutorial for the details. 
+
+
+### 1. Get to your home directory 
+
+#### Mac/Linux
+
+```
+cd ~
+```
+
+#### Windows (Replace your_username with your Windows username) 
+
+```
+cd "C:\Users\your_username\
+```
 
 
 
-
-`cd ~`
+### 2. Download the tutorial code, and the data
 
 `git clone https://github.com/tensorflow/nmt/`
 
@@ -15,15 +29,14 @@ This is a summary of the commands in the [Tensorflow NMT tutorial](https://githu
 `nmt/scripts/download_iwslt15.sh nmt_data`
 
 
-
-Run a docker image to make a container
+### 3. Run a docker image to make a container
 
 ```
 docker run -it --rm -v $PWD:/tmp -w /tmp tensorflow/tensorflow bash
 ```
 
 
-Train (this is in the Docker container)
+### 4. Train
 
 ```
 python -m nmt.nmt     --src=vi --tgt=en     --vocab_prefix=/tmp/nmt_data/vocab      --train_prefix=/tmp/nmt_data/train     --dev_prefix=/tmp/nmt_data/tst2012      --test_prefix=/tmp/nmt_data/tst2013     --out_dir=/tmp/nmt_model     --num_train_steps=12000     --steps_per_stats=100     --num_layers=2     --num_units=128     --dropout=0.2     --metrics=bleu
@@ -35,9 +48,11 @@ This will take a while, and suck the life out of your battery if you are on a la
 :japanese_ogre:
 
 
+### 5. Infer
+
 Make an infer source file named `my_infer_file.vi` in the nmt directory, with a sentence in the source language.
 
-This should copy a line from nmt_data/tst2013.vi
+5.1. This should copy a line from nmt_data/tst2013.vi
 
 ``` 
 sed '1q;d' nmt_data/tst2013.vi >> my_infer_file.vi
@@ -58,7 +73,7 @@ nmt
 ```
 
 
-Do the inference
+5.2. Do the inference
 
 ```
 python -m nmt.nmt \
@@ -67,7 +82,8 @@ python -m nmt.nmt \
     --inference_output_file=/tmp/nmt_model/output_infer
 ```
 
-Look at the inference
+
+5.3. Look at the inference
 
 ```
 cat /tmp/nmt_model/output_infer

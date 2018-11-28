@@ -10,6 +10,7 @@ Please check that you have done these before the 2018 CoEDL Summer School Machin
 - Download a toy corpus
 - Also, please join the Slack channel. You should have received an email with a link to join. Get in touch if you haven't received the email b.foley@uq.edu.au
 
+If you want to use your own data with the Elpis tutorial, refer to the information in the [cleaning data page](cleaning-data) to prepare your speech and training transcript files. 
 
 
 ## Workshop guides

@@ -30,6 +30,11 @@ python -m nmt.nmt     --src=vi --tgt=en     --vocab_prefix=/tmp/nmt_data/vocab  
 ```
 
 
+This will take a while, and suck the life out of your battery if you are on a laptop. 
+
+:japanese_ogre:
+
+
 Make an infer source file named `my_infer_file.vi` in the nmt directory, with a sentence in the source language.
 
 ```

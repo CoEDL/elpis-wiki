@@ -420,7 +420,7 @@ This exercise shows how to set up the initial folders with your own data. The co
 
 5.4. Add your data. 
 
-Put your audio and transcription files inside the *data* folder. Elpis can handle Elan .eaf files, Transcriber .trs files and Praat .TextGrid files. 
+Put the audio and transcription files you have for training into the *data* folder. Elpis can handle Elan .eaf files, Transcriber .trs files and Praat .TextGrid files. 
 
 Please use 16bit 44.1kHz mono WAV files.
 
@@ -447,13 +447,15 @@ If you are using the abui-trs data, the training data was transcribed using a pr
 ```
 
 (or)
+
 ```
     / # task _run-trs
 ```
 
 
 
-Wait...
+Wait till that is done...
+
 
 ```
     / # task _train-test
@@ -467,6 +469,14 @@ Wait some more...
 
 5.7.1. Prepare the files. Kaldi works best with short audio clips, utterances about 10 seconds long. We are planning to improve support for longer audio over summer - stay tuned! For now, please use a single audio file, max 10 seconds duration.
 
+Audio specifications:
+
+- WAV file
+- 16bit
+- 44.1kHz
+- mono (single channel)
+
+Make a folder, named *infer*, in your input directory (next to the *config*, *data* and *output* folders). Put an untranscribed audio file in there.
 
 5.7.2. As before, run the `_transcribe` or `_transcribe-align` tasks. The helper files will be created, and after decoding, the results will be copied back into the infer folder. 
 

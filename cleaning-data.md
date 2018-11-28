@@ -7,7 +7,9 @@ Select a collection of data for which you have the most orthographically-transcr
 
 Choose a set of data from your corpus. For maximum success in the workshop, use orthographically-transcribed content from a single speaker, preferably with more than an hour of transcription. Select data from a common recording activity, e.g. short sentences, or stories. The scripts we are using are written to work with ELAN (.eaf), Praat (.TextGrid), or Transcriber (.trs) files. Let us know if you have other transcription forms, as we may be able to write an import script for your data.
 
-Duplicate your data set so that you don’t affect your data by preparing for this workshop, as some of these steps are destructive.
+Duplicate your data set so that you don’t affect your data by preparing for this workshop, as some of the workshop steps are destructive.
+
+For Elan data, the scripts will look for training transcripts on a tier name *Phrase*.
 
 ## Clean your transcriptions by looking through them and checking the following:
 

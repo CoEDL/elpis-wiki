@@ -16,5 +16,5 @@ Please check that you have done these before the 2018 CoEDL Summer School Machin
 
 - [Elpis workshop](2018-summer-workshop-elpis-steps)
 - Persephone workshop
-- NMT workshop
+- [NMT workshop](nmt-steps)
 

@@ -9,7 +9,10 @@ Choose a set of data from your corpus. For maximum success in the workshop, use 
 
 Duplicate your data set so that you don’t affect your data by preparing for this workshop, as some of the workshop steps are destructive.
 
-For Elan data, the scripts will look for training transcripts on a tier name *Phrase*.
+For Elan data, the scripts will look for training transcripts on a tier name *Phrase*. We will be changing soon to use the top-most tier.. stay tuned for more details.
+
+![](images/elan-phrase-tier.png)
+
 
 ## Clean your transcriptions by looking through them and checking the following:
 

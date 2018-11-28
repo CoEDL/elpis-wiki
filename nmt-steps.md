@@ -37,6 +37,14 @@ This will take a while, and suck the life out of your battery if you are on a la
 
 Make an infer source file named `my_infer_file.vi` in the nmt directory, with a sentence in the source language.
 
+This should copy a line from nmt_data/tst2013.vi
+
+``` 
+sed '1q;d' nmt_data/tst2013.vi >> my_infer_file.vi
+```
+
+Result
+
 ```
 nmt
 ├── CONTRIBUTING.md

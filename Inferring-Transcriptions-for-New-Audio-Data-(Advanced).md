@@ -9,7 +9,7 @@ You can put a new audio file in `working_dir/input/infer` and run:
 task transcribe
 ```
 
-**Note: this process currently only supports short audio files (generally a single utterance)**
+**Note: this process currently only supports short audio files (generally a single utterance or ~10s)**
 
 Which will produce a CTM (time aligned file).
 

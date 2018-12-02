@@ -15,7 +15,7 @@ cd ~
 #### Windows (Replace your_username with your Windows username) 
 
 ```
-cd "C:\Users\your_username\
+cd "C:\Users\your_username\"
 ```
 
 

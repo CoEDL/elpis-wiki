@@ -1,6 +1,7 @@
+### Optional Step: Add Additional Text Corpora or Word Lists
+
 _This functionality is included in ELPIS images ≥0.86_
 
-### Optional Step: Add Additional Text Corpora or Word Lists
 Do you have an additional word list (dictionary) or text corpora that you would like to include? This data will assist Kaldi in recognising words that don't appear in your transcribed training data and will increase the accuracy of its word-level n-gram prediction.
 
 #### Including additional words

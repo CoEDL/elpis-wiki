@@ -1,10 +1,28 @@
+### Optional Step: Add Additional Text Corpora or Words
+Do you have an additional word list (dictionary) or text corpora that you would like to include? This data will assist Kaldi in recognising words that don't appear in your transcribed training data and will increase the accuracy of its word-level n-gram prediction.
+
+#### Including additional words
+You can include additional words by including a list in plaintext in the file:
+
+`working_dir/input/config/additional_words.txt`
+
+#### Including additional text corpora
+You can include additional text corpora by placing plaintext (.txt) files in the following directory:
+
+`working_dir/input/config/text_corpora/`
+
+Any subdirectories included in this directory will also be searched for `.txt` files.
+
+
+# Process for Inferring Transcriptions for New Audio
+
 Once you've trained your model (e.g):
 ```sh
 task _run-elan
 task _train-test
 ```
 
-You can put a new audio file in `working_dir/input/infer` and run:
+You can put a new audio file (named `audio.wav`) in the directory `working_dir/input/infer` and run:
 ```sh
 task transcribe
 ```
@@ -18,4 +36,4 @@ or:
 task transcribe-align
 ```
 
-Which will produce a CTM, Praat (.TextGrid and ELAN) (.eaf) time-aligned files.
+Which will produce a CTM, Praat (.TextGrid) and ELAN (.eaf) time-aligned files.

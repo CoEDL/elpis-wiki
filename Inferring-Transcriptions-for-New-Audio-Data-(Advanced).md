@@ -1,4 +1,4 @@
-_This functionality is included in ELPIS images >0.86_
+_This functionality is included in ELPIS images ≥0.86_
 
 ### Optional Step: Add Additional Text Corpora or Word Lists
 Do you have an additional word list (dictionary) or text corpora that you would like to include? This data will assist Kaldi in recognising words that don't appear in your transcribed training data and will increase the accuracy of its word-level n-gram prediction.
@@ -36,6 +36,6 @@ or:
 task transcribe-align
 ```
 
-Which will produce a CTM, Praat (.TextGrid) and ELAN (.eaf) time-aligned files.
+Which will produce CTM, Praat (.TextGrid) and ELAN (.eaf) time-aligned files.
 
 **Disclaimer: this process currently only supports short audio files (generally a single utterance or ~10s). If you do try with longer files and it doesn't work out, please let us know what went wrong. We intend on increasing supported length and appreciate any and all feedback**

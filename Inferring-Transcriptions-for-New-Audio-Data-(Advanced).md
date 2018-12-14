@@ -11,7 +11,7 @@ You can include additional text corpora by placing plaintext (.txt) files in the
 
 `working_dir/input/config/text_corpora/`
 
-Any subdirectories included in this directory will also be searched for `.txt` files.
+Any subdirectories included in this directory will also be recursively searched for `.txt` files. The words in these text files that were not already included in the `additional_words.txt` file will be added to the wordlist.
 
 
 # Process for Inferring Transcriptions for New Audio

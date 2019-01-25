@@ -31,3 +31,5 @@ pip install -r requirements.txt _(this pip installs all the required dependencie
 export FLASK_ENV='development'
 
 FLASK_APP=elpis flask run
+
+**Now you're able to run elpis in your browser. Go to the url that is output in the terminal (Example 127.0.0.1:5000)**

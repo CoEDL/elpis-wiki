@@ -12,7 +12,7 @@ git submodule update --recursive --remote --init
 
 cd elpis-gui
 
-npm install _('npm i' can also be run instead)_ 
+npm install _(or 'npm i' if typing isn't your thing)_ 
 
 npm run build _(this builds the webpages that flask will run)_
 

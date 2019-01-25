@@ -2,6 +2,8 @@
 
 git clone https://github.com/CoEDL/elpis.git
 
+cd elpis
+
 git checkout development
 
 git submodule update --recursive --remote --init 

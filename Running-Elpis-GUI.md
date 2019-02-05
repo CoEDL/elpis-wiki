@@ -33,3 +33,25 @@ export FLASK_ENV='development'
 FLASK_APP=elpis flask run
 
 **Now you're able to run elpis in your browser. Go to the url that is output in the terminal in your browser (Example 127.0.0.1:5000)**
+
+
+---
+# Docker
+
+```
+docker run -it --rm -P -v ~/Desktop/abui_toy_corpus/:/kaldi-helpers/working_dir/input coedl/kaldi-helpers:0.87
+
+// build the gui (shouldn't need to do this soon)
+
+cd /elpis/elpis-gui
+npm install
+npm run build
+
+// build the server
+
+cd ..
+pip install -r requirements.txt
+
+export FLASK_ENV='development'
+FLASK_APP=elpis flask run --host=0.0.0.0
+```

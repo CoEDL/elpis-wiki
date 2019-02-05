@@ -39,24 +39,14 @@ FLASK_APP=elpis flask run
 # Docker
 
 ```
-docker run -it --rm -P coedl/kaldi-helpers:0.87
+docker run -it --rm -P -v ~/Desktop/abui_toy_corpus/:/kaldi-helpers/working_dir/input coedl/kaldi-helpers:0.87
 
-// build the gui (shouldn't need to do this soon)
+cd /elpis/ && pip3 install -r requirements.txt && export LC_ALL=C.UTF-8 && export LANG=C.UTF-8 && export FLASK_ENV='development' && FLASK_APP=elpis flask run
 
-cd /elpis/elpis-gui
-npm install
-npm run build
+// another terminal
+docker ps
+docker exec -it <container id> bash
 
-// build the server
+cd /elpis/elpis-gui/ && npm i && npm run watch
 
-cd ..
-apt-get install python3-venv
-python3 -m venv venv
-source venv/bin/activate
-pip install -r requirements.txt
-
-export FLASK_ENV='development'
-export LC_ALL=C.UTF-8
-export LANG=C.UTF-8
-FLASK_APP=elpis flask run --host=0.0.0.0
 ```

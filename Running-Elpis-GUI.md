@@ -39,7 +39,7 @@ FLASK_APP=elpis flask run
 # Docker
 
 ```
-docker run -it --rm -P -v ~/Desktop/abui_toy_corpus/:/kaldi-helpers/working_dir/input coedl/kaldi-helpers:0.87
+docker run -it --rm -P coedl/kaldi-helpers:0.87
 
 // build the gui (shouldn't need to do this soon)
 

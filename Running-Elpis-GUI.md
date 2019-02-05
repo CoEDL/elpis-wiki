@@ -56,5 +56,7 @@ source venv/bin/activate
 pip install -r requirements.txt
 
 export FLASK_ENV='development'
+export LC_ALL=C.UTF-8
+export LANG=C.UTF-8
 FLASK_APP=elpis flask run --host=0.0.0.0
 ```

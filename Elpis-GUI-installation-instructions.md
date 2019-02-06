@@ -17,17 +17,21 @@ Run the server.
 cd /elpis/ && pip3 install -r requirements.txt && export FLASK_ENV='development' && FLASK_APP=elpis flask run
 ```
 
-Open another terminal, get the container id from ps.
+Open another terminal window (Terminal > Shell > New window)
+
+Run this command to see some information about the docker container. We'll copy the ID from here in a moment.
 ```
 docker ps
 ```
 
-Get into the same container.
+Copy this command, and replace the <container id> with the real ID (might be easier to do this in a text file).
 ```
 docker exec -it <container id> bash
 ```
 
-Start the gui.
+That should connect to the same Docker container that the server is running in.
+
+Run this command to start the GUI.
 ```
 cd /elpis/elpis-gui/ && npm i && npm run watch
 ```

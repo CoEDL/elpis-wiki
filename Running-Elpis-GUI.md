@@ -36,10 +36,12 @@ FLASK_APP=elpis flask run
 
 
 ---
-# Docker
+# Docker version
+
+Download [Docker](https://www.docker.com/products/docker-desktop). Don't even bother with Docker Toolbox.
 
 ```
-docker run -it --rm -P -v ~/Desktop/abui_toy_corpus/:/kaldi-helpers/working_dir/input coedl/kaldi-helpers:0.87
+docker run -it --rm -p 5000:5000 coedl/kaldi-helpers:0.91
 
 cd /elpis/ && pip3 install -r requirements.txt && export LC_ALL=C.UTF-8 && export LANG=C.UTF-8 && export FLASK_ENV='development' && FLASK_APP=elpis flask run
 

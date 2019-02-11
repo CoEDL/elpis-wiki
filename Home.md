@@ -1,5 +1,6 @@
 # Welcome to the Elpis wiki!
 
+The new GUI interface is currently in development. Information on how to install and use it will be here soon.
 
 ## Workshop guides
 

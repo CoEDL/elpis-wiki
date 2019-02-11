@@ -28,7 +28,7 @@ python3 -m venv venv _(-m is telling python3 it will be using the inbuilt tools,
 
 source venv/bin/activate _(this loads the environment, running 'deactivate' will quit the environment)_ 
 
-pip install -r requirements.txt _(this pip installs all the required dependencies that are required to make elpis run)_
+pip3 install -r requirements.txt _(this pip installs all the required dependencies that are required to make elpis run)_
 
 ## Step 4 - Running Elpis in venv
 

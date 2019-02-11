@@ -1,5 +1,16 @@
 # 2018 CoEDL Summer School Elpis workshop preparation
 
+
+Please check that you have done these before the 2018 CoEDL Summer School Machine Learning workshops. 
+
+- Install Docker
+- Download the coedl/kaldi-helpers docker image
+- Download a toy corpus
+
+If you want to use your own data with the Elpis tutorial, refer to the information in the [Data preparation page](data-preparation) to prepare your speech and training transcript files. 
+
+
+
 ## Requirements
 
 * To install Docker, you will need a computer with at least:

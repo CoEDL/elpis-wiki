@@ -1,3 +1,9 @@
+**Not for general consumption yet. Please stay tuned...**
+
+***
+
+
+
 # Installing the GUI
 
 The GUI is run inside a Docker, a virtual computer running on **your** computer. To use this, you first need to install Docker on your computer. 

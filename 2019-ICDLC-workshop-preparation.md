@@ -1,6 +1,8 @@
 # 2019 ICDLC workshop preparation
 
-## Installation
+### Abui toy corpus
+
+- Download: [http://elpis.net.au/abui.zip](http://elpis.net.au/abui.zip)
 
 ### Docker
 

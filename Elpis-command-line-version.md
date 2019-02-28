@@ -12,9 +12,9 @@ First, check the *Questions* document (refer to Slack for the link). As we find 
 Prepare for the workshop by
 
 - Getting online
-- [Installing Docker](2018-summer-workshop-preparation#install-docker-on-your-computer)
-- [Downloading the coedl/kaldi-helpers docker image](2018-summer-workshop-preparation#download-the-workshop-code)
-- [Downloading a toy corpus](2018-summer-workshop-preparation#download-some-toy-data)
+- Installing Docker: add more info
+- Downloading the coedl/kaldi-helpers docker image
+- Downloading a toy corpus
 
 
 Contents of this document

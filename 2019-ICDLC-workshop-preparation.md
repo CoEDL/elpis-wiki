@@ -2,9 +2,13 @@
 
 ### Abui toy corpus
 
+We'll use this toy (small) corpus in the workshop. It's a tiny amount of data, making for quick download, short training times while we get to know the system, and guaranteed terrible results.
+
 - Download: [http://elpis.net.au/abui.zip](http://elpis.net.au/abui.zip)
 
 ### Docker
+
+Docker is a virtual machine that software (such as Elpis) can run in. It standardises the operating environment of Elpis across the many different computers that language workers use. Download and install the version of Docker that matches your computer.
 
 - **macOS**: Download and install [Docker Desktop for Mac](https://hub.docker.com/editions/community/docker-ce-desktop-mac#installation)
 - **Windows**: Download and install [Docker Desktop for Windows](https://hub.docker.com/editions/community/docker-ce-desktop-windows#docker-desktop-for-windows)

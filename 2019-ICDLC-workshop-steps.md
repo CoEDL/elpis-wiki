@@ -34,6 +34,9 @@ If you already have Docker installed and you want to run Elpis on your own compu
 docker run --rm -p 5000:5000/tcp coedl/elpis:icldc
 ```
 
+When Elpis starts it looks like this...
+> Soon to have much more welcoming videos and information on it!
+
 ![Welcome](icldc/10-welcome.png)
 
 

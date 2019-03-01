@@ -16,11 +16,11 @@ Then, using these models to get a **new transcription** on un-transcribed data.
 
 Models are descriptions of the language content that the system can use to interpret audio that it hasn't heard before.
 
-**Fun facts**
+> **Fun facts**
 
-This is “machine learning” technology, not “artificial intelligence”. The system doesn’t ever “understand” or know your content in the sense of understanding the meaning what you give it.
+> This is “machine learning” technology, not “artificial intelligence”. The system doesn’t ever “understand” or know your content in the sense of understanding the meaning what you give it.
 
-If you run the Docker version of Elpis, the processing all happens on your local computer, no data is uploaded to cloud servers. It is safe to use where your ethics or permissions prevent sharing or uploading your data. For the workshop, to save time installing Elpis, we have prepared some "cloud servers" with Elpis running. Using one of these is easier to get started, but does require that your data is uploaded to the internet. 
+> If you run the Docker version of Elpis, the processing all happens on your local computer, no data is uploaded to cloud servers. It is safe to use where your ethics or permissions prevent sharing or uploading your data. For the workshop, to save time installing Elpis, we have prepared some "cloud servers" with Elpis running. Using one of these is easier to get started, but does require that your data is uploaded to the internet. 
 
 ---
 
@@ -44,6 +44,7 @@ When Elpis starts it looks like this...
 
 ![Welcome](icldc/10-welcome.png)
 
+---
 
 ## Interface tour
 Click through to the *New Data Bundle* page.
@@ -146,25 +147,28 @@ n n
 
 Now your training data has been uploaded and the lexicon has been built, you are ready to start the training process. 
 
-On the **Settings** step you can set the n-gram value. A 1-gram (unigram) value will train the model on each word. A 3-gram (trigram) value with train the model by words with their neighbours. 
+On the **Settings** step, you can set the n-gram value. A unigram (1) value will train the model on each word. A trigram (3) value with train the model by words with their neighbours. 
 
 ![Settings](icldc/80-settings.png)
 
-Got to the **Training** step to kick off the training process. Press Start training to begin. At the moment we don’t have any indication of how the training is progressing.. we are planning on showing this in two ways - one friendly way of the sub-steps in the training being highlighted as it happens, and also showing the output from the Kaldi engine. 
+Got to the **Training** step to kick off the training process. Press Start training to begin. 
 
 ![Ready](icldc/90-training.png)
-![Training](icldc/100-training.png)
-![Trained](icldc/110-training.png)
 
-When training is done, go to the Results page to see the stats for this model. 
+At the moment we don’t have any indication of how the training is progressing.. we are planning on showing this in two ways - one friendly way of the sub-steps in the training being highlighted as it happens, and also showing the output from the Kaldi engine. 
+
+![Training](icldc/100-training.png)
+
+When it has finished, we should see **trained** in the middle of the page.
+
+![Trained](icldc/110-training.png)
 
 ---
 
 ## Results
 
-The **Results** step shows values which we can learn to read to understand what happened in the training process. These numbers are scored by comparing the words in one of the original transcriptions against the machine's version.
 
-![Results](icldc/120-results.png)
+When training is done, go to the Results page to see the stats for this model. These results tell us how the training went, and helps us to understand what happened in the training process. These numbers are **scored** by comparing the words in one of the original transcriptions against the machine's version.
 
 The results are:
 
@@ -174,19 +178,21 @@ The results are:
 > DEL - words that were deleted (missed)
 > SUB - words that have been substituted (mistaken)
 
+![Results](icldc/120-results.png)
+
 ----
 
 ## Making a new transcription
 
-Now the model has been trained, on the **New Transcriptions** step we can **Choose a file**.
+Now the model has been trained, on the **New Transcriptions** step, we can **Choose a file**.
 
 ![New transcription](icldc/130-transcribe.png)
 
 The transcribing begins when you upload it.  The process can take time, depending on how long your audio is. 
 
-> Short audio only for now!
+> We are working on being able to handle long audio better. For now, just use a single utterance. Stay tuned for updates on this feature.
 
-Go top the Results page. When transcribing is complete and the Elan file has been generated, the button to Download an Elan file will show. Save this into the folder that you got your new audio from.
+Go to the transcription Results page. When transcribing is complete and the Elan file has been generated, the button to **Download an Elan file** will show. Save this into the same folder that the new audio file came from.
 
 ![Download](icldc/140-download.png)
 

@@ -5,13 +5,13 @@ To prepare for the workshop, you will need to be on a good internet connection t
 
 ### Abui toy corpus
 
-We'll use this toy (small) corpus in the workshop. It's a tiny amount of data, making for quick download, short training times while we get to know the system, and guaranteed terrible results.
+We'll use this toy (meaning small) corpus in the workshop. It's a tiny amount of data, quick to download. Because it is very small our training times will also be quick, which is handy while we get to know the system, and is guaranteed to give results which are "easy to improve upon".
 
 - Download (3MB): [http://elpis.net.au/abui.zip](http://elpis.net.au/abui.zip)
 
 ### Docker
 
-Docker is a virtual machine that software (such as Elpis) can run in. It standardises the operating environment of Elpis across the many different computers that language workers use. Download and install the version of Docker that matches your computer (approx 500MB). You will need to sign in to the Docker website. See the workshop slides for a login and password.
+Docker is a virtual machine that software such as Elpis can run in. It standardises the operating environment of Elpis across the many different computers that language workers use. Download and install the version of Docker that matches your computer (approx 500MB). You will need to sign in to the Docker website. See the workshop slides for a login and password.
 
 - **macOS**: Download and install [Docker Desktop for Mac](https://hub.docker.com/editions/community/docker-ce-desktop-mac#installation)
 - **Windows**: Download and install [Docker Desktop for Windows](https://hub.docker.com/editions/community/docker-ce-desktop-windows#docker-desktop-for-windows)

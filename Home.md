@@ -1,9 +1,11 @@
-# Welcome to the Elpis wiki!
+# Welcome to ICLDC 2019. 
 
-The new GUI interface is currently in development. Information on how to install and use it on your own computer will be here soon.
+## Transcription Acceleration for Language Documentation with ELPIS workshop
 
-## Workshop guides
+Ben Foley, Nay San & Daan van Esch
+ICLDC 6, University of Hawaiʻi at Mānoa
 
-- [2019 ICDLC workshop steps](2019-ICDLC-workshop-steps)
+
+- [Please click here for the workshop steps](2019-ICDLC-workshop-steps)
 
 

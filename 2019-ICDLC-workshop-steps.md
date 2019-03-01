@@ -11,7 +11,7 @@ Making **pronunciation rules**
 
 **Training** acoustic, pronunciation and language models
 
-Then, using these models to get a first-pass transcription on un-transcribed data. 
+Then, using these models to get a **new transcription** on un-transcribed data. 
 
 This is “machine learning” technology, not “artificial intelligence”. The system doesn’t ever “understand” or know your content in the sense of understanding the meaning.
 

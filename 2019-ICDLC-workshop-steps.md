@@ -1,9 +1,9 @@
 Workshop steps
 
 ## Overview 
-The speech recognition process broadly involves steps of:
+The speech recognition (also called Speech to Text) process broadly involves steps of:
 
-**Organising data** that will be used to train the system (training input)
+**Organising data** that will be used to train the system
 
 **Cleaning data** (normalisation)
 

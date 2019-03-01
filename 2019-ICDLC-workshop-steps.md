@@ -20,20 +20,22 @@ Models are descriptions of the language content that the system can use to inter
 
 ## Setup
 
-### Getting some training files
+### 1) Get some training files
 
 Start with downloading some "toy data" to use during the workshop. [Download the Abui toy corpus here.](https://elpis.net.au/abui.zip)
 
-### Running Elpis
+### 2) Run Elpis
 
-If you don't have Docker, or that means nothing to you, we have set up some temporary servers online. To use one of these machines, [open this Google spreadsheet](https://goo.gl/uwSCSt). Find a row that doesn't have someone's name in it yet, and claim a machine by putting your name in there. Copy the IP Address, open a new web browser (Chrome or Firefox), paste the address into the location bar and press Enter/Return to start Elpis. 
+2a) If you don't have Docker, or that means nothing to you, we have set up some temporary servers online. To use one of these machines, [open this Google spreadsheet](https://goo.gl/uwSCSt). Find a row that doesn't have someone's name in it yet, and claim a machine by putting your name in there. Copy the IP Address, open a new web browser (Chrome or Firefox), paste the address into the location bar and press Enter/Return to start Elpis. 
 
-If you already have Docker installed and you want to run Elpis on your own computer, download and run the Elpis Docker image by running this command in a terminal, when it is running open `http://0.0.0.0:5000` in a browser.
+OR
+
+2b) If you already have Docker installed and you want to run Elpis on your own computer, download and run the Elpis Docker image by running this command in a terminal, when it is running open `http://0.0.0.0:5000` in a browser.
 ```
 docker run --rm -p 5000:5000/tcp coedl/elpis:icldc
 ```
 
-When Elpis starts it looks like this. (We'll make it look a bit more welcoming soon!)
+3) When Elpis starts it looks like this. (We'll make it look a bit more welcoming soon!)
 
 ![Welcome](icldc/10-welcome.png)
 

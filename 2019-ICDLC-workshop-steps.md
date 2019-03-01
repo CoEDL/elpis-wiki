@@ -27,12 +27,12 @@ Start with downloading some "toy data" to use during the workshop. [Download the
 
 ### Running Elpis
 
-If you already have Docker installed, download and run the Elpis image by running this command in a terminal, when it is running open `http://0.0.0.0:5000` in a browser.
+If you don't have Docker, or that means nothing to you, we have set up some temporary servers online. To use one of these machines, [open this Google spreadsheet](https://goo.gl/uwSCSt). Find a row that doesn't have someone's name in it yet, and claim a machine by putting your name in there. Copy the IP Address, open a new web browser (Chrome or Firefox), paste the address into the location bar and press Enter/Return to start Elpis. 
+
+If you already have Docker installed and you want to run Elpis on your own computer, download and run the Elpis Docker image by running this command in a terminal, when it is running open `http://0.0.0.0:5000` in a browser.
 ```
 docker run --rm -p 5000:5000/tcp coedl/elpis:icldc
 ```
-
-If you don't have Docker, or that means nothing to you, we have set up some temporary servers online. To use one of these machines, [open this Google spreadsheet](https://goo.gl/uwSCSt). Find a row that doesn't have someone's name in it yet, and claim a machine by putting your name in there. Copy the IP Address, open a new web browser (Chrome or Firefox), paste the address into the location bar and press Enter/Return to start Elpis. 
 
 ![Welcome](icldc/10-welcome.png)
 

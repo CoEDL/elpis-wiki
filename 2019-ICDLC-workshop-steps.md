@@ -14,10 +14,6 @@ Then, using these models to get a **new transcription** on un-transcribed data.
 
 Models are descriptions of the language content that the system can use to interpret audio that it hasn't heard before.
 
-> **Fun facts**
-
-> This is “machine learning” technology, not “artificial intelligence”. The system doesn’t ever “understand” or know your content in the sense of understanding the meaning what you give it.
-
 > If you run the Docker version of Elpis, the processing all happens on your local computer, no data is uploaded to cloud servers. It is safe to use where your ethics or permissions prevent sharing or uploading your data. For the workshop, to save time installing Elpis, we have prepared some "cloud servers" with Elpis running. Using one of these is easier to get started, but does require that your data is uploaded to the internet. 
 
 ---
@@ -128,11 +124,13 @@ This will build a pronunciation lexicon (also known as a pronunciation dictionar
 
 ![Lexicon](icldc/70-lexicon.png)
 
-Check words that have been transcribed with consecutive matching characters. Do they represent one sound or two? If only one, add a line to your  `letter-to-sound.txt` file, mapping the consecutive characters to a single symbol and rebuild the lexicon. 
+The `!SIL` and `<unk>` lines are used to handle silence and unknown words.
+
+Check words that have been transcribed with consecutive matching characters. Do they represent one sound or two? If only one, add a line to your `letter-to-sound.txt` file, mapping the consecutive characters to a single symbol and rebuild the lexicon. 
 
 For example, if `wu̱nne̱` is mapped to `wu̱nne̱ w ɨ n n ɛ` in the lexicon, then add `nn n` to `letter-to-sound.txt`, upload it again and rebuild the lexicon.  The results should be collapsed lexicon entry `wu̱nne̱ w ɨ n ɛ`.
 
-If your language has diphthongs, put these earlier in the l2s, above single characters. For example,
+If your language has digraphs, put these earlier in the l2s, above single characters. For example,
 ```
 ng ŋ
 n n
@@ -158,7 +156,7 @@ At the moment we don’t have any indication of how the training is progressing.
 
 When it has finished, we should see **trained** in the middle of the page.
 
-![Trained](icldc/110-training.png)
+![Trained](icldc/110-trained.png)
 
 ---
 

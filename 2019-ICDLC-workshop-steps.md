@@ -13,6 +13,11 @@ Making **pronunciation rules**
 
 Then, using these models to get a **new transcription** on un-transcribed data. 
 
+
+Models are descriptions of the language content that the system can use to interpret audio that it hasn't heard before.
+
+**Fun facts**
+
 This is “machine learning” technology, not “artificial intelligence”. The system doesn’t ever “understand” or know your content in the sense of understanding the meaning what you give it.
 
 If you run the Docker version of Elpis, the processing all happens on your local computer, no data is uploaded to cloud servers. It is safe to use where your ethics or permissions prevent sharing or uploading your data. For the workshop, to save time installing Elpis, we have prepared some "cloud servers" with Elpis running. Using one of these is easier to get started, but does require that your data is uploaded to the internet. 

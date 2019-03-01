@@ -135,30 +135,52 @@ Now your training data has been uploaded and the lexicon has been built, you are
 
 On the **Settings** step you can set the n-gram value. A 1-gram (unigram) value will train the model on each word. A 3-gram (trigram) value with train the model by words with their neighbours. 
 
+![Settings](icldc/80-settings.png)
+
 Got to the **Training** step to kick off the training process. Press Start training to begin. At the moment we don’t have any indication of how the training is progressing.. we are planning on showing this in two ways - one friendly way of the sub-steps in the training being highlighted as it happens, and also showing the output from the Kaldi engine. 
+
+![Ready](icldc/90-training.png)
+![Training](icldc/100-training.png)
+![Trained](icldc/110-training.png)
 
 When training is done, go to the Results page to see the stats for this model. 
 
 ---
 
-The **Results** step shows values which we can learn to read to understand what happened in the training process. 
+## Results
 
-The results are 
-WER - Word Error Rate
-INS - words that have been inserted (added)
-DEL - words that were deleted (missed)
-SUB - words that have been substituted (mistaken)
+The **Results** step shows values which we can learn to read to understand what happened in the training process. These numbers are scored by comparing the words in one of the original transcriptions against the machine's version.
+
+![Results](icldc/120-results.png)
+
+The results are:
+
+> WER - Word Error Rate
+> a word count
+> INS - words that have been inserted (added)
+> DEL - words that were deleted (missed)
+> SUB - words that have been substituted (mistaken)
 
 ----
 
+## Making a new transcription
+
 Now the model has been trained, on the **New Transcriptions** step we can **Choose a file**.
+
+![New transcription](icldc/130-transcribe.png)
 
 The transcribing begins when you upload it.  The process can take time, depending on how long your audio is. 
 
-> Short audio only for now
+> Short audio only for now!
 
-Go top the Results page. When transcribing is complete, the button to Download an Elan file will show. Save this into the folder that you got your fresh audio from. 
+Go top the Results page. When transcribing is complete and the Elan file has been generated, the button to Download an Elan file will show. Save this into the folder that you got your new audio from.
 
-> If you are using your own audio, rename the audio to `audio.wav` and 
+![Download](icldc/140-download.png)
+
+> If you are using your own audio, rename the audio to `audio.wav`.
+
 
 Listen in Elan. 
+
+![Elan](icldc/150-elan.png)
+

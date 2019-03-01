@@ -29,8 +29,7 @@ If you do have Docker installed, download and run the Elpis image by running thi
 docker run --rm -p 5000:5000/tcp coedl/elpis:icldc
 ```
 
-
-[[imgages/icldc/10-welcome.png|alt=octocat]]
+![Welcome](images/icldc/10-welcome.png)
 
 
 ## Interface tour

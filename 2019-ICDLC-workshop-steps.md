@@ -15,19 +15,24 @@ Then, using these models to get a **new transcription** on un-transcribed data.
 
 This is “machine learning” technology, not “artificial intelligence”. The system doesn’t ever “understand” or know your content in the sense of understanding the meaning what you give it.
 
-If you run the Docker version of Elpis, the processing all happens on your local computer, no data is uploaded to cloud servers. It is safe to use where your ethics or permissions prevent sharing or uploading your data. 
+If you run the Docker version of Elpis, the processing all happens on your local computer, no data is uploaded to cloud servers. It is safe to use where your ethics or permissions prevent sharing or uploading your data. For the workshop, to save time installing Elpis, we have prepared some "cloud servers" with Elpis running. Using one of these is easier to get started, but does require that your data is uploaded to the internet. 
 
 ---
 
 ## Setup
 
+### Getting some training files
 
-If you don't have Docker, or that means nothing to you, we have set up some temporary servers online. *Note that using one of these will send the language data to a server.* To use one of these machines, [open this Google spreadsheet], find a row that doesn't have someone's name in it yet, and claim a machine by putting your name in there. Copy the IP Address, open a new web browser (Chrome or Firefox), paste the address into the location bar and press Enter/Return to start Elpis. 
+Start with downloading some "toy data" to use during the workshop. [Download the Abui toy corpus here.](https://elpis.net.au/abui.zip)
 
-If you do have Docker installed, download and run the Elpis image by running this command in a terminal, when it is running open `http://0.0.0.0:5000` in a browser.
+### Running Elpis
+
+If you already have Docker installed, download and run the Elpis image by running this command in a terminal, when it is running open `http://0.0.0.0:5000` in a browser.
 ```
 docker run --rm -p 5000:5000/tcp coedl/elpis:icldc
 ```
+
+If you don't have Docker, or that means nothing to you, we have set up some temporary servers online. To use one of these machines, [open this Google spreadsheet](https://goo.gl/uwSCSt). Find a row that doesn't have someone's name in it yet, and claim a machine by putting your name in there. Copy the IP Address, open a new web browser (Chrome or Firefox), paste the address into the location bar and press Enter/Return to start Elpis. 
 
 ![Welcome](icldc/10-welcome.png)
 

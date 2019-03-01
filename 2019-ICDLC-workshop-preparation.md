@@ -36,8 +36,8 @@ Once Docker is installed, start the program if it hasn't automatically started.
 
 The Elpis software, including Kaldi ASR toolkit, is bundled in a *Docker image*. Think of this like a zip file, which we will download and run. We will use a *command line* program to download the image. We'll cover Docker images and containers in more detail in the workshop. For now, open a *command line* program, copy the following *command* and paste it into the command line. 
 
+- **macOS**: use the Terminal app in your Applications > Utilities folder. Press `Command-Space` to open Spotlight Search and type `terminal`.
 - **Windows**: use the Command Prompt program. Open it by typing `command prompt` in the Start Menu's search box.
-- **MacOS**: use the Terminal app in your Applications > Utilities folder. Press `Command-Space` to open Spotlight Search and type `terminal`.
 
 With the terminal running, paste the following text and press return.
 

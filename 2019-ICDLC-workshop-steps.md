@@ -3,27 +3,38 @@ Workshop steps
 ## Overview 
 The speech recognition process broadly involves steps of:
 
-Organising data that will be used to train the system (training input)
+**Organising data** that will be used to train the system (training input)
 
-Cleaning data (normalisation)
+**Cleaning data** (normalisation)
 
-Developing pronunciation rules
+Making **pronunciation rules**
 
-Training acoustic, pronunciation and language models
+**Training** acoustic, pronunciation and language models
 
 Then, using these models to get a first-pass transcription on un-transcribed data. 
 
 This is “machine learning” technology, not “artificial intelligence”. The system doesn’t ever “understand” or know your content in the sense of understanding the meaning.
 
-If you run the Docker version of Elpis, the processing all happens on your local computer, no data is uploaded to cloud servers. It is safe to use where  your ethics or permissions prevent sharing or uploading your data. 
+If you run the Docker version of Elpis, the processing all happens on your local computer, no data is uploaded to cloud servers. It is safe to use where your ethics or permissions prevent sharing or uploading your data. 
 
 ---
 
 ## Setup
-Follow the workshop steps to get some data, download, install and run Docker, and download and run the Elpis image.
+
+
+If you don't have Docker, or that means nothing to you, we have set up some temporary servers online. *Note that using one of these will send the language data to a server.* To use one of these machines, [open this Google spreadsheet], find a row that doesn't have someone's name in it yet, and claim a machine by putting your name in there. Copy the IP Address, open a new web browser (Chrome or Firefox), paste the address into the location bar and press Enter/Return to start Elpis. 
+
+If you do have Docker installed, download and run the Elpis image by running this command in a terminal, when it is running open `http://0.0.0.0:5000` in a browser.
+```
+docker run --rm -p 5000:5000/tcp coedl/elpis:icldc
+```
+
+
+[[imgages/icldc/10-welcome.png|alt=octocat]]
+
 
 ## Interface tour
-With the image running, take a tour of the interface. 
+Click through to the *Create New Bundle* page.
 There are three main steps, with sub-steps in each. 
 
 1. Data Bundles

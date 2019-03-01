@@ -1,6 +1,6 @@
 # 2019 ICDLC workshop preparation
 
-To prepare for the workshop, you will need to be on a good internet connection to download the software. We will download one small file (3MB) and two large files (500MB and 2GB).
+To prepare for the workshop, you will need to be on a good internet connection to download the data and software. We will download one small file (3MB) and two large files (500MB and 2GB).
 
 
 ### Abui toy corpus

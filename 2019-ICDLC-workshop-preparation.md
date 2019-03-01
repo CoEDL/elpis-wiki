@@ -40,7 +40,7 @@ Open a *terminal* program:
 - **macOS**: use the Terminal app in your Applications > Utilities folder. Press `Command-Space` to open Spotlight Search and type `terminal`.
 - **Windows**: use the Command Prompt program. Open it by typing `command prompt` in the Start Menu's search box.
 
-Copy the following text, paste it into the terminal and press return:
+Copy the following text, paste it into the terminal and press *Enter*/*Return*:
 ```
 docker run --rm -p 5000:5000/tcp coedl/elpis:0.91.8
 ```

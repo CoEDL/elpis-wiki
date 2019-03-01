@@ -32,7 +32,7 @@ There are three main steps, with sub-steps in each.
 
 **Data bundles** is where we collect and clean the audio and text which we will train the models with. 
 
-**Models** here, we connect the data with “letter to sound” rules which Elpis will use to build a pronunciation dictionary, and then train the models. 
+**Models** is where “letter to sound” rules are applied to the data files to build a pronunciation dictionary, and then the acoustic and language models are trained. 
 
 **New transcriptions** is the place we go to use an existing model to obtain a first-pass transcription on new audio. 
 
@@ -61,8 +61,9 @@ Clean your transcriptions by looking through them and checking the following:
 * Replace non-lexical number forms, shorthand forms and abbreviations with full lexical forms. For example, replace ‘9’ with ‘nine’.
 - For more cleaning tips, see the [Data preparation](https://github.com/CoEDL/elpis/wiki/Data-preparation) wiki page.
 
+**When you are happy with your data,  make a New Data Bundle and then Add data.**
 
-**When you are happy with your data, upload it.**
+Check how the text has been cleaned on the **Data preparation** page. 
 
 ---
 
@@ -78,8 +79,44 @@ ng ŋ
 n n
 ```
 
-Listen to the audio, are words that have been transcribed with consecutive matching characters representing one phoneme or two? If only one, add a line to your  `letter-to-sound.txt` file, mapping the consecutive characters to a single symbol and rebuild the lexicon. 
+**After preparing your letter-to-sound file, make a New Model then  upload Letter to sound.**
+
+This will build a pronunciation lexicon (also known as a pronunciation dictionary). Look at it on the **Lexicon** step.
+
+Check words that have been transcribed with consecutive matching characters. Do they represent one sound or two? If only one, add a line to your  `letter-to-sound.txt` file, mapping the consecutive characters to a single symbol and rebuild the lexicon. 
 
 For example, if `wu̱nne̱` is mapped to `wu̱nne̱ w ɨ n n ɛ` in the lexicon, then add `nn n` to `letter-to-sound.txt`, upload it again and rebuild the lexicon.  The results should be collapsed lexicon entry `wu̱nne̱ w ɨ n ɛ`.
 
+---
 
+Now your training data has been uploaded and the lexicon has been built, you are ready to start the training process. 
+
+On the **Settings** step you can set the n-gram value. A 1-gram (unigram) value will train the model on each word. A 3-gram (trigram) value with train the model by words with their neighbours. 
+
+Got to the **Training** step to kick off the training process. Press Start training to begin. At the moment we don’t have any indication of how the training is progressing.. we are planning on showing this in two ways - one friendly way of the sub-steps in the training being highlighted as it happens, and also showing the output from the Kaldi engine. 
+
+When training is done, go to the Results page to see the stats for this model. 
+
+---
+
+The **Results** step shows values which we can learn to read to understand what happened in the training process. 
+
+The results are 
+WER - Word Error Rate
+INS - words that have been inserted (added)
+DEL - words that were deleted (missed)
+SUB - words that have been substituted (mistaken)
+
+----
+
+Now the model has been trained, on the **New Transcriptions** step we can **Choose a file**.
+
+The transcribing begins when you upload it.  The process can take time, depending on how long your audio is. 
+
+> Short audio only for now
+
+Go top the Results page. When transcribing is complete, the button to Download an Elan file will show. Save this into the folder that you got your fresh audio from. 
+
+> If you are using your own audio, rename the audio to `audio.wav` and 
+
+Listen in Elan. 

@@ -41,7 +41,7 @@ When Elpis starts it looks like this...
 
 
 ## Interface tour
-Click through to the *Create New Bundle* page.
+Click through to the *New Data Bundle* page.
 
 ![New data](icldc/20-new-data.png)
 

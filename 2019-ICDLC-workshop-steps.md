@@ -30,12 +30,10 @@ Start with downloading some "toy data" to use during the workshop. [Download the
 
 OR
 
-2b) If you already have Docker installed and you want to run Elpis on your own computer, download and run the Elpis Docker image by running this command in a terminal, when it is running open `http://0.0.0.0:5000` in a browser.
-```
-docker run --rm -p 5000:5000/tcp coedl/elpis:icldc
-```
+2b) If you already have Docker installed and you want to run Elpis on your own computer, download and run the Elpis Docker image by running this command in a terminal, when it is running open `http://0.0.0.0:5000` in a browser. `docker run --rm -p 5000:5000/tcp coedl/elpis:icldc`
 
-3) When Elpis starts it looks like this. (We'll make it look a bit more welcoming soon!)
+### 3) When Elpis starts it looks like this. 
+We'll make it look a bit more welcoming soon!
 
 ![Welcome](icldc/10-welcome.png)
 
@@ -169,11 +167,11 @@ When training is done, go to the Results page to see the stats for this model. T
 
 The results are:
 
-> WER - Word Error Rate
-> a word count
-> INS - words that have been inserted (added)
-> DEL - words that were deleted (missed)
-> SUB - words that have been substituted (mistaken)
+- WER - Word Error Rate
+- a word count
+- INS - words that have been inserted (added)
+- DEL - words that were deleted (missed)
+- SUB - words that have been substituted (mistaken)
 
 ![Results](icldc/120-results.png)
 

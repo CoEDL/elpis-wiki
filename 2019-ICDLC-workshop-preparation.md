@@ -11,7 +11,7 @@ We'll use this toy (small) corpus in the workshop. It's a tiny amount of data, m
 
 ### Docker
 
-Docker is a virtual machine that software (such as Elpis) can run in. It standardises the operating environment of Elpis across the many different computers that language workers use. Download and install the version of Docker that matches your computer (approx 500MB).
+Docker is a virtual machine that software (such as Elpis) can run in. It standardises the operating environment of Elpis across the many different computers that language workers use. Download and install the version of Docker that matches your computer (approx 500MB). You will need to sign in to the Docker website. See the workshop slides for a login and password.
 
 - **macOS**: Download and install [Docker Desktop for Mac](https://hub.docker.com/editions/community/docker-ce-desktop-mac#installation)
 - **Windows**: Download and install [Docker Desktop for Windows](https://hub.docker.com/editions/community/docker-ce-desktop-windows#docker-desktop-for-windows)
@@ -27,6 +27,7 @@ Docker is a virtual machine that software (such as Elpis) can run in. It standar
 
 	b) Windows 10 Pro, Enterprise or Education 64 bit (note that Docker installs best on non-home versions of Windows)
 
+You may be prompted to authenticate the installer with your computer's password.
 
 Once Docker is installed, start the program if it hasn't automatically started.
 

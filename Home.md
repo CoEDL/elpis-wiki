@@ -6,6 +6,6 @@ Ben Foley, Nay San & Daan van Esch
 ICLDC 6, University of Hawaiʻi at Mānoa
 
 
-- [Please click here for the workshop steps](2019-ICDLC-workshop-steps)
+- [Please click here for the workshop steps](2019-ICLDC-Workshop-Steps)
 
 

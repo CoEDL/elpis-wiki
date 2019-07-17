@@ -26,7 +26,7 @@ Start with downloading some "toy data" to use during the workshop. [Download the
 
 ### 2) Run Elpis
 
-2a) If you don't have Docker, or that means nothing to you, we have set up some temporary servers online. To use one of these machines, [open this Google spreadsheet](https://goo.gl/uwSCSt). Find a row that doesn't have someone's name in it yet, and claim a machine by putting your name in there. Copy the IP Address, open a new web browser (Chrome or Firefox), paste the address into the location bar and press Enter/Return to start Elpis. 
+2a) If you are following these steps in a workshop, get an address from the workshop facilitator, open a new web browser (Chrome or Firefox), paste the address into the location bar and press Enter/Return to start Elpis. 
 
 OR
 

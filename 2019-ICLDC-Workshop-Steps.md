@@ -30,7 +30,7 @@ Start with downloading some "toy data" to use during the workshop. [Download the
 
 OR
 
-2b) If you already have Docker installed and you want to run Elpis on your own computer, download and run the Elpis Docker image by running this command in a terminal: `docker run --rm -p 5000:5000/tcp coedl/elpis:icldc` 
+2b) If you already have Docker installed and you want to run Elpis on your own computer, download and run the Elpis Docker image by running this command in a terminal, `docker run --rm -p 5000:5000/tcp coedl/elpis:icldc` 
  and when it is running open `http://0.0.0.0:5000` in a browser.
 
 ### 3) When Elpis starts it looks like this. 

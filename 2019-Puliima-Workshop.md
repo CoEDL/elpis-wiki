@@ -26,7 +26,7 @@ Start with downloading some "toy data" to use during the workshop. [Download the
 
 ### 2) Run Elpis
 
-Get an address from the workshop spreadsheet (link coming here), open a new web browser (Chrome or Firefox), paste the address into the location bar and press Enter/Return to start Elpis.
+Get an address from the workshop spreadsheet [click here](https://bit.ly/2HfDNua), open a new web browser (Chrome or Firefox), paste the address into the location bar and press Enter/Return to start Elpis.
 
 
 ### 3) When Elpis starts it looks like this.

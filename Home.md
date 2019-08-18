@@ -1,11 +1,6 @@
-# Welcome to ICLDC 2019. 
 
-## Transcription Acceleration for Language Documentation with ELPIS workshop
+## ELPIS transcription workshop at Puliima Darwin 19th and 20th August 2019
 
-Ben Foley, Nay San & Daan van Esch
-ICLDC 6, University of Hawaiʻi at Mānoa
-
-
-- [Please click here for the workshop steps](2019-ICLDC-Workshop-Steps)
+- [Please click here for the workshop steps](2019-Puliima-Workshop)
 
 

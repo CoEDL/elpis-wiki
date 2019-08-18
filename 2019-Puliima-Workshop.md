@@ -36,7 +36,8 @@ We'll make it look a bit more welcoming soon!
 
 ---
 
-## Interface tour
+## A quick tour
+
 Click through to the *New Data Bundle* page.
 
 ![New data](workshop/20-new-data.png)

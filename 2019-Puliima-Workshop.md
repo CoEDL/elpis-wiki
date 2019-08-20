@@ -114,16 +114,17 @@ On the Pronunciation dictionary page we can see how Elpis has used the letter to
 ![Lexicon](workshop/70-lexicon.png)
 
 > The `!SIL` and `<unk>` lines are used to handle silence and unknown words.
-
- Check words that have been transcribed with consecutive matching characters. Do they represent one sound or two? If only one, add a line to your `letter-to-sound.txt` file, mapping the consecutive characters to a single symbol and rebuild the lexicon.
-
- For example, if `wu̱nne̱` is mapped to `wu̱nne̱ w ɨ n n ɛ` in the lexicon, then add `nn n` to `letter-to-sound.txt`, upload it again and rebuild the lexicon.  The results should be collapsed lexicon entry `wu̱nne̱ w ɨ n ɛ`.
-
- If your language has digraphs, put these earlier in the l2s, above single characters. For example,
-```
-ng ŋ
-n n
-```
+>
+> Check words that have been transcribed with consecutive matching characters. Do they represent one sound or two? If only one, add a line to your `letter-to-sound.txt` file, mapping the consecutive characters to a single symbol and rebuild the lexicon.
+>
+> For example, if `wu̱nne̱` is mapped to `wu̱nne̱ w ɨ n n ɛ` in the lexicon, then add `nn n` to `letter-to-sound.txt`, upload it again and rebuild the lexicon.  The results should be collapsed lexicon entry `wu̱nne̱ w ɨ n ɛ`.
+>
+> If your language has digraphs, put these earlier in the l2s, above single characters. For example,
+>
+> ```
+> ng ŋ
+> n n
+> ```
 
 
 ## Settings

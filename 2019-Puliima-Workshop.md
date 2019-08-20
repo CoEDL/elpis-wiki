@@ -177,8 +177,6 @@ If you selected Text format, after the transcription is done, the transcription 
 
 ![Download](workshop/140-text.png)
 
-![Download](workshop/140-elan.png)
-
 
 Listen in Elan.
 > If you are using your own audio, rename the audio to `audio.wav`.

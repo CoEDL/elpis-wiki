@@ -15,7 +15,7 @@ Then, using the trained system we can get a new transcription on un-transcribed 
 - [Setup](#setup)
   * [Get some training files](#get-some-training-files)
   * [Start Elpis](#start-elpis)
-- [Recordings](#starting)
+- [Recordings](#recordings)
   * [Add files](#add-files)
   * [Prepare](#prepare)
 - [Training sessions](#training-sessions)

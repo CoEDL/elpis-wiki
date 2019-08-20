@@ -2,9 +2,8 @@
 
 The speech recognition (also called Speech to Text) process broadly involves steps of:
 
+- Making pronunciation rules for your language
 - Organising files that will be used to train the system
-- Cleaning files
-- Making pronunciation rules
 - Acoustic, pronunciation and language training
 
 Then, using the trained system we can get a new transcription on un-transcribed recordings.

@@ -12,13 +12,32 @@ Then, using the trained system we can get a new transcription on un-transcribed 
 ---
 
 
+- [Setup](#setup)
+  * [Get some training files](#get-some-training-files)
+  * [Start Elpis](#start-elpis)
+- [Recordings](#starting)
+  * [Add files](#add-files)
+  * [Prepare](#prepare)
+- [Training sessions](#training-sessions)
+  * [Letter to sound rules](#letter-to-sound-rules)
+  * [Pronunciation](#pronunciation)
+  * [Settings](#settings)
+  * [Training](#training)
+  * [Results](#results)
+- [Making a new transcription](#making-a-new-transcription)
+- [More information about training files](#more-information-about-training-files)
+
+
+---
+
+
 # Setup
 
-## 1) Get some training files
+## Get some training files
 
 Start with downloading some files to use during the workshop. [Download the Abui files here.](https://elpis.net.au/abui.zip)
 
-## 2) Run Elpis
+## Start Elpis
 
 - Get an address from the workshop spreadsheet [click here](https://bit.ly/2HfDNua).
 - Open a new web browser (Chrome or Firefox).
@@ -32,7 +51,7 @@ Start with downloading some files to use during the workshop. [Download the Abui
 ---
 
 
-# Starting
+# Recordings
 
 On the Elpis welcome page, click on *making a new group of recordings* to go to the *New group of recordings* page.
 
@@ -161,9 +180,11 @@ The results are:
 
 ![Results](workshop/120-results.png)
 
+
 ----
 
-## Making a new transcription
+
+# Making a new transcription
 
 Now the training has been done, on the **New Transcriptions** step, we can **Choose a file**. Then decide whether you want the transcription in text format or an Elan file with the words aligned. When you click a format button, the transcribing starts. The process can take time, depending on how long your audio is.
 

@@ -1,6 +1,6 @@
 # elpis-wiki
 
-Elpis is a speech recognition toolkit. 
+[Elpis](https://github.com/CoEDL/elpis) is a speech recognition toolkit. 
 
 This wiki is a stable clone of the Elpis repository's wiki, which is the development version.
 

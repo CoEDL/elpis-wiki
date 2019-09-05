@@ -11,7 +11,7 @@ Duplicate your data set so that you don’t affect your data by preparing for th
 
 For Elan data, the scripts will look for training transcripts on a tier name *Phrase*. We will be changing soon to use the top-most tier.. stay tuned for more details.
 
-![](images/elan-phrase-tier.png)
+![](assets/preparing-files/elan-phrase-tier.png)
 
 
 ## Clean your transcriptions by looking through them and checking the following:
@@ -32,10 +32,6 @@ Audio filenames should match the transcript filenames, bearing in mind that any 
 
 Use noise reduction techniques to clean the audio signal.
 
-You should now have a collection of cleaned transcriptions and audio in the right format. 
+You should now have a collection of cleaned transcriptions and audio in the right format.
 
-For examples, refer to the [Abui toy corpus](https://github.com/CoEDL/toy-corpora).
-
-
-
-
+For examples, refer to the [Abui toy corpus](https://elpis.net.au/abui.zip).

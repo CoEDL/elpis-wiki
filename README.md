@@ -1,4 +1,4 @@
-# elpis-wiki
+# About this repository
 
 [Elpis](https://github.com/CoEDL/elpis) is a speech recognition toolkit. 
 

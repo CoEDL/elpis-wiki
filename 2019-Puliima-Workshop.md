@@ -35,11 +35,12 @@ Then, using the trained system we can get a new transcription on un-transcribed 
 
 ## Get some training files
 
-Start with downloading some files to use during the workshop. [Download the Abui files here.](https://elpis.net.au/abui.zip)
+Start with downloading some files to use during the workshop. [Download the Abui files here.](https://elpis.net.au/abui.zip) After the zip file has downloaded, unzip it to create a folder somewhere handy (for example, the Desktop).
 
 ## Start Elpis
 
-- Get an address from the workshop spreadsheet [click here](https://bit.ly/2HfDNua).
+- We will provide a list of servers on the workshop day.
+- Get an address from the list.
 - Open a new web browser (Chrome or Firefox).
 - Paste the address into the location bar.
 - Press Enter/Return to start Elpis.
@@ -75,7 +76,7 @@ Give your new bundle of recordings a name, then click Next.
 
 ## Add files
 
-On the *Add files* page, click inside the dotted area and go to where you downloaded the Abui files. Open the training folder, select all the *wav* and *eaf* files and add them.
+On the *Add files* page, click inside the dotted area and go to where you downloaded the Abui files. Open the `transcribed` folder, select all the *wav* and *eaf* files and add them.
 
 ![Add files](workshop/30-add-files.png)
 
@@ -84,7 +85,7 @@ Click Next
 
 ## Prepare
 
-On the *Prepare* page we can see how Elpis has read your training transcription files.
+On the *Prepare* page we can see how Elpis has read your transcription files.
 
 ![Prepare files](workshop/40-prepare.png)
 
@@ -103,13 +104,13 @@ Now our training files have been prepared, we can start a new training session. 
 
 ## Letter to sound rules
 
-Upload the letter to sound rules from the Abui files folder. Elpis will use this to build a pronunciation dictionary for the training transcriptions.
+Upload the letter to sound rules `letter_to_sound.txt` from your Abui folder. Elpis will use this to build a pronunciation dictionary for the transcriptions you provided earlier.
 
 ![Letter to sound](workshop/60-l2s.png)
 
-The **letter to sound** file is a text file of rules mapping your orthography into phonemic transcription. It will be used to build a pronunciation dictionary for your training files.
+The **letter to sound** file is a text file of rules mapping your orthography into phonemic transcription. It will be used to build a pronunciation dictionary.
 
-It is formatted in two columns, space separated. Left column is all the characters in your corpus. The right column is a symbol representing the sound. You can use IPA or SAMPA for the right column. Comments can be written in the file with a # starting the comment line. For example,
+It is formatted in two columns, space separated. Left column is all the characters in your corpus. The right column is a symbol representing the sound. You can use IPA or SAMPA for the right column. Comments can be written in the file with a `#` starting the comment line. For example,
 
 ```
 # Abui
@@ -128,7 +129,7 @@ Click Next
 
 ## Pronunciation
 
-On the Pronunciation dictionary page we can see how Elpis has used the letter to sound rules to work out how to pronounce the words in our training transcriptions. You may need to correct some of them! We are working on how to do this.
+On the Pronunciation dictionary page we can see how Elpis has used the letter to sound rules to work out how to pronounce the words in our training transcripts. You may need to correct some of them! We are working on how to do this.
 
 ![Lexicon](workshop/70-lexicon.png)
 
@@ -186,9 +187,9 @@ The results are:
 
 # Making a new transcription
 
-Now the training has been done, on the **New Transcriptions** step, we can **Choose a file**. Then decide whether you want the transcription in text format or an Elan file with the words aligned. When you click a format button, the transcribing starts. The process can take time, depending on how long your audio is.
+Now the training has been done, on the **New Transcriptions** step, we can **Choose a file**. Upload the `audio.wav` file in the Abui untranscribed folder. Then decide whether you want the transcription in text format or an Elan file with the words aligned. When you click a format button, the transcribing starts.
 
-> We are working on being able to handle long audio better. For now, just use a single utterance. Stay tuned for updates on this feature.
+> We are working on being able to handle long audio better. For now, just use a single, short utterance. Stay tuned for updates on this feature.
 
 
 ![New transcription](workshop/130-transcribe.png)

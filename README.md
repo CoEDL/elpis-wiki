@@ -8,4 +8,4 @@ Elpis code is open-source, available at [github.com/CoEDL/elpis](https://github.
 
 This wiki is a stable clone of pages from the Elpis repository wiki, which is the development version.
 
-[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.3386190.svg)](https://doi.org/10.5281/zenodo.3386190)
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.3403419.svg)](https://doi.org/10.5281/zenodo.3403419)

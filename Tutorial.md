@@ -46,7 +46,7 @@ Start with downloading some files to use during the workshop. [Download the Abui
 - Press Enter/Return to start Elpis.
 - When Elpis starts it looks like this.
 
-![Welcome](assets/2019-puliima/10-welcome.png)
+![Welcome](assets/tutorial/10-welcome.png)
 
 
 ---
@@ -56,7 +56,7 @@ Start with downloading some files to use during the workshop. [Download the Abui
 
 On the Elpis welcome page, click on *making a new group of recordings* to go to the *New group of recordings* page.
 
-![New files](assets/2019-puliima/20-new-data.png)
+![New files](assets/tutorial/20-new-data.png)
 
 There are three main steps in Elpis, with sub-steps in each.
 
@@ -78,7 +78,7 @@ Give your new bundle of recordings a name, then click Next.
 
 On the *Add files* page, click inside the dotted area and go to where you downloaded the Abui files. Open the `transcribed` folder, select all the *wav* and *eaf* files and add them.
 
-![Add files](assets/2019-puliima/30-add-files.png)
+![Add files](assets/tutorial/30-add-files.png)
 
 Click Next
 
@@ -87,7 +87,7 @@ Click Next
 
 On the *Prepare* page we can see how Elpis has read your transcription files.
 
-![Prepare files](assets/2019-puliima/40-prepare.png)
+![Prepare files](assets/tutorial/40-prepare.png)
 
 Click Next
 
@@ -99,14 +99,14 @@ Click Next
 
 Now our training files have been prepared, we can start a new training session. Give it a name then click Next.
 
-![New model](assets/2019-puliima/50-new-model.png)
+![New model](assets/tutorial/50-new-model.png)
 
 
 ## Letter to sound rules
 
 Upload the letter to sound rules `letter_to_sound.txt` from your Abui folder. Elpis will use this to build a pronunciation dictionary for the transcriptions you provided earlier.
 
-![Letter to sound](assets/2019-puliima/60-l2s.png)
+![Letter to sound](assets/tutorial/60-l2s.png)
 
 The **letter to sound** file is a text file of rules mapping your orthography into phonemic transcription. It will be used to build a pronunciation dictionary.
 
@@ -131,7 +131,7 @@ Click Next
 
 On the Pronunciation dictionary page we can see how Elpis has used the letter to sound rules to work out how to pronounce the words in our training transcripts. You may need to correct some of them! We are working on how to do this.
 
-![Lexicon](assets/2019-puliima/70-lexicon.png)
+![Lexicon](assets/tutorial/70-lexicon.png)
 
 > The `!SIL` and `<unk>` lines are used to handle silence and unknown words.
 >
@@ -152,19 +152,19 @@ On the Pronunciation dictionary page we can see how Elpis has used the letter to
 
 Here you can adjust settings which affect the tool's performance. A unigram (1) value will train the model on each word. A trigram (3) value with train the model by words with their neighbours.
 
-![Settings](assets/2019-puliima/80-settings.png)
+![Settings](assets/tutorial/80-settings.png)
 
 
 ## Training
 
 Got to the **Training** page to kick off the training process. Press *Start training* to begin.
 
-![Ready](assets/2019-puliima/90-training.png)
+![Ready](assets/tutorial/90-training.png)
 
 
 When it has finished, we should see **trained** in the middle of the page.
 
-![Trained](assets/2019-puliima/110-trained.png)
+![Trained](assets/tutorial/110-trained.png)
 
 
 ## Results
@@ -179,7 +179,7 @@ The results are:
 - DEL - words that were deleted (missed)
 - SUB - words that have been substituted (mistaken)
 
-![Results](assets/2019-puliima/120-results.png)
+![Results](assets/tutorial/120-results.png)
 
 
 ----
@@ -192,18 +192,18 @@ Now the training has been done, on the **New Transcriptions** step, we can **Cho
 > We are working on being able to handle long audio better. For now, just use a single, short utterance. Stay tuned for updates on this feature.
 
 
-![New transcription](assets/2019-puliima/130-transcribe.png)
+![New transcription](assets/tutorial/130-transcribe.png)
 
 
 If you selected Text format, after the transcription is done, the transcription will show on the page. For either format, the text or Elan file can be downloaded.
 
-![Download](assets/2019-puliima/140-text.png)
+![Download](assets/tutorial/140-text.png)
 
 
 Listen in Elan.
 > If you are using your own audio, rename the audio to `audio.wav`.
 
-![Elan](assets/2019-puliima/150-elan.png)
+![Elan](assets/tutorial/150-elan.png)
 
 
 

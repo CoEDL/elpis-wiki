@@ -234,7 +234,7 @@ Clean your transcriptions by looking through them and checking the following:
 
 - Standardise variation in spelling
 * Replace non-lexical number forms, shorthand forms and abbreviations with full lexical forms. For example, replace ‘9’ with ‘nine’.
-- For more cleaning tips, see the [Data preparation](Data-preparation) wiki page.
+- For more cleaning tips, see the [Data preparation](Preparing-Files) wiki page.
 
 
 You can also add text files that contain words in the language, that don't have matching audio. These will be used to improve the system's language model.

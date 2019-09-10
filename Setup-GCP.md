@@ -28,7 +28,7 @@
 
 	![](assets/setup/gcp-ip.png)
 	
-- After a couple of minutes, the Elpis interface will be available at the IP address:
+- After a short while (around 5-10 minutes), the Elpis interface will be available at the IP address:
 
 	![](assets/setup/gcp-done.png)
 	

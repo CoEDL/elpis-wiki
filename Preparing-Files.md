@@ -1,3 +1,5 @@
+# Preparing Files for Elpis
+
 ASR systems train on pre-transcribed speech data, building a statistical model of speech, which can then be applied to untranscribed speech. It is important to recognise that the type of speech that the system trains on will determine the type of speech that the trained model can be used on. For example if you train a system with speech of a person counting numbers, that model will be great for automatically transcribing more speech of that person counting, but wouldn’t be practical for transcribing a different person telling stories.
 
 Select a collection of data for which you have the most orthographically-transcribed, high-quality speech recordings. The system will learn from these to build a model for the language. The more training data and the higher the quality (no background noise, good quality microphones) the better. If you are able to bring at least an hours worth will be good, though more will give the system greater amounts of material from which to learn. If you don’t have data, fear not, we will provide some.
